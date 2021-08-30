@@ -1,6 +1,3 @@
-- 👋 Hi, I’m @lxRbckl
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 🏫 
+- 🎒 
 - 📫 alexarbuckle@protonmail.com
 
