@@ -1,2 +1,3 @@
-### alexarbuckle@protonmail.com
-### https://github.com/ala2q6
+- 📫 alexarbuckle@protonmail.com
+- 🏫 https://github.com/ala2q6
+- 📖 
