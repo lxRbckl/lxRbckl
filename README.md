@@ -1,3 +1,1 @@
-- 📫 **alexarbuckle@protonmail.com**
-- [🎓](https://github.com/ala2q6) **https://github.com/ala2q6**
-- [📰](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+`alexarbuckle@protonmail.com`&nbsp; [`https://github.com/ala2q6`](https://github.com/ala2q6)
