@@ -4,7 +4,7 @@
   <img width="50" src="https://cdn.discordapp.com/attachments/934690396037054537/934748674590928946/discord.png">
   <img width="75vh" src="https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png">
     
-  <a href = 'mailto:alexarbuckle@protonmail.com'>
+  <a href = 'mailto:'>
   <img width="50" src="https://cdn.discordapp.com/attachments/934690396037054537/934748675211669544/protonmail.png">
   <img width="75vh" src="https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png">
   
