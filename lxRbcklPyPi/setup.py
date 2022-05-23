@@ -1,14 +1,15 @@
-import setuptools
+from setuptools import setup, find_packages
 
 
-setuptools.setup(
+setup(
 
+    version = '0.2',
     name = 'lxRbckl',
-    version = '0.1',
     author = 'Alexander Arbuckle',
     author_email = 'lxrbckl@gmail.com',
+    packages = find_packages(),
+    url = 'https://github.com/lxRbckl/lxRbckl',
     description = 'Layers of abstraction to increase readability and productivity in lxRbckl projects.',
-    packages = setuptools.find_packages(),
     classifiers = [
 
         'Programming Language :: Python :: 3',
