@@ -69,14 +69,24 @@ def githubSet(pGithub: object, pData: dict, pRepository: str, pFile: str):
 def githubGet(pGithub: object, pRepository: str, pFile: str):
     '''  '''
 
-    # get content from file in repository <
-    content = pGithub.get_repo(pRepository).get_contents(pFile)
+    # try if structured content <
+    # except then unstructured content <
+    try:
 
-    # >
+        # get content from repository <
+        # return structured content content <
+        content = pGithub.get_repo(pRepository).get_contents(pFile)
+        return loads(content.decoded_content.decode())
 
-    # try if structured then return decoded content <
-    # except then unstructured and return decoded content <
-    try: return loads(content.decoded_content.decode())
-    except: return dict(content.decoded_content.decode())
+        # >
+
+    except:
+
+        # try if unstructured content then return content <
+        # except then content does not exist then return None <
+        try: return dict(content.decoded_content.decode())
+        except: return None
+
+        # >
 
     # >
