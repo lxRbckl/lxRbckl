@@ -1,21 +1,18 @@
 <p align="center">
   
   <a href = 'https://discordapp.com/users/589900887212949522'>
-  <img width="45" src="https://cdn.discordapp.com/attachments/934690396037054537/944636818454900798/discord.png">
-    
-  <img width="15%" src="https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png">
+  <img width="155" src="https://cdn.discordapp.com/attachments/993060883670511646/993062366780596224/discord.png">
     
   <a href = 'mailto:lxRbckl@protonmail.com'>
-  <img width="45" src="https://cdn.discordapp.com/attachments/934690396037054537/944636818844966912/protonmail.png">
-    
-  <img width="15%" src="https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png">
+  <img width="155" src="https://cdn.discordapp.com/attachments/993060883670511646/993062439232999464/protonmail.png">
 
   <a href = 'https://github.com/ala2q6'>
-  <img width="45" src="https://cdn.discordapp.com/attachments/934690396037054537/941726647491645490/github.png">
-    
-  <img width="15%" src="https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png">
+  <img width="155" src="https://cdn.discordapp.com/attachments/993060883670511646/993062387429167184/github.png">
 
   <a href = 'http://lxrbckl.com'>
-  <img width="45" src="https://cdn.discordapp.com/attachments/934690396037054537/944636818240970792/blog.png">
+  <img width="155" src="https://cdn.discordapp.com/attachments/993060883670511646/993062333444280430/blog.png">
     
+  <a href = 'https://www.linkedin.com/in/alexander-arbuckle-857146243/'>
+  <img width="155" src="https://cdn.discordapp.com/attachments/993060883670511646/993062457503404113/linkedin.png">
+  
 </p>
