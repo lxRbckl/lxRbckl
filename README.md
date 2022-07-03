@@ -16,6 +16,6 @@
   <img width="15%" src="https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png">
 
   <a href = 'http://lxrbckl.com'>
-  <img width="50" src="https://cdn.discordapp.com/attachments/934690396037054537/944636818240970792/blog.png">
+  <img width="30" src="https://cdn.discordapp.com/attachments/934690396037054537/944636818240970792/blog.png">
     
 </p>
