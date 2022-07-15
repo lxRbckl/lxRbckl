@@ -1,7 +1,7 @@
 <p align="center">
   
   <a href = 'https://discordapp.com/users/589900887212949522'>
-  <img width="155" src="https://cdn.discordapp.com/attachments/997331275704705053/997334192218185769/discord.png">
+  <img width="155" src="https://cdn.discordapp.com/attachments/997331275704705053/997334192218185769/discord.png" margin = "10%">
     
   <a href = 'mailto:lxRbckl@protonmail.com'>
   <img width="155" src="https://cdn.discordapp.com/attachments/997331275704705053/997334257917771836/protonmail.png">
