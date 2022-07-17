@@ -4,7 +4,12 @@ from json import load, dump, loads
 # >
 
 
-def jsonLoad(pFile: str = None, pNew: bool = False):
+def jsonLoad(
+
+        pFile: str,
+        pNew: bool = False
+
+):
     '''  '''
 
     # if new file <
@@ -31,7 +36,13 @@ def jsonLoad(pFile: str = None, pNew: bool = False):
     # >
 
 
-def jsonDump(pFile: str = None, pData = None, pIndent: int = 3):
+def jsonDump(
+
+        pData,
+        pFile: str,
+        pIndent: int = 3
+
+):
     '''  '''
 
     # get file <
@@ -43,22 +54,32 @@ def jsonDump(pFile: str = None, pData = None, pIndent: int = 3):
     # >
 
 
-def githubSet(pGithub: object, pData: dict, pRepository: str, pFile: str):
+def githubSet(
+
+        pData,
+        pFile: str,
+        pGithub: object,
+        pRepository: str,
+        pBranch: str = 'main',
+        pMessage: str = 'Automated Update'
+
+):
     '''  '''
 
     # get repository <
-    # get content from file in repository <
+    # get content from repository <
     repository = pGithub.get_repo(pRepository)
-    content = repository.get_contents(pFile)
+    content = repository.get_contents(path = pFile, ref = pBranch)
 
     # >
 
     # update file from repository <
     repository.update_file(
 
+        branch = pBranch,
         sha = content.sha,
+        message = pMessage,
         path = content.path,
-        message = 'automated update',
         content = str(pData).replace('\'', '\"')
 
     )
@@ -66,27 +87,53 @@ def githubSet(pGithub: object, pData: dict, pRepository: str, pFile: str):
     # >
 
 
-def githubGet(pGithub: object, pRepository: str, pFile: str):
+def githubGet(
+
+        pFile: str,
+        pGithub: object,
+        pRepository: str,
+        pBranch: str = 'main'
+
+):
     '''  '''
 
-    # try if structured content <
-    # except then unstructured content <
-    try:
-
-        # get content from repository <
-        # return structured content content <
-        content = pGithub.get_repo(pRepository).get_contents(pFile)
-        return loads(content.decoded_content.decode())
-
-        # >
-
-    except:
-
-        # try if unstructured content then return content <
-        # except then content does not exist then return None <
-        try: return dict(content.decoded_content.decode())
-        except: return None
-
-        # >
+    # get repository <
+    # get content from repository <
+    repository = pGithub.get_repo(pRepository)
+    content = repository.get_contents(path = pFile, ref = pBranch)
 
     # >
+
+    return loads(content.decoded_content.decode())
+
+
+
+
+
+
+
+
+
+
+
+    # # try if structured content <
+    # # except then unstructured content <
+    # try:
+    #
+    #     # get content from repository <
+    #     # return structured content content <
+    #     content = pGithub.get_repo(pRepository).get_contents(path = pFile, ref = pBranch)
+    #     return loads(content.decoded_content.decode())
+    #
+    #     # >
+    #
+    # except:
+    #
+    #     # try if unstructured content then return content <
+    #     # except then content does not exist then return None <
+    #     try: return dict(content.decoded_content.decode())
+    #     except: return None
+    #
+    #     # >
+    #
+    # # >
