@@ -1,4 +1,5 @@
 # import <
+from requests import get
 from json import load, dump, loads
 
 # >
@@ -107,33 +108,4 @@ def githubGet(
     return loads(content.decoded_content.decode())
 
 
-
-
-
-
-
-
-
-
-
-    # # try if structured content <
-    # # except then unstructured content <
-    # try:
-    #
-    #     # get content from repository <
-    #     # return structured content content <
-    #     content = pGithub.get_repo(pRepository).get_contents(path = pFile, ref = pBranch)
-    #     return loads(content.decoded_content.decode())
-    #
-    #     # >
-    #
-    # except:
-    #
-    #     # try if unstructured content then return content <
-    #     # except then content does not exist then return None <
-    #     try: return dict(content.decoded_content.decode())
-    #     except: return None
-    #
-    #     # >
-    #
-    # # >
+def requestsGet(pLink: str): return loads(get(pLink).text)
