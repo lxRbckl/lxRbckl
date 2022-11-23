@@ -1,4 +1,3 @@
-### `Problem`
 ```
 Traceback (most recent call last):
   File "/Users/highlander/Desktop/Project-Heimir/main.py", line 5, in <module>
