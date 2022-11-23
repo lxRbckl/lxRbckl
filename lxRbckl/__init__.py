@@ -108,4 +108,17 @@ def githubGet(
     return loads(content.decoded_content.decode())
 
 
-def requestsGet(pLink: str): return loads(get(pLink).text)
+def requestsGet(
+
+        pLink: str,
+        isJSON: bool = True
+
+):
+    '''  '''
+
+    # if (.json) <
+    # else (not .json) <
+    if (isJSON): return loads(get(pLink).text)
+    else: return get(pLink).text
+
+    # >
