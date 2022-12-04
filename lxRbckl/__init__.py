@@ -50,7 +50,7 @@ def jsonDump(
     # dump data <
     with open(pFile, 'w') as f:
 
-        dump(pData, f, pIndent)
+        dump(pData, f)
 
     # >
 
