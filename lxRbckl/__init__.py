@@ -8,12 +8,14 @@ from json import load, dump, loads
 def jsonLoad(
 
         pFile: str,
-        pNew: bool = False
+        pNew: bool = False,
+        isWindows: bool = False
 
 ):
     '''  '''
 
-    # if new file <
+    # if (new file) <
+    # if (is windows) <
     # else then existing file <
     if (pNew):
 
@@ -23,6 +25,8 @@ def jsonLoad(
         jsonLoad(pFile = pFile)
 
         # >
+
+    if (isWindows): pFile = pFile.replace('/', '\\')
 
     else:
 
@@ -41,10 +45,16 @@ def jsonDump(
 
         pData,
         pFile: str,
-        pIndent: int = 3
+        pIndent: int = 3,
+        isWindows: bool = False
 
 ):
     '''  '''
+
+    # if (is windows) <
+    if (isWindows): pFile = pFile.replace('/', '\\')
+
+    # >
 
     # get file <
     # dump data <
