@@ -71,6 +71,7 @@ def githubSet(
         pFile: str,
         pGithub: object,
         pRepository: str,
+        isNew: bool = False,
         pBranch: str = 'main',
         pMessage: str = 'Automated Update'
 
@@ -80,20 +81,46 @@ def githubSet(
     # get repository <
     # get content from repository <
     repository = pGithub.get_repo(pRepository)
-    content = repository.get_contents(path = pFile, ref = pBranch)
 
     # >
 
-    # update file from repository <
-    repository.update_file(
+    # if (is new) <
+    # else (then not new) <
+    if (isNew):
 
-        branch = pBranch,
-        sha = content.sha,
-        message = pMessage,
-        path = content.path,
-        content = str(pData).replace('\'', '\"')
+        # add file to repository <
+        repository.create_file(
 
-    )
+            path = pFile,
+            content = pData,
+            branch = pBranch,
+            message = pMessage
+
+        )
+
+        # >
+
+    else:
+
+        # update file from repository <
+        # get content from repository <
+        content = repository.get_contents(
+
+            path = pFile,
+            ref = pBranch
+
+        )
+        repository.update_file(
+
+            branch = pBranch,
+            sha = content.sha,
+            message = pMessage,
+            path = content.path,
+            content = str(pData).replace('\'', '\"')
+
+        )
+
+        # >
 
     # >
 
