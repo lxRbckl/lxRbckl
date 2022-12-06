@@ -1,6 +1,6 @@
 # import <
 from requests import get
-from json import load, dump, loads
+from json import load, dump, loads, dumps
 
 # >
 
@@ -71,7 +71,6 @@ def githubSet(
         pFile: str,
         pGithub: object,
         pRepository: str,
-        isNew: bool = False,
         pBranch: str = 'main',
         pMessage: str = 'Automated Update'
 
@@ -81,48 +80,54 @@ def githubSet(
     # get repository <
     # get content from repository <
     repository = pGithub.get_repo(pRepository)
+    content = repository.get_contents(path = pFile, ref = pBranch)
 
     # >
 
-    # if (is new) <
-    # else (then not new) <
-    if (isNew):
+    repository.update_file(
 
-        # add file to repository <
-        repository.create_file(
+        branch = pBranch,
+        sha = content.sha,
+        message = pMessage,
+        path = content.path,
+        content = str(pData).replace('\'', '\"')
 
-            path = pFile,
-            content = pData,
-            branch = pBranch,
-            message = pMessage
+    )
 
-        )
+    # # if (is new) <
+    # # else (then not new) <
+    # if (isNew):
+    #
+    #     # add file to repository <
+    #     repository.create_file(
+    #
+    #         path = pFile,
+    #         content = pData,
+    #         branch = pBranch,
+    #         message = pMessage
+    #
+    #     )
+    #
+    #     # >
 
-        # >
-
-    else:
-
-        # update file from repository <
-        # get content from repository <
-        content = repository.get_contents(
-
-            path = pFile,
-            ref = pBranch
-
-        )
-        repository.update_file(
-
-            branch = pBranch,
-            sha = content.sha,
-            message = pMessage,
-            path = content.path,
-            content = str(pData).replace('\'', '\"')
-
-        )
-
-        # >
-
-    # >
+    # else:
+    #
+    #     # update file from repository <
+    #     # get content from repository <
+    #     content = repository.get_contents(path = pFile, ref = pBranch)
+    #     repository.update_file(
+    #
+    #         branch = pBranch,
+    #         sha = content.sha,
+    #         message = pMessage,
+    #         path = content.path,
+    #         content = str(pData).replace('\'', '\"')
+    #
+    #     )
+    #
+    #     # >
+    #
+    # # >
 
 
 def githubGet(
@@ -143,6 +148,31 @@ def githubGet(
     # >
 
     return loads(content.decoded_content.decode())
+
+
+def githubCreate(
+
+        pFile: str,
+        pGithub: object,
+        pRepository: str,
+        pBranch: str = 'main'
+
+):
+    '''  '''
+
+    # get repository <
+    repository = pGithub.get_repo(pRepository)
+
+    # >
+
+    repository.create_file(
+
+        path = pFile,
+        branch = pBranch,
+        message = pMessage,
+        content = dumps(pData)
+
+    )
 
 
 def requestsGet(
