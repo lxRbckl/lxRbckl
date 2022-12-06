@@ -72,7 +72,7 @@ def githubSet(
         pGithub: object,
         pRepository: str,
         pBranch: str = 'main',
-        pMessage: str = 'Automated Update'
+        pMessage: str = 'Automated Action'
 
 ):
     '''  '''
@@ -93,41 +93,6 @@ def githubSet(
         content = str(pData).replace('\'', '\"')
 
     )
-
-    # # if (is new) <
-    # # else (then not new) <
-    # if (isNew):
-    #
-    #     # add file to repository <
-    #     repository.create_file(
-    #
-    #         path = pFile,
-    #         content = pData,
-    #         branch = pBranch,
-    #         message = pMessage
-    #
-    #     )
-    #
-    #     # >
-
-    # else:
-    #
-    #     # update file from repository <
-    #     # get content from repository <
-    #     content = repository.get_contents(path = pFile, ref = pBranch)
-    #     repository.update_file(
-    #
-    #         branch = pBranch,
-    #         sha = content.sha,
-    #         message = pMessage,
-    #         path = content.path,
-    #         content = str(pData).replace('\'', '\"')
-    #
-    #     )
-    #
-    #     # >
-    #
-    # # >
 
 
 def githubGet(
@@ -152,10 +117,12 @@ def githubGet(
 
 def githubCreate(
 
+        pData,
         pFile: str,
         pGithub: object,
         pRepository: str,
-        pBranch: str = 'main'
+        pBranch: str = 'main',
+        pMessage: str = 'Automated Action'
 
 ):
     '''  '''
