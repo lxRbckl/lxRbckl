@@ -1,12 +1,12 @@
 # `Pygithub ImportError`
 
-#### `Description`
-The following error occurs most often in virtual environments. This error occurs when your interpreter cannot find a
+### `Description`
+`The following error occurs most often in virtual environments. This error occurs when your interpreter cannot find a
 package. The command in the traling box ensures that the package you are installing is tied to the pip installer used
 with the executable Python file. The final box contains all the related resources I used to find the solution to this
-problem.
+problem.`
 
-#### `Problem`
+### `Problem`
 ```
 Traceback (most recent call last):
   File "/Users/highlander/Desktop/Project-Heimir/main.py", line 5, in <module>
@@ -14,7 +14,7 @@ Traceback (most recent call last):
 ImportError: cannot import name 'Github' from 'github' (/Users/highlander/Desktop/Project-Heimir/venv/lib/python3.10/site-packages/github/__init__.py)
 ```
 
-#### `Solution`
+### `Solution`
 ```
 python3 -m pip install pygithub
 ```
