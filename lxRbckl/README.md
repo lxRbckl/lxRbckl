@@ -1,5 +1,5 @@
 ## `lxRbckl`
-> A package used to maintain and monitor local .json files along with files on the GitHub website.
+> Layers of abstraction to increase readability and productivity and decrease trivial redundancy in lxRbckl projects.
 
 ### `Installation`
 ```
