@@ -90,7 +90,7 @@ def githubSet(
         sha = content.sha,
         message = pMessage,
         path = content.path,
-        content = str(pData).replace('\'', '\"')
+        content = str(pData).replace('\'', '\"').replace('None', 'null')
 
     )
 
