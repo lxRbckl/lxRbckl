@@ -1,5 +1,5 @@
 ## [`lxRbckl`](https://pypi.org/project/lxRbckl/)
-> Layers of abstraction to increase readability and productivity and decrease trivial redundancy in lxRbckl projects.
+> Layers of abstraction to increase readability and productivity in lxRbckl projects.
 
 ### `Installation`
 ```
