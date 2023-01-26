@@ -1,10 +1,7 @@
 # `Pygithub ImportError`
 
 ### `Description`
-`The following error occurs most often in virtual environments. This error occurs when your interpreter cannot find a
-package. The command in the traling box ensures that the package you are installing is tied to the pip installer used
-with the executable Python file. The final box contains all the related resources I used to find the solution to this
-problem.`
+`This error frequently when improperly installing the github API. Most often, users will install the library github rather than the library pygithub.`
 
 ### `Problem`
 ```
