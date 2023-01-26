@@ -16,8 +16,8 @@ ImportError: cannot import name 'Github' from 'github' (/Users/highlander/Deskto
 
 ### `Solution`
 ```
-python3 -m pip install pygithub
-```
+pip3 uninstall github
+pip3 uninstall pygithub
 
-#### `Resources`
-#### `1. `[`PyGithub/issues/#856`](https://github.com/PyGithub/PyGithub/issues/856#issuecomment-421110639) `2. `[`https://stackoverflow.com/a/50821379`](https://stackoverflow.com/a/50821379) `3. `[`pythonpool.com/python-m-flag/`](https://www.pythonpool.com/python-m-flag/) `4. `[`appdividend.com/python-m-flag/`](https://appdividend.com/2022/06/15/python-m-flag/) `5. `[`pyquestions.com/meaning-of-python-m-flag`](https://pyquestions.com/meaning-of-python-m-flag)
+pip3 install pygithub
+```
