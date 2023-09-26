@@ -2,11 +2,13 @@
 name = "lxrbckl"
 version = "0.1.0"
 description = ""
-authors = ["lxrbckl <lxrbckl@gmail.com>"]
+authors = ["lxRbckl <lxrbckl@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
+pytest = "^7.4.2"
+requests = "^2.31.0"
 
 
 [build-system]
