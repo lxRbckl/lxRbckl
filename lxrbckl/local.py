@@ -1,5 +1,7 @@
 # import <
-
+from re import split
+from os import remove
+from json import dump, load
 
 # >
 
@@ -10,10 +12,28 @@
 # >
 
 
-def fileSet():
+def fileSet(
+   
+   pFile: str,
+   pDelimeter: str = '/',
+   pEnding: str = '.json',
+   outputError: bool = False
+   
+):
    '''  '''
    
-   pass
+   try:
+      
+      pass
+   
+   except Exception as e:
+      
+      return {
+         
+         True : e,
+         False : None
+         
+      }[outputError]
 
 
 def fileGet():
