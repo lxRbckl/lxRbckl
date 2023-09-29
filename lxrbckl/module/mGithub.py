@@ -11,7 +11,7 @@ def githubSet(
         pGithub: object,
         pRepository: str,
         pBranch: str = 'main',
-        pMessage: str = 'Automated Action'
+        pMessage: str = 'Automated Commit'
 
 ):
     '''  '''
@@ -61,7 +61,7 @@ def githubAddFile(
         pGithub: object,
         pRepository: str,
         pBranch: str = 'main',
-        pMessage: str = 'Automated Action'
+        pMessage: str = 'Automated Commit'
 
 ):
     '''  '''

@@ -11,7 +11,9 @@ from ..module.mFile import (
 
 
 # declare <
-
+validPath = '/Users/highlander/lxRbckl/lxrbckl/data/valid.txt'
+brokenPath = '/Users/highlander/lxRbckl/lxrbckl/data/broken.txt'
+invalidPath = '/Users/highlander/lxRbckl/lxrbckl/data/invalid.txt'
 
 # >
 
@@ -19,20 +21,38 @@ from ..module.mFile import (
 def test_setValid1():
    ''' Can write objects to files. '''
    
-   pass
+   data = 'this is a test'
+   result = setFile(
+      
+      pData = data,
+      pFile = validPath
+      
+   )
+   
+   assert (result == True)
 
 
 def test_setInvalid1():
    ''' Can detect invalid objects. '''
    
    data = {'test' : 'this is a test'}
+   result = setFile(
+      
+      pData = data,
+      pFile = brokenPath
+      
+   )
    
+   assert (result == False)
 
 
 def test_getValid1():
    ''' Can retrieve existing files. '''
    
-   pass
+   expected = 'this is a test'
+   result = getFile(pFile = validPath)
+   
+   assert (result == expected)
 
 
 def test_getInvalid1():
