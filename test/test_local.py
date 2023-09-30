@@ -158,13 +158,27 @@ def test_fileGetShowError():
    assert(type(result) == JSONDecodeError)
 
 
-def test_fileDel():
+def test_fileDelJSON():
    '''  '''
    
-   pass
+   result = fileDel(pFilepath = f'{gFilepath}/test/test.json')
+   assert(result == None)
+
+
+def test_fileDelTXT():
+   '''  '''
+   
+   result = fileDel(pFilepath = f'{gFilepath}/test/test.txt')
+   assert(result == None)
 
 
 def test_fileDelShowError():
    '''  '''
    
-   pass
+   result = fileDel(
+      
+      pShowError = True,
+      pFilepath = f'{gFilepath}/test/test.txt'
+      
+   )
+   assert(type(result) == FileNotFoundError)
