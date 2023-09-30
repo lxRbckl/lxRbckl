@@ -14,7 +14,7 @@ from json import loads, dumps
 def githubSet(
    
    pData,
-   pFile: str,
+   pFilename: str,
    pGithub: object,
    pRepository: str,
    pBranch: str = 'main',
@@ -28,7 +28,7 @@ def githubSet(
    # get content from repository <
    repository = pGithub.get_repo(pRepository)
    data = str(pData).replace('\'', '\"').replace('None', 'null')
-   content = repository.get_contents(path = pFile, ref = pBranch)
+   content = repository.get_contents(path = pFilename, ref = pBranch)
 
    # >
 
@@ -42,19 +42,64 @@ def githubSet(
 
    )
 
-def githubGet():
+def githubGet(
+   
+   pFilename: str,
+   pGithub: object,
+   pRepository: str,
+   pBranch: str = 'main'
+   
+):
    '''  '''
    
-   pass
+   # get repository <
+   # get content from repository <
+   repository = pGithub.get_repo(pRepository)
+   content = repository.get_contents(path = pFilename, ref = pBranch)
+
+   # >
+
+   return loads(content.decoded_content.decode())
 
 
-def githubAdd():
+def githubAdd(
+
+   pData,
+   pFilename: str,
+   pGithub: object,
+   pRepository: str,
+   pBranch: str = 'main',
+   pMessage: str = 'Automated Commit'
+        
+):
    '''  '''
    
-   pass
+   # get repository <
+   # add file to repository <
+   repository = pGithub.get_repo(pRepository)
+   repository.create_file(
 
+      path = pFilename,
+      branch = pBranch,
+      message = pMessage,
+      content = dumps(pData)
 
-def requestsGet():
+   )
+   
+   # >
+   
+
+def requestsGet(
+   
+   pLink: str,
+   isJSON: bool = True
+   
+):
    '''  '''
    
-   pass
+   return {
+      
+      False : lambda : get(pLink).text,
+      True : lambda : loads(get(pLink).text)
+      
+   }[isJSON]()
