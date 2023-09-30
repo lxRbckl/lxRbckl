@@ -47,8 +47,8 @@ def fileSet(
 ):
    '''  '''
       
-   # try (if ) <
-   # except (then ) <
+   # try (if permitted) <
+   # except (then not permitted) <
    try:
 
       file = pDelimeter.join(split(r'[/\\]+', pFilepath))
@@ -81,13 +81,46 @@ def fileSet(
    # >
 
 
-def fileGet():
+def fileGet(
+   
+   pFilepath: str,
+   pDelimeter: str = '/',
+   pEnding: str = '.json',
+   pShowError: bool = False
+   
+):
    '''  '''
    
-   pass
+   # try (if existing file) <
+   # except (then non-existing file) <
+   try:
+   
+      file = pDelimeter.join(split(r'[/\\]+', pFilepath))
+      with open(file, 'r') as fin:
+         
+         return {
+            
+            '.txt' : lambda : fin.read(),
+            '.json' : lambda : load(fin)
+            
+         }[pEnding]()
+   
+   except Exception as e: return e if (pShowError) else False
+   
+   # >
 
 
-def fileDel():
+def fileDel(
+   
+   pFilepath: str,
+   pShowError: bool = False
+   
+):
    '''  '''
    
-   pass
+   # try (if existing file) <
+   # except (then non-existing file) <
+   try: remove(pFilepath)
+   except Exception as e: return e if (pShowError) else False
+   
+   # >

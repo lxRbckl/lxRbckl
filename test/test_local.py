@@ -1,5 +1,7 @@
 # import <
 from os import path
+from json.decoder import JSONDecodeError
+
 from lxrbckl.local import (
    
    fileSet,
@@ -20,14 +22,14 @@ gFilepath = getProjectPath(pProjectName = 'lxRbckl')
 
 
 def test_getProjectPath():
-   '''  '''
+   ''' Can find full project path. '''
 
    result = getProjectPath(pProjectName = 'lxRbckl')
    assert(result == gPath)
 
 
 def test_fileSetJSON():
-   '''  '''
+   ''' Can establish .json files with information. '''
    
    result = fileSet(
       
@@ -40,7 +42,7 @@ def test_fileSetJSON():
 
 
 def test_fileSetTXT():
-   '''  '''
+   ''' Can establish .txt files with information. '''
    
    result = fileSet(
       
@@ -54,7 +56,7 @@ def test_fileSetTXT():
 
 
 def test_fileSetFilepath():
-   '''  '''
+   ''' Can detect invalid filepaths. '''
    
    result = fileSet(
       
@@ -68,7 +70,7 @@ def test_fileSetFilepath():
    
    
 def test_fileSetData():
-   '''  '''
+   ''' Can detect invalid data for .txt files. '''
    
    result = fileSet(
       
@@ -83,7 +85,7 @@ def test_fileSetData():
    
 
 def test_fileSetOverride():
-   '''  '''
+   ''' Can prevent overwritting existing files. '''
    
    result = fileSet(
       
@@ -98,7 +100,7 @@ def test_fileSetOverride():
 
 
 def test_fileSetShowError():
-   '''  '''
+   ''' Can display undiagnosed errors to user. '''
    
    result = fileSet(
       
@@ -113,13 +115,56 @@ def test_fileSetShowError():
    assert (type(result) == Exception)
    
 
-# def test_fileGet():
-#    '''  '''
+def test_fileGetJSON():
+   ''' Can load existing .json files. '''
    
-#    pass
+   expected = {"json" : "example"}
+   result = fileGet(pFilepath = f'{gFilepath}/test/test.json')
+   
+   assert (result == expected)
 
 
-# def test_fileDel():
-#    '''  '''
+def test_fileGetTXT():
+   ''' Can load existing .txt files. '''
    
-#    pass
+   fileSet(
+      
+      pData = 'this is a test',
+      pEnding = '.txt',
+      pFilepath = f'{gFilepath}/test/test.txt'
+      
+   )
+      
+   expected = 'this is a test'
+   result = fileGet(
+      
+      pEnding = '.txt',
+      pFilepath = f'{gFilepath}/test/test.txt'
+      
+   )
+   assert (result == expected)
+
+
+def test_fileGetShowError():
+   ''' Can detect non-existing files. '''
+   
+   result = fileGet(
+      
+      pEnding = '.json',
+      pShowError = True,
+      pFilepath = f'{gFilepath}/test/test.txt'
+      
+   )
+   assert(type(result) == JSONDecodeError)
+
+
+def test_fileDel():
+   '''  '''
+   
+   pass
+
+
+def test_fileDelShowError():
+   '''  '''
+   
+   pass
