@@ -21,6 +21,10 @@ from lxrbckl.remote import (
 
 # declare <
 gGithubToken = ''
+
+gBranch = 'python'
+gFilename = 'test.json'
+gRepository = 'lxRbckl/lxrbckl'
 gGithub = Github(auth = Auth.Token(gGithubToken))
 
 # >
@@ -39,59 +43,55 @@ gGithub = Github(auth = Auth.Token(gGithubToken))
 
 
 def test_githubAdd():
-   '''
-   Can add new files.
-   Can detect existing files.
-   '''
+   ''' githubAdd() Test Suite '''
 
    result = githubAdd(
       
       pGithub = gGithub,
-      pBranch = 'python2',
-      pFilename = 'test.json',
-      pData = {'this' : 'example'},
-      pRepository = 'lxRbckl/lxrbckl'
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pRepository = gRepository,
+      pData = {'this' : 'example'}
       
    )
-   assert(result == None)
+   assert (result == None), 'Can add new files.'
    
+   expected = 'File already exists.'
    result = githubAdd(
    
       pGithub = gGithub,
-      pBranch = 'python2',
-      pFilename = 'test.json',
-      pData = {'this' : 'example'},
-      pRepository = 'lxRbckl/lxrbckl'
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pRepository = gRepository,
+      pData = {'this' : 'example'}
       
    )
-   assert(result == False)
+   assert (result == expected), 'Can detect existing files.'
    
 
 def test_githubDel():
-   '''
-   Can delete existing files.
-   Can detect non-existing files.
-   '''
+   ''' githubDel() Test Suite '''
    
    result = githubDel(
       
       pGithub = gGithub,
-      pBranch = 'python2',
-      pFilename = 'test.json',
-      pRepository = 'lxRbckl/lxrbckl',
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pRepository = gRepository
       
    )
-   assert(result == None)
+   assert (result == None), 'Can delete existing files.'
    
+   expected = 'File does not exist.'
    result = githubDel(
       
       pGithub = gGithub,
-      pBranch = 'python2',
-      pFilename = 'test.json',
-      pRepository = 'lxRbckl/lxrbckl',
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pRepository = gRepository
       
    )
-   assert(result == False)
+   assert (result == expected), 'Can detect non-existing files.'
 
 
 # def test_requestsGet():

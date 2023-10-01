@@ -93,7 +93,7 @@ def githubAdd(
       
       # >
    
-   except: return False
+   except: return 'File already exists.'
 
    # >
 
@@ -125,7 +125,7 @@ def githubDel(
          
       )
    
-   except: return False
+   except: return 'File does not exist.'
    
    # >
    

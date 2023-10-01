@@ -22,15 +22,15 @@ gFilepath = getProjectPath(pProjectName = 'lxRbckl')
 
 
 def test_getProjectPath():
-   ''' Can find full project path. '''
+   ''' getProjectPath() Test Suite '''
 
    result = getProjectPath(pProjectName = 'lxRbckl')
-   assert(result == gPath)
-
-
-def test_fileSetJSON():
-   ''' Can establish .json files with information. '''
+   assert(result == gPath), 'Can find full project path.'
    
+   
+def test_fileSet():
+   ''' fileSet() Test Suite '''
+
    result = fileSet(
       
       pData = {"json" : "example"},
@@ -38,11 +38,7 @@ def test_fileSetJSON():
       
    )
    
-   assert(result == None)
-
-
-def test_fileSetTXT():
-   ''' Can establish .txt files with information. '''
+   assert (result == None), 'Can establish .json files with data.'
    
    result = fileSet(
       
@@ -52,12 +48,8 @@ def test_fileSetTXT():
       
    )
    
-   assert(result == None)
+   assert (result == None), 'Can establish .txt files with data.'
 
-
-def test_fileSetFilepath():
-   ''' Can detect invalid filepaths. '''
-   
    result = fileSet(
       
       pEnding = '.json',
@@ -66,12 +58,8 @@ def test_fileSetFilepath():
       
    )
    
-   assert(result == False)
-   
-   
-def test_fileSetData():
-   ''' Can detect invalid data for .txt files. '''
-   
+   assert (result == False), 'Can detect invalid filepaths.'
+
    result = fileSet(
       
       pEnding = '.txt',
@@ -80,12 +68,7 @@ def test_fileSetData():
       
    )
    
-   assert(result == False)
-
-   
-
-def test_fileSetOverride():
-   ''' Can prevent overwritting existing files. '''
+   assert (result == False), 'Can detect invalid data for .txt files.'
    
    result = fileSet(
       
@@ -96,14 +79,10 @@ def test_fileSetOverride():
       
    )
    
-   assert(result == False)
-
-
-def test_fileSetShowError():
-   ''' Can display undiagnosed errors to user. '''
+   assert (result == False), 'Can prevent overwritten existing files.'
    
    result = fileSet(
-      
+   
       pEnding = '.txt',
       pOverride = False,
       pShowError = True,
@@ -112,20 +91,16 @@ def test_fileSetShowError():
       
    )
 
-   assert (type(result) == Exception)
-   
+   assert (type(result) == Exception), 'Can display undiagnosed errors to users.'
 
-def test_fileGetJSON():
-   ''' Can load existing .json files. '''
-   
+
+def test_fileGet():
+   ''' fileGet() Test Suite '''
+
    expected = {"json" : "example"}
    result = fileGet(pFilepath = f'{gFilepath}/test/test.json')
    
-   assert (result == expected)
-
-
-def test_fileGetTXT():
-   ''' Can load existing .txt files. '''
+   assert (result == expected), 'Can load existing .json files.'
    
    fileSet(
       
@@ -143,11 +118,7 @@ def test_fileGetTXT():
       
    )
    
-   assert (result == expected)
-
-
-def test_fileGetShowError():
-   ''' Can detect non-existing files. '''
+   assert (result == expected), 'Can load existing .txt files.'
    
    result = fileGet(
       
@@ -156,25 +127,17 @@ def test_fileGetShowError():
       pFilepath = f'{gFilepath}/test/test.txt'
       
    )
-   assert(type(result) == JSONDecodeError)
+   assert (type(result) == JSONDecodeError), 'Can detect non-existing files.'
 
 
-def test_fileDelJSON():
-   '''  '''
+def test_fileDel():
+   ''' fileDel() Test Suite '''
    
    result = fileDel(pFilepath = f'{gFilepath}/test/test.json')
-   assert(result == None)
-
-
-def test_fileDelTXT():
-   '''  '''
+   assert (result == None), 'Can delete existing .json files.'
    
    result = fileDel(pFilepath = f'{gFilepath}/test/test.txt')
-   assert(result == None)
-
-
-def test_fileDelShowError():
-   '''  '''
+   assert (result == None), 'Can delete existing .txt files.'
    
    result = fileDel(
       
@@ -182,4 +145,4 @@ def test_fileDelShowError():
       pFilepath = f'{gFilepath}/test/test.txt'
       
    )
-   assert(type(result) == FileNotFoundError)
+   assert (type(result) == FileNotFoundError), 'Can detect non-existing files.'
