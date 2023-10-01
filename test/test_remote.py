@@ -9,7 +9,8 @@ from github import (
 from lxrbckl.remote import (
    
    githubSet, 
-   githubGet, 
+   githubGet,
+   githubDel,
    githubAdd,
    requestsGet
    
@@ -25,45 +26,75 @@ gGithub = Github(auth = Auth.Token(gGithubToken))
 # >
 
 
-def test_githubSet():
-   '''  '''
-   
-   pass
+# def test_githubSet():
+#    '''  '''
+
+#    pass
 
 
-def test_githubGet():
-   '''  '''
-   
-   repo = gGithub.get_repo('lxRbckl/lxrbckl')
-   print(repo) # remove
-   branch = repo.get_branch(branch = 'python2')
-   print(branch) # remove
-   x = repo.get_contents('setup.py')
-   print(x) # remove
-   
-   assert(1 == 2)
-   
-   # expected = None
-   # result = githubGet(
+# def test_githubGet():
+#    '''  '''
+
+#    pass
+
+
+def test_githubAdd():
+   '''
+   Can add new files.
+   Can detect existing files.
+   '''
+
+   result = githubAdd(
       
-   #    pGithub = gGithub,
-   #    pBranch = 'python2',
-   #    pFilename = 'test.txt',
-   #    pRepository = 'lxRbckl/lxrbckl',
+      pGithub = gGithub,
+      pBranch = 'python2',
+      pFilename = 'test.json',
+      pData = {'this' : 'example'},
+      pRepository = 'lxRbckl/lxrbckl'
       
-   # )
+   )
+   assert(result == None)
    
-   # print(result) # remove
-   # assert(result == expected)
-
-
-def test_GithubAdd():
-   '''  '''
+   result = githubAdd(
    
-   pass
-
-
-def test_requestsGet():
-   '''  '''
+      pGithub = gGithub,
+      pBranch = 'python2',
+      pFilename = 'test.json',
+      pData = {'this' : 'example'},
+      pRepository = 'lxRbckl/lxrbckl'
+      
+   )
+   assert(result == False)
    
-   pass
+
+def test_githubDel():
+   '''
+   Can delete existing files.
+   Can detect non-existing files.
+   '''
+   
+   result = githubDel(
+      
+      pGithub = gGithub,
+      pBranch = 'python2',
+      pFilename = 'test.json',
+      pRepository = 'lxRbckl/lxrbckl',
+      
+   )
+   assert(result == None)
+   
+   result = githubDel(
+      
+      pGithub = gGithub,
+      pBranch = 'python2',
+      pFilename = 'test.json',
+      pRepository = 'lxRbckl/lxrbckl',
+      
+   )
+   assert(result == False)
+
+
+# def test_requestsGet():
+#    '''  '''
+   
+#    pass

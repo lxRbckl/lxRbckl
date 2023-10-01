@@ -41,6 +41,7 @@ def githubSet(
       path = content.path
 
    )
+   
 
 def githubGet(
    
@@ -74,17 +75,57 @@ def githubAdd(
 ):
    '''  '''
    
-   # get repository <
-   # add file to repository <
-   repository = pGithub.get_repo(pRepository)
-   repository.create_file(
+   # try (if ) <
+   # except (then ) <
+   try:
+   
+      # get repository <
+      # add file to repository <
+      repository = pGithub.get_repo(pRepository)
+      repository.create_file(
 
-      path = pFilename,
-      branch = pBranch,
-      message = pMessage,
-      content = dumps(pData)
+         path = pFilename,
+         branch = pBranch,
+         message = pMessage,
+         content = dumps(pData)
 
-   )
+      )
+      
+      # >
+   
+   except: return False
+
+   # >
+
+
+def githubDel(
+   
+   pGithub,
+   pRepository,
+   pFilename: str,
+   pBranch: str = 'main',
+   pMessage: str = 'Automated Deletion'
+   
+):
+   '''  '''
+   
+   # try (if ) <
+   # except (then ) <
+   try:
+   
+      repository = pGithub.get_repo(pRepository)
+      file = repository.get_contents(path = pFilename, ref = pBranch)
+         
+      repository.delete_file(
+         
+         sha = file.sha,
+         path = pFilename,
+         branch = pBranch,
+         message = pMessage
+         
+      )
+   
+   except: return False
    
    # >
    
