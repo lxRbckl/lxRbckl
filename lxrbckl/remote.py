@@ -1,6 +1,8 @@
 # import <
+from time import sleep
 from requests import get
 from json import loads, dumps
+from requests.exceptions import MissingSchema
 
 # >
 
@@ -17,6 +19,8 @@ def githubSet(
    pFilename: str,
    pGithub: object,
    pRepository: str,
+   
+   pSleep: int = 0,
    isNew: bool = False,
    pBranch: str = 'main',
    pMessage: str = 'Automated Action'
@@ -60,10 +64,12 @@ def githubSet(
       
       # >
    
+      sleep(pSleep)
+   
    except: return {
       
-      True : 'error 1',
-      False : 'error 2'
+      True : 'File already exists.',
+      False : 'File does not exist.'
       
    }[isNew]
    
@@ -75,6 +81,7 @@ def githubGet(
    pFilename: str,
    pGithub: object,
    pRepository: str,
+   
    pBranch: str = 'main'
    
 ):
@@ -103,6 +110,8 @@ def githubDel(
    pGithub,
    pRepository,
    pFilename: str,
+   
+   pSleep: int = 0,
    pBranch: str = 'main',
    pMessage: str = 'Automated Deletion'
    
@@ -124,6 +133,8 @@ def githubDel(
          message = pMessage
          
       )
+      
+      sleep(pSleep)
    
    except: return 'File does not exist.'
    
@@ -137,10 +148,16 @@ def requestsGet(
    
 ):
    '''  '''
-   
-   return {
+
+   # try (if valid link) <
+   # except (then invalid link) <
+   try: return {
       
       False : lambda : get(pLink).text,
       True : lambda : loads(get(pLink).text)
       
    }[isJSON]()
+   
+   except MissingSchema: return 'Invalid link.'
+   
+   # > 
