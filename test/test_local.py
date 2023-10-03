@@ -92,7 +92,6 @@ def test_fileSet():
    result = fileSet(
    
       pEnding = '.txt',
-      pShowError = True,
       pOverride = False,
       pShowError = True,
       pData = 'this is an example',
