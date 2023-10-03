@@ -29,7 +29,7 @@ def getProjectPath(
 
       return pDelimeter.join(projectPath[:(projectBase + 1)])
 
-   except: return None
+   except Exception as e: print(e); return None
    
    # >
 
