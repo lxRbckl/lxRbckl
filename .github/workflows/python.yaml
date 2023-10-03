@@ -1,0 +1,12 @@
+name: Python Workflow
+
+
+on:
+   push:
+      branches:
+         - python
+
+
+jobs:
+   build:
+      runs-on: ubuntu-22.04
