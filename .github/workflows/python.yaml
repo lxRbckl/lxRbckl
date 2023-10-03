@@ -19,3 +19,6 @@ jobs:
            uses: actions/checkout@v2
            with:
             ref: python
+         
+         - name: run code
+           run: echo $PYGITHUB
