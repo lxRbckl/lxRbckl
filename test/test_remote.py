@@ -1,4 +1,5 @@
 # import <
+from os import environ
 from github import (
    
    Auth,
@@ -19,12 +20,12 @@ from lxrbckl.remote import (
 
 
 # declare <
-gGithubToken = ''
+gPyGitHubToken = environ.get('pygithub')
 
 gBranch = 'python'
 gFilename = 'test.json'
 gRepository = 'lxRbckl/lxrbckl'
-gGithub = Github(auth = Auth.Token(gGithubToken))
+gGithub = Github(auth = Auth.Token(gPyGitHubToken))
 
 # >
 
