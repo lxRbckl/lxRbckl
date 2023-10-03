@@ -21,7 +21,7 @@ jobs:
             if [ "${{github.event.head_commit.message}}" != "Test" ]; then
 
                echo "Strictly told not to execute Pytest.";
-               exit 0;
+               exit 1;
 
             fi
 
