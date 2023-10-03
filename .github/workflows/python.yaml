@@ -14,3 +14,5 @@ jobs:
       steps:
          - name: checkout code
            uses: actions/checkout@v2
+           with:
+            ref: python
