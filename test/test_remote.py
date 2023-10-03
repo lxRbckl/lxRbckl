@@ -1,34 +1,34 @@
-# # import <
-# from os import environ
-# from github import (
+# import <
+from os import environ
+from github import (
    
-#    Auth,
-#    Github
+   Auth,
+   Github
    
-# )
+)
 
-# from lxrbckl.remote import (
+from lxrbckl.remote import (
    
-#    githubSet, 
-#    githubGet,
-#    githubDel,
-#    requestsGet
+   githubSet, 
+   githubGet,
+   githubDel,
+   requestsGet
    
-# )
+)
 
-# # >
+# >
 
 
-# # declare <
-# gPyGitHubToken = environ.get('PYGITHUB')
-# print(gPyGitHubToken) # remove
+# declare <
+gPyGitHubToken = environ.get('PYGITHUB')
+print(gPyGitHubToken) # remove
 
-# gBranch = 'python'
-# gFilename = 'test.json'
-# gRepository = 'lxRbckl/lxrbckl'
-# gGithub = Github(auth = Auth.Token(gPyGitHubToken))
+gBranch = 'python'
+gFilename = 'test.json'
+gRepository = 'lxRbckl/lxrbckl'
+gGithub = Github(auth = Auth.Token(gPyGitHubToken))
 
-# # >
+# >
 
 
 # def test_githubSet():
