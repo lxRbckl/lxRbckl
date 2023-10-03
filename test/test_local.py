@@ -17,9 +17,9 @@ from lxrbckl.local import (
 
 # declare <
 gPath = path.realpath(__file__).split('/test')[0]
-print(gPath) # remove
+print('output 1', gPath) # remove
 gFilepath = getProjectPath(pProjectName = 'lxRbckl')
-print(gFilepath) # remove
+print('output 2', gFilepath) # remove
 
 # >
 
@@ -37,6 +37,7 @@ def test_fileSet():
    result = fileSet(
       
       pData = {"json" : "example"},
+      pShowError = True, # remove
       pFilepath = f'{gFilepath}/test/test.json'
       
    )
@@ -46,6 +47,7 @@ def test_fileSet():
    result = fileSet(
       
       pEnding = '.txt',
+      pShowError = True,
       pData = "this is an example",
       pFilepath = f'{gFilepath}/test/test.txt'
       
@@ -56,6 +58,7 @@ def test_fileSet():
    result = fileSet(
       
       pEnding = '.json',
+      pShowError = True,
       pData = "this is an example",
       pFilepath = f'${gFilepath}//test.txt'
       
@@ -66,6 +69,7 @@ def test_fileSet():
    result = fileSet(
       
       pEnding = '.txt',
+      pShowError = True,
       pData = {"this" : "that"},
       pFilepath = f'{gFilepath}/test/test.txt'
       
@@ -77,6 +81,7 @@ def test_fileSet():
       
       pEnding = '.txt',
       pOverride = False,
+      pShowError = True,
       pData = 'this is an example',
       pFilepath = f'{gFilepath}/test/test.txt'
       
@@ -87,6 +92,7 @@ def test_fileSet():
    result = fileSet(
    
       pEnding = '.txt',
+      pShowError = True,
       pOverride = False,
       pShowError = True,
       pData = 'this is an example',

@@ -21,7 +21,6 @@ from lxrbckl.remote import (
 
 # declare <
 gPyGitHubToken = environ.get('PYGITHUB')
-print(gPyGitHubToken) # remove
 
 gBranch = 'python'
 gFilename = 'test.json'
