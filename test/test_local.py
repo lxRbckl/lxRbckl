@@ -17,7 +17,9 @@ from lxrbckl.local import (
 
 # declare <
 gPath = path.realpath(__file__).split('/test')[0]
+print(gPath) # remove
 gFilepath = getProjectPath(pProjectName = 'lxRbckl')
+print(gFilepath) # remove
 
 # >
 
