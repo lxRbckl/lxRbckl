@@ -1,12 +1,40 @@
 # import <
 from re import split
-from os import remove, path
-from json import dump, load
+from json.decoder import JSONDecodeError
+from json import (
+   
+   dump,
+   load
+   
+)
+# from os import (
+   
+#    getcwd,
+#    remove,
+#    path as ospath
+   
+# )
+from os import (
+   
+   getcwd,
+   remove
+   
+)
+from os.path import (
+   
+   isfile,
+   dirname,
+   basename
+   
+)
 
 # >
 
 
 # declare <
+
+# print(path.dirname(getcwd())) # remove
+# print(path.basename(getcwd())) # remove
 
 
 # >
@@ -14,33 +42,27 @@ from json import dump, load
 
 def getProjectPath(
    
-   pProjectName: str,
+   pFile: str = '',
    pDelimeter: str = '/'
    
 ):
    '''  '''
    
-   # try (if ) <
-   # except (then ) <
-   try:
+   return '{}{}'.format(
+      
+      f'{dirname(getcwd())}{pDelimeter}{basename(getcwd())}',
+      pDelimeter.join(split(r'[/\\]+', pFile))
+      
+   )
    
-      projectPath = path.realpath(__file__).split(pDelimeter)
-      projectBase = projectPath.index(pProjectName)
-
-      return pDelimeter.join(projectPath[:(projectBase + 1)])
-
-   except Exception as e: print(e); return None
-   
-   # >
+print(getProjectPath(pFile = '\\this\\is\\a\\test')) # remove
 
 
 def fileSet(
    
    pData,
-   pFilepath: str,
+   pFile: str,
    pIndent: int = 3,
-   pDelimeter: str = '/',
-   pEnding: str = '.json',
    pOverride: bool = True,
    pShowError: bool = False
    
@@ -51,13 +73,11 @@ def fileSet(
    # except (then not permitted) <
    try:
 
-      file = pDelimeter.join(split(r'[/\\]+', pFilepath))
-
       # if (write to file) <
       # else (throw error) <
-      if ((path.isfile(file) is False) or (pOverride)):
+      if ((isfile(pFile) is False) or (pOverride)):
          
-         with open(file, 'w') as fout:
+         with open(pFile, 'w') as fout:
             
             {
                
@@ -72,7 +92,7 @@ def fileSet(
                
             }[pEnding]()
 
-      else: raise Exception(f'{file} already exists.')
+      else: raise Exception('File already exists.')
 
       # >
 
@@ -83,20 +103,19 @@ def fileSet(
 
 def fileGet(
    
-   pFilepath: str,
-   pDelimeter: str = '/',
-   pEnding: str = '.json',
-   pShowError: bool = False
+   pFile: str,
+   pEnding: str = '.json'
    
 ):
    '''  '''
    
    # try (if existing file) <
+   # except (then bad .json format) <
    # except (then non-existing file) <
    try:
    
-      file = pDelimeter.join(split(r'[/\\]+', pFilepath))
-      with open(file, 'r') as fin:
+      print(pFile) # remove
+      with open(pFile, 'r') as fin:
          
          return {
             
@@ -105,22 +124,18 @@ def fileGet(
             
          }[pEnding]()
    
-   except Exception as e: return e if (pShowError) else False
+   except JSONDecodeError: return 'Loaded data is broken.'
+   except FileNotFoundError: return 'File does not exist.'
    
    # >
 
 
-def fileDel(
-   
-   pFilepath: str,
-   pShowError: bool = False
-   
-):
+def fileDel(pFile: str):
    '''  '''
    
    # try (if existing file) <
    # except (then non-existing file) <
-   try: remove(pFilepath)
-   except Exception as e: return e if (pShowError) else False
+   try: remove(pFile)
+   except FileNotFoundError: return False
    
    # >
