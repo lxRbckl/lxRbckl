@@ -2,6 +2,7 @@
 from time import sleep
 from requests import get
 from json import loads, dumps
+from json.decoder import JSONDecodeError
 from requests.exceptions import MissingSchema
 
 # >
@@ -159,5 +160,6 @@ def requestsGet(
    }[isJSON]()
    
    except MissingSchema: return 'Invalid link.'
+   except JSONDecodeError: return 'Cannot load broken data.'
    
    # > 
