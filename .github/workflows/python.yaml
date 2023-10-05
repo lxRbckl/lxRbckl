@@ -58,13 +58,13 @@ jobs:
 
             if [ $isSuccessful == 0 ] && [ $commitMessage == "Update" ]; then
 
-               echo "Condition met to update package."
+               echo "Updating lxRbckl package."
 
                poetry config pypi-token.pypi $PYPI
 
                poetry build
                poetry publish
             
-            else echo "Condition not met to update package.";
+            else echo "Not updating lxRbckl package.";
             
             fi
