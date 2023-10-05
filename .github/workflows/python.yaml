@@ -18,7 +18,9 @@ jobs:
          - name: Check Commit Message
            run: |
 
-            if [ "${{ github.event.head_commit.message }}" != "Test" ]; then
+            commitMessage="${{ github.event.head_commit.message }}";
+
+            if [ $commitMessage != "Test" ] && [ $commitMessage != "Update" ]; then
 
                echo "Strictly told not to execute PyTest.";
                exit 1;
@@ -52,7 +54,7 @@ jobs:
             isSuccessful=$?;
             commitMessage="${{ github.event.head_commit.message }}";
 
-            if [ $isSuccessful == 0 ] && [ commitMessage == "Update" ]; then
+            if [ $isSuccessful == 0 ] && [ $commitMessage == "Update" ]; then
 
                echo "Condition met to update package."
 
