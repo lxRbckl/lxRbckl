@@ -39,13 +39,16 @@ jobs:
            run: pip install -r requirements.txt
 
          - name: Run Pytest
-           run: pytest
+           run: |
+
+            pytest
+            isSuccessful=$?
 
          - name: Evaluate PyPI
            run: |
 
             echo steps.pytest.outputs.pytest-exist-code;
-            if [ steps.pytest.outputs.pytest-exit-code == 0 ]; then
+            if [ $isSuccessful == 0 ]; then
 
                echo "We should update package.";
             
