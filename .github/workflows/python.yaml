@@ -20,12 +20,14 @@ jobs:
 
             commitMessage="${{ github.event.head_commit.message }}";
 
-            if [ $commitMessage != "Test" ] || [ $commitMessage != "Update" ]; then
+            if [ $commitMessage == "Test" ] || [ $commitMessage == "Update" ]; then
 
+               echo "Executing PyTest.";
+            
+            else 
+            
                echo "Strictly told not to execute PyTest.";
                exit 1;
-            
-            else echo "Executing PyTest.";
 
             fi
 
