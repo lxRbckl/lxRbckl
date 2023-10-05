@@ -5,16 +5,9 @@ from lxrbckl.local import (
    
    fileSet,
    fileGet,
-   fileDel,
-   getProjectPath
+   fileDel
    
 )
-
-# >
-
-
-# declare <
-gPath = getProjectPath()
 
 # >
 
@@ -25,60 +18,44 @@ def test_fileSet():
    # test <
    result = fileSet(
       
-      pData = {"json" : "example"},
-      pFile = f'{gPath}/test/test.json'
+      pFile = 'test/test.json',
+      pData = {"json" : "example"}
       
    )
    assert (result == None), 'Can establish .json files with data.'
    
    result = fileSet(
       
-      pData = "this is an example",
-      pFile = f'{gPath}/test/test.txt'
+      pFile = 'test/test.txt',
+      pData = "this is an example"
       
    )
    assert (result == None), 'Can establish .txt files with data.'
 
+   expected = 'Invalid data for this filetype.'
    result = fileSet(
       
-      pData = "this is an example",
-      pFile = f'${gPath}//test.txt'
+      pFile = 'test/test.txt',
+      pData = {"this" : "that"}
       
    )
-   assert (result == False), 'Can detect invalid filepaths.'
-
-   result = fileSet(
-      
-      pData = {"this" : "that"},
-      pFile = f'{gPath}/test/test.txt'
-      
-   )
-   assert (result == False), 'Can detect invalid data for .txt files.'
+   assert (result == expected), 'Can detect invalid data for .txt files.'
    
+   expected = 'File already exists.'
    result = fileSet(
       
       pOverride = False,
-      pData = 'this is an example',
-      pFile = f'{gPath}/test/test.txt'
+      pFile = 'test/test.txt',
+      pData = 'this is an example'
       
    )
-   assert (result == False), 'Can prevent overwritten existing files.'
-   
-   result = fileSet(
-   
-      pOverride = False,
-      pShowError = True,
-      pData = 'this is an example',
-      pFile = f'{gPath}/test/test.txt'
-      
-   )
-   assert (type(result) == Exception), 'Can display undiagnosed errors to users.'
+   assert (result == expected), 'Can prevent overwritten existing files.'
    
    # >
    
    # deconstruct <
-   fileDel(pFile = f'{gPath}/test/test.json')
-   fileDel(pFile = f'{gPath}/test/test.txt')
+   fileDel(pFile = 'test/test.json')
+   fileDel(pFile = 'test/test.txt')
    
    # >
 
@@ -89,14 +66,14 @@ def test_fileGet():
    # construct <
    fileSet(
       
-      pData = 'this is a test',
-      pFile = f'{gPath}/test/test.txt'
+      pFile = 'test/test.txt',
+      pData = 'this is a test'
       
    )
    fileSet(
       
-      pData = {'json' : 'example'},
-      pFile = f'{gPath}/test/test.json'
+      pFile = 'test/test.json',
+      pData = {'json' : 'example'}
       
    )
    
@@ -104,56 +81,58 @@ def test_fileGet():
 
    # test <
    expected = {"json" : "example"}
-   result = fileGet(pFile = f'{gPath}/test/test.json')
+   result = fileGet(pFile = 'test/test.json')
    assert (result == expected), 'Can load existing .json files.'
       
    expected = 'this is a test'
-   result = fileGet(pFile = f'{gPath}/test/test.txt')
+   result = fileGet(pFile = 'test/test.txt')
    assert (result == expected), 'Can load existing .txt files.'
    
    expected = 'Loaded data is broken.'
-   result = fileGet(pFile = f'{gPath}/test/test.txt')
+   result = fileGet(pFile = 'test/broken.json')
    assert (result == expected), 'Can detect broken .json data.'
    
    expected = 'File does not exist.'
-   result = fileGet(pFile = f'{gPath}/test/dne.txt')
+   result = fileGet(pFile = 'test/broken.txt')
    assert (result == expected), 'Can detect non-existing files.'
    
    # >
    
    # deconstruct <
-   fileDel(pFile = f'{gPath}/test/test.json')
-   fileDel(pFile = f'{gPath}/test/test.txt')
+   fileDel(pFile = 'test/test.json')
+   fileDel(pFile = 'test/test.txt')
    
    # >
 
 
-# def test_fileDel():
-#    ''' fileDel() Test Suite '''
+def test_fileDel():
+   ''' fileDel() Test Suite '''
    
-#    # construct <
-#    fileSet(
+   # construct <
+   fileSet(
       
-#       pData = {'test' : 'example'},
-#       pFile = f'{}'
+      pFile = 'test/test.json',
+      pData = {'json' : 'test'}
       
-#    )
-#    fileSet(
+   )
+   fileSet(
       
+      pData = 'txt test',
+      pFile = 'test/test.txt'
       
-      
-#    )
+   )
    
-#    # >
+   # >
    
-#    # test <
-#    result = fileDel(pFile = f'{gPath}/test/test.json')
-#    assert (result == None), 'Can delete existing .json files.'
+   # test <
+   result = fileDel(pFile = 'test/test.json')
+   assert (result == None), 'Can delete existing .json files.'
    
-#    result = fileDel(pFile = f'{gPath}/test/test.txt')
-#    assert (result == None), 'Can delete existing .txt files.'
+   result = fileDel(pFile = 'test/test.txt')
+   assert (result == None), 'Can delete existing .txt files.'
    
-#    result = fileDel(pFile = f'{gPath}/test/test.txt')
-#    assert (result == False), 'Can detect non-existing files.'
+   expected = 'File does not exist.'
+   result = fileDel(pFile = 'test/broken.txt')
+   assert (result == expected), 'Can detect non-existing files.'
    
-#    # >
+   # >

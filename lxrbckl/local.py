@@ -1,5 +1,4 @@
 # import <
-from re import split
 from json.decoder import JSONDecodeError
 from json import (
    
@@ -7,13 +6,6 @@ from json import (
    load
    
 )
-# from os import (
-   
-#    getcwd,
-#    remove,
-#    path as ospath
-   
-# )
 from os import (
    
    getcwd,
@@ -31,15 +23,6 @@ from os.path import (
 # >
 
 
-# declare <
-
-# print(path.dirname(getcwd())) # remove
-# print(path.basename(getcwd())) # remove
-
-
-# >
-
-
 def getProjectPath(
    
    pFile: str = '',
@@ -48,15 +31,11 @@ def getProjectPath(
 ):
    '''  '''
    
-   return '{}{}'.format(
-      
-      f'{dirname(getcwd())}{pDelimeter}{basename(getcwd())}',
-      pDelimeter.join(split(r'[/\\]+', pFile))
-      
-   )
+   cwd = getcwd()
+   path = [dirname(cwd), basename(cwd), pFile]
    
-print(getProjectPath(pFile = '\\this\\is\\a\\test')) # remove
-
+   return pDelimeter.join(path)
+   
 
 def fileSet(
    
@@ -64,7 +43,7 @@ def fileSet(
    pFile: str,
    pIndent: int = 3,
    pOverride: bool = True,
-   pShowError: bool = False
+   pPath: str = getProjectPath()
    
 ):
    '''  '''
@@ -75,14 +54,14 @@ def fileSet(
 
       # if (write to file) <
       # else (throw error) <
-      if ((isfile(pFile) is False) or (pOverride)):
+      if ((isfile(f'{pPath}{pFile}') is False) or (pOverride)):
          
          with open(pFile, 'w') as fout:
             
             {
                
-               '.txt' : lambda : fout.write(pData),
-               '.json' : lambda : dump(
+               'txt' : lambda : fout.write(pData),
+               'json' : lambda : dump(
                   
                   fp = fout,
                   obj = pData,
@@ -90,13 +69,13 @@ def fileSet(
                   
                )
                
-            }[pEnding]()
+            }[pFile.split('.')[1]]()
 
-      else: raise Exception('File already exists.')
+      else: return 'File already exists.'
 
       # >
 
-   except Exception as e: return e if (pShowError) else False
+   except TypeError: return 'Invalid data for this filetype.'
    
    # >
 
@@ -104,7 +83,7 @@ def fileSet(
 def fileGet(
    
    pFile: str,
-   pEnding: str = '.json'
+   pPath: str = getProjectPath()
    
 ):
    '''  '''
@@ -114,15 +93,14 @@ def fileGet(
    # except (then non-existing file) <
    try:
    
-      print(pFile) # remove
       with open(pFile, 'r') as fin:
          
          return {
             
-            '.txt' : lambda : fin.read(),
-            '.json' : lambda : load(fin)
+            'txt' : lambda : fin.read(),
+            'json' : lambda : load(fin)
             
-         }[pEnding]()
+         }[pFile.split('.')[1]]()
    
    except JSONDecodeError: return 'Loaded data is broken.'
    except FileNotFoundError: return 'File does not exist.'
@@ -130,12 +108,17 @@ def fileGet(
    # >
 
 
-def fileDel(pFile: str):
+def fileDel(
+   
+   pFile: str,
+   pPath: str = getProjectPath()
+
+):
    '''  '''
    
    # try (if existing file) <
    # except (then non-existing file) <
-   try: remove(pFile)
-   except FileNotFoundError: return False
+   try: remove(f'{pPath}{pFile}')
+   except FileNotFoundError: return 'File does not exist.'
    
    # >
