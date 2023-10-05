@@ -14,14 +14,11 @@ jobs:
       env:
          PYPI: ${{ secrets.PYPI }}
          PYGITHUB: ${{ secrets.PYGITHUB }}
-         PYPIUSERNAME: ${{ secrets.PYPIUSERNAME }}
-         PYPIPASSWORD: ${{ secrets.PYPIPASSWORD }}
-
       steps:
          - name: Check Commit Message
            run: |
 
-            if [ "${{github.event.head_commit.message}}" != "Test" ]; then
+            if [ "${{ github.event.head_commit.message }}" != "Test" ]; then
 
                echo "Strictly told not to execute PyTest.";
                exit 1;
@@ -52,13 +49,18 @@ jobs:
          - name: Evaluate lxRbckl Package Update
            run: |
             
-            isSuccessful=$?
+            isSuccessful=$?;
+            commitMessage="${{ github.event.head_commit.message }}";
 
-            if [ $isSuccessful == 0 ]; then
+            if [ $isSuccessful == 0 ] && [ commitMessage == "Update" ]; then
+
+               echo "Condition met to update package."
 
                poetry config pypi-token.pypi $PYPI
 
                poetry build
                poetry publish
+            
+            else echo "Condition not met to update package.";
             
             fi
