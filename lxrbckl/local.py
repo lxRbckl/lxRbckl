@@ -1,4 +1,5 @@
 # import <
+from re import split
 from json.decoder import JSONDecodeError
 from json import (
    
@@ -32,9 +33,9 @@ def getProjectPath(
    '''  '''
    
    cwd = getcwd()
-   path = [dirname(cwd), basename(cwd), pFile]
+   file = pDelimeter.join(split(r'[/\\]+', pFile))
    
-   return pDelimeter.join(path)
+   return pDelimeter.join([dirname(cwd), basename(cwd), file])
    
 
 def fileSet(
@@ -93,7 +94,7 @@ def fileGet(
    # except (then non-existing file) <
    try:
    
-      with open(pFile, 'r') as fin:
+      with open(f'{pPath}{pFile}', 'r') as fin:
          
          return {
             
