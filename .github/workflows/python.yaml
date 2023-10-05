@@ -44,6 +44,7 @@ jobs:
          - name: Evaluate PyPI
            run: |
 
+            echo steps.pytest.outputs.pytest-exist-code;
             if [ steps.pytest.outputs.pytest-exit-code == 0 ]; then
 
                echo "We should update package.";
