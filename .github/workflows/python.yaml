@@ -12,10 +12,10 @@ jobs:
       runs-on: ubuntu-22.04
 
       env:
-         PYPIUSERNAME: ${{ secrets.PYPIUSERNAME }}
-         PYPIPASSWORD: ${{ secrets.PYPIPASSWORD }}
          PYPI: ${{ secrets.PYPI }}
          PYGITHUB: ${{ secrets.PYGITHUB }}
+         PYPIUSERNAME: ${{ secrets.PYPIUSERNAME }}
+         PYPIPASSWORD: ${{ secrets.PYPIPASSWORD }}
 
       steps:
          - name: Check Commit Message
@@ -57,7 +57,8 @@ jobs:
             if [ $isSuccessful == 0 ]; then
 
                poetry config pypi-token.pypi $PYPI
+               
                poetry build
-               poetry publish -- build -u 
+               poetry publish -- build -u $PYPIUSERNAME -p $PYPIPASSWORD
             
             fi
