@@ -50,9 +50,7 @@ jobs:
            run: |
             
             isSuccessful=$?;
-            echo $isSuccessful;
             commitMessage="${{ github.event.head_commit.message }}";
-            echo $commitMessage;
 
             if [ $isSuccessful == 0 ] && [ commitMessage == "Update" ]; then
 
