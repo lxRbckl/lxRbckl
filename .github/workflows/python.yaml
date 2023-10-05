@@ -12,6 +12,8 @@ jobs:
       runs-on: ubuntu-22.04
 
       env:
+         PYPIUSERNAME: ${{ secrets.PYPIUSERNAME }}
+         PYPIPASSWORD: ${{ secrets.PYPIPASSWORD }}
          PYPI: ${{ secrets.PYPI }}
          PYGITHUB: ${{ secrets.PYGITHUB }}
 
@@ -54,6 +56,8 @@ jobs:
 
             if [ $isSuccessful == 0 ]; then
 
-               echo "We should upgrade package.";
+               poetry config pypi-token.pypi $PYPI
+               poetry build
+               poetry publish -- build -u 
             
             fi

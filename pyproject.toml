@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "lxrbckl"
-version = "0.1.0"
-description = ""
+version = "1.0.0"
+description = "CRUD tools for local and remote files, enhancing readability and abstraction in lxRbckl projects."
 authors = ["lxRbckl <lxrbckl@gmail.com>"]
 readme = "README.md"
 
