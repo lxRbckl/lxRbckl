@@ -40,3 +40,10 @@ jobs:
 
          - name: Run Pytest
            run: pytest
+
+         - name: Evaluate PyPI
+           run: |
+
+            if [ steps.pytest.outputs.pytest-exit-code == 0 ]; then
+
+               echo "We should update package.";
