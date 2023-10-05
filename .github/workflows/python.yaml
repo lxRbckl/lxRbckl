@@ -47,3 +47,5 @@ jobs:
             if [ steps.pytest.outputs.pytest-exit-code == 0 ]; then
 
                echo "We should update package.";
+            
+            fi
