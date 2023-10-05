@@ -57,8 +57,8 @@ jobs:
             if [ $isSuccessful == 0 ]; then
 
                poetry config pypi-token.pypi $PYPI
-               
+
                poetry build
-               poetry publish -- build -u $PYPIUSERNAME -p $PYPIPASSWORD
+               poetry publish --no-interaction -- build -u $PYPIUSERNAME -p $PYPIPASSWORD
             
             fi
