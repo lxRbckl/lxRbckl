@@ -12,6 +12,7 @@ jobs:
       runs-on: ubuntu-22.04
 
       env:
+         PYPI: ${{ secrets.PYPI }}
          PYGITHUB: ${{ secrets.PYGITHUB }}
 
       steps:
@@ -36,12 +37,15 @@ jobs:
            uses: actions/setup-python@v2
            with:
             python-version: 3.8
+
+         - name: Install Python Poetry
+           run: pip install poetry
          
-         - name: Install Dependencies
-           run: pip install -r requirements.txt
+         - name: Initialize Poetry Environment
+           run: poetry install
 
          - name: Run PyTest
-           run: pytest
+           run: poetry run pytest
 
          - name: Evaluate lxRbckl Package Update
            run: |
@@ -51,7 +55,5 @@ jobs:
             if [ $isSuccessful == 0 ]; then
 
                echo "We should upgrade package.";
-            
-            else echo "Do not upgrade package.";
             
             fi
