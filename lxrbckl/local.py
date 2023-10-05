@@ -57,7 +57,7 @@ def fileSet(
       # else (throw error) <
       if ((isfile(f'{pPath}{pFile}') is False) or (pOverride)):
          
-         with open(pFile, 'w') as fout:
+         with open(f'{pPath}{pFile}', 'w') as fout:
             
             {
                
@@ -70,7 +70,7 @@ def fileSet(
                   
                )
                
-            }[pFile.split('.')[1]]()
+            }[pFile.split('.')[-1]]()
 
       else: return 'File already exists.'
 

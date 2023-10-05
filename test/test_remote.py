@@ -1,217 +1,222 @@
-# # import <
-# from os import environ
-# from github import (
+# import <
+from os import environ
+from github import (
    
-#    Auth,
-#    Github
+   Auth,
+   Github
    
-# )
+)
 
-# from lxrbckl.remote import (
+from lxrbckl.remote import (
    
-#    githubSet, 
-#    githubGet,
-#    githubDel,
-#    requestsGet
+   githubSet, 
+   githubGet,
+   githubDel,
+   requestsGet
    
-# )
+)
 
-# # >
-
-
-# # declare <
-# gPyGitHubToken = environ.get('PYGITHUB')
-
-# gBranch = 'python'
-# gFilename = 'test.json'
-# gRepository = 'lxRbckl/lxrbckl'
-# gGithub = Github(auth = Auth.Token(gPyGitHubToken))
-
-# # >
+# >
 
 
-# def test_githubSet():
-#    ''' githubSet() Test Suite '''
+# declare <
+gPyGitHubToken = environ.get('PYGITHUB')
 
-#    result = githubSet(
-      
-#       pSleep = 3,
-#       isNew = True,
-#       pGithub = gGithub,
-#       pBranch = gBranch,
-#       pFilename = gFilename,
-#       pData = {'test' : 'set'},
-#       pRepository = gRepository
-      
-#    )
+gBranch = 'python'
+gFilename = 'test.json'
+gRepository = 'lxRbckl/lxrbckl'
+gGithub = Github(auth = Auth.Token(gPyGitHubToken))
 
-#    assert (result == None), 'Can add new files to repository.'
-   
-#    result = githubSet(
-      
-#       pSleep = 3,
-#       pGithub = gGithub,
-#       pBranch = gBranch,
-#       pFilename = gFilename,
-#       pRepository = gRepository,
-#       pData = {'test' : 'update'}
-      
-#    )
-
-#    assert (result == None), 'Can add to existing files in repository.'
-   
-#    expected = 'File already exists.'
-#    result = githubSet(
-      
-#       pSleep = 3,
-#       isNew = True,
-#       pGithub = gGithub,
-#       pBranch = gBranch,
-#       pFilename = gFilename,
-#       pRepository = gRepository,
-#       pData = {'test' : 'update'}
-      
-#    )
-
-#    assert (result == expected), 'Can detect existing files in repository.'
-   
-#    githubDel(
-      
-#       pSleep = 3,
-#       pGithub = gGithub,
-#       pBranch = gBranch,
-#       pFilename = gFilename,
-#       pRepository = gRepository
-      
-#    )
-   
-#    expected = 'File does not exist.'
-#    result = githubSet(
-      
-#       pSleep = 3,
-#       pGithub = gGithub,
-#       pBranch = gBranch,
-#       pFilename = gFilename,
-#       pRepository = gRepository,
-#       pData = {'test' : 'update'}
-      
-#    )
-   
-#    assert (result == expected), 'Can detect non-existing files in repository.'
+# >
 
 
-# def test_githubGet():
-#    ''' githubGet() Test Suite '''
+def test_githubSet():
+   ''' githubSet() Test Suite '''
    
-#    githubSet(
+   # test <
+   expected = 'File does not exist.'
+   result = githubSet(
       
-#       pSleep = 2,
-#       isNew = True,
-#       pBranch = gBranch,
-#       pGithub = gGithub,
-#       pFilename = gFilename,
-#       pRepository = gRepository,
-#       pData = {'test' : 'example'}
+      pGithub = gGithub,
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pData = {'test' : 'set'},
+      pRepository = gRepository
       
-#    )
-   
-#    expected = {'test' : 'example'}
-#    result = githubGet(
-      
-#       pBranch = gBranch,
-#       pGithub = gGithub,
-#       pFilename = gFilename,
-#       pRepository = gRepository
-      
-#    )
-#    assert(result == expected), 'Can load existing files.'
-   
-#    githubDel(
-      
-#       pSleep = 2,
-#       pGithub = gGithub,
-#       pBranch = gBranch,
-#       pFilename = gFilename,
-#       pRepository = gRepository
-      
-#    )
-   
-#    expected = 'File does not exist.'
-#    result = githubGet(
-      
-#       pBranch = gBranch,
-#       pGithub = gGithub,
-#       pFilename = 'dne.json',
-#       pRepository = gRepository
-      
-#    )
-#    assert (result == expected), 'Can detect non-existing files.'
-   
+   )
+   assert (result == expected), 'Can detect non-existing files in repository.'
 
-# def test_githubDel():
-#    ''' githubDel() Test Suite '''
+   result = githubSet(
+      
+      isNew = True,
+      pGithub = gGithub,
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pData = {'test' : 'set'},
+      pRepository = gRepository
+      
+   )
+   assert (result == None), 'Can add new files to repository.'
    
-#    githubSet(
+   result = githubSet(
       
-#       pSleep = 2,
-#       isNew = True,
-#       pBranch = gBranch,
-#       pGithub = gGithub,
-#       pFilename = gFilename,
-#       pRepository = gRepository,
-#       pData = {'test' : 'example'}
+      pGithub = gGithub,
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pRepository = gRepository,
+      pData = {'test' : 'update'}
       
-#    )
+   )
+   assert (result == None), 'Can update files in repository.'
    
-#    result = githubDel(
+   expected = 'File already exists.'
+   result = githubSet(
       
-#       pSleep = 3,
-#       pGithub = gGithub,
-#       pBranch = gBranch,
-#       pFilename = gFilename,
-#       pRepository = gRepository
+      isNew = True,
+      pGithub = gGithub,
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pRepository = gRepository,
+      pData = {'test' : 'update'}
       
-#    )
-#    assert (result == None), 'Can delete existing files.'
+   )
+   assert (result == expected), 'Can detect existing files in repository.'
+
+   # >
    
-#    expected = 'File does not exist.'
-#    result = githubDel(
+   # deconstruct <
+   githubDel(
       
-#       pGithub = gGithub,
-#       pBranch = gBranch,
-#       pFilename = gFilename,
-#       pRepository = gRepository
+      pGithub = gGithub,
+      pFilename = gFilename,
+      pRepository = gRepository
       
-#    )
-#    assert (result == expected), 'Can detect non-existing files.'
+   )
+   
+   # >
 
 
-# def test_requestsGet():
-#    ''' requestsGet() Test Suite '''
+def test_githubGet():
+   ''' githubGet() Test Suite '''
    
-#    link = ''
-#    expected = 'Invalid link.'
-#    result = requestsGet(pLink = link)
+   # construct <
+   githubSet(
+      
+      isNew = True,
+      pBranch = gBranch,
+      pGithub = gGithub,
+      pFilename = gFilename,
+      pRepository = gRepository,
+      pData = {'test' : 'example'}
+      
+   )
    
-#    assert (result == expected), 'Can detect invalid links.'
+   # >
    
-#    link = 'https://raw.githubusercontent.com/lxRbckl/Project-Heimir/main/data.json'
-#    expected = 'Cannot load broken data.'
-#    result = requestsGet(pLink = link)
+   # test <
+   expected = {'test' : 'update'}
+   result = githubGet(
+      
+      pBranch = gBranch,
+      pGithub = gGithub,
+      pFilename = gFilename,
+      pRepository = gRepository
+      
+   )
+   assert(result == expected), 'Can retrieve existing files.'
+   
+   expected = 'File does not exist.'
+   result = githubGet(
+      
+      pBranch = gBranch,
+      pGithub = gGithub,
+      pFilename = 'dne.json',
+      pRepository = gRepository
+      
+   )
+   assert (result == expected), 'Can detect non-existing files.'
+   
+   # >
+   
+   # deconstruct <
+   githubDel(
+      
+      pGithub = gGithub,
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pRepository = gRepository
+      
+   )
+   
+   # >
+   
 
-#    assert (result == expected), 'Can detect broken .json data.'
+def test_githubDel():
+   ''' githubDel() Test Suite '''
    
-#    link = 'https://raw.githubusercontent.com/lxRbckl/Project-Heimir/main/requirements.txt'
-#    result = requestsGet(
+   # construct <
+   githubSet(
       
-#       pLink = link,
-#       isJSON = False
+      isNew = True,
+      pBranch = gBranch,
+      pGithub = gGithub,
+      pFilename = gFilename,
+      pRepository = gRepository,
+      pData = {'test' : 'example'}
       
-#    )
+   )
    
-#    assert (type(result) == str), 'Can load .txt files.'
+   # >
    
-#    link = 'https://raw.githubusercontent.com/lxRbckl/Project-RCoD/main/setting.json'
-#    result = requestsGet(pLink = link)
+   # test <
+   result = githubDel(
+      
+      pGithub = gGithub,
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pRepository = gRepository
+      
+   )
+   assert (result == None), 'Can delete existing files.'
    
-#    assert (type(result) == dict), 'Can load .json files.'
+   expected = 'File does not exist.'
+   result = githubDel(
+      
+      pGithub = gGithub,
+      pBranch = gBranch,
+      pFilename = gFilename,
+      pRepository = gRepository
+      
+   )
+   assert (result == expected), 'Can detect non-existing files.'
+   
+   # >
+
+
+def test_requestsGet():
+   ''' requestsGet() Test Suite '''
+   
+   # declare <
+   invalidLink = ''
+   txtLink = 'https://raw.githubusercontent.com/lxRbckl/lxRbckl/python/requirements.txt'
+   jsonLink = 'https://raw.githubusercontent.com/lxRbckl/Project-RCoD/main/setting.json'
+   brokenLink = 'https://raw.githubusercontent.com/lxRbckl/lxRbckl/python/test/broken.json'
+   
+   # >
+   
+   # test <
+   result = requestsGet(pLink = txtLink)
+   assert (type(result) == str), 'Can load .txt files.'
+   
+   result = requestsGet(pLink = jsonLink)
+   assert (type(result) == dict), 'Can load .json files.'
+   
+   expected = 'Invalid link.'
+   result = requestsGet(pLink = invalidLink)
+   assert (result == expected), 'Can detect invalid links.'
+   
+   expected = 'Loaded data is broken.'
+   result = requestsGet(pLink = brokenLink)
+   assert (result == expected), 'Can detect broken .json data.'
+   
+   # >

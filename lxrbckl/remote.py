@@ -8,12 +8,6 @@ from requests.exceptions import MissingSchema
 # >
 
 
-# declare <
-
-
-# >
-
-
 def githubSet(
    
    pData,
@@ -21,10 +15,9 @@ def githubSet(
    pGithub: object,
    pRepository: str,
    
-   pSleep: int = 0,
+   pSleep: int = 3,
    isNew: bool = False,
-   pBranch: str = 'main',
-   pMessage: str = 'Automated Action'
+   pBranch: str = 'main'
    
 ):
    '''  '''
@@ -43,8 +36,8 @@ def githubSet(
             
             path = pFilename,
             branch = pBranch,
-            message = pMessage,
-            content = dumps(pData)
+            content = dumps(pData),
+            message = 'Automated Set'
             
          )
       
@@ -58,8 +51,8 @@ def githubSet(
             content = data,
             branch = pBranch,
             sha = content.sha,
-            message = pMessage,
-            path = content.path
+            path = content.path,
+            message = 'Automated Update'
             
          )
       
@@ -109,10 +102,10 @@ def githubGet(
 def githubDel(
    
    pGithub,
-   pRepository,
    pFilename: str,
+   pRepository: str,
    
-   pSleep: int = 0,
+   pSleep: int = 3,
    pBranch: str = 'main',
    pMessage: str = 'Automated Deletion'
    
@@ -142,24 +135,23 @@ def githubDel(
    # >
    
 
-def requestsGet(
-   
-   pLink: str,
-   isJSON: bool = True
-   
-):
+def requestsGet(pLink: str):
    '''  '''
 
    # try (if valid link) <
    # except (then invalid link) <
-   try: return {
+   # except (then invalid .json format) <
+   try: 
       
-      False : lambda : get(pLink).text,
-      True : lambda : loads(get(pLink).text)
+      return {
       
-   }[isJSON]()
+         'txt' : lambda : get(pLink).text,
+         'json' : lambda : loads(get(pLink).text)
+         
+      }[pLink.split('.')[-1]]()
    
+   except KeyError: return 'Invalid link.'
    except MissingSchema: return 'Invalid link.'
-   except JSONDecodeError: return 'Cannot load broken data.'
+   except JSONDecodeError: return 'Loaded data is broken.'
    
-   # > 
+   # >
