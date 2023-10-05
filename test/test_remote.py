@@ -217,6 +217,6 @@ def test_requestsGet():
    
    expected = 'Loaded data is broken.'
    result = requestsGet(pLink = brokenLink)
-   assert (result == expected), 'Can detect broken .json data.'
+   assert (result == 'expected'), 'Can detect broken .json data.'
    
    # >

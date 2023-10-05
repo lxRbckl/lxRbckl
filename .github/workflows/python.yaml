@@ -20,8 +20,10 @@ jobs:
 
             if [ "${{github.event.head_commit.message}}" != "Test" ]; then
 
-               echo "Strictly told not to execute Pytest.";
+               echo "Strictly told not to execute PyTest.";
                exit 1;
+            
+            else echo "Executing PyTest.";
 
             fi
 
@@ -38,16 +40,18 @@ jobs:
          - name: Install Dependencies
            run: pip install -r requirements.txt
 
-         - name: Run Pytest
+         - name: Run PyTest
            run: pytest
 
-         - name: Evaluate PyPI
+         - name: Evaluate lxRbckl Package Update
            run: |
             
             isSuccessful=$?
 
             if [ $isSuccessful == 0 ]; then
 
-               echo "We should update package.";
+               echo "We should upgrade package.";
+            
+            else echo "Do not upgrade package.";
             
             fi
