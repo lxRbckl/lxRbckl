@@ -1,5 +1,5 @@
 // import <
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
 
 // >
@@ -28,57 +28,70 @@ async function fileSet(
 
 ) {
 
-   fs.writeFile(
-      
-      file = pPath + pFile, 
-      data = {
+   try {
 
-         'txt' : () => {return pData;},
-         'json' : () => {return JSON.stringify(pData);}
+      fs.writeFile(
 
-      }[pFile.split('.').slice(-1)](),
-      (err) => {if (err) {return 'Could not write to file.';}}
-   
-   );
-   
+         file = pPath + pFile,
+         data = {
+
+            'txt' : () => {return pData;},
+            'json' : () => {return JSON.stringify(pData);}
+
+         }[pFile.split('.').slice(-1)]()
+
+      );
+
+   } catch (error) {return 'Could not write to file.';}
+
 }
 
 
 async function fileGet(
 
    pFile,
+   pEncoding = 'utf8',
    pPath = getProjectPath()
 
 ) {
 
-   fs.readFile(
+   try {
 
-      file = pPath + pFile,
-      (error, data) => {
+      const fin = await fs.readFile(
 
-         console.log(error);
-         console.log(data);
+         file = pPath + pFile,
+         options = {encoding : pEncoding}
 
-         if (error) {return 'Could not read file.';}
-         else {
+      );
 
-            return {
+      return {
 
-               'txt' : () => {return data;},
-               'json' : () => {return JSON.parse(data);}
+         'txt' : () => {return fin;},
+         'json' : () => {return JSON.parse(fin);}
 
-            }[pFile.split('.').slice(-1)]();
+      }[pFile.split('.').slice(-1)]();
 
-         }
-
-      }
-
-   )
+   } catch (error) {return 'Could not read file.';}
 
 }
 
 
-console.log(fileGet(pFile = 'test.txt'));
+(async () => {
+
+   // set
+
+   // get
+   const file = 'sj.json';
+   await fileSet(
+
+      pData = {"test" : "test"},
+      pFile = file
+
+   );
+   const fin = await fileGet(pFile = file);
+   console.log(fin);
+
+})();
 
 
 async function fileDel(
