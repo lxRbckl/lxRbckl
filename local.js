@@ -20,88 +20,68 @@ function getProjectPath(
 }
 
 
-async function fileSet(
+async function fileSet({
 
    pData,
    pFile,
-   pPath = getProjectPath()
+   pPath = getProjectPath(),
+   pErrorMessage = 'Could not write to file.'
 
-) {
+}) {
 
    try {
 
-      fs.writeFile(
+      await fs.writeFile(
 
-         file = pPath + pFile,
-         data = {
+         (pPath + pFile),
+         {
 
-            'txt' : () => {return pData;},
-            'json' : () => {return JSON.stringify(pData);}
+            'txt' : () => {return pData},
+            'json' : () => {return JSON.stringify(pData)}
 
          }[pFile.split('.').slice(-1)]()
 
-      );
+      )
 
-   } catch (error) {return 'Could not write to file.';}
+   } catch (error) {return pErrorMessage;}
 
 }
 
 
-async function fileGet(
+async function fileGet({
 
    pFile,
    pEncoding = 'utf8',
-   pPath = getProjectPath()
+   pPath = getProjectPath(),
+   pErrorMessage = 'Could not read file.'
 
-) {
+}) {
 
    try {
 
-      const fin = await fs.readFile(
-
-         file = pPath + pFile,
-         options = {encoding : pEncoding}
-
-      );
-
+      const fin = await fs.readFile((pPath + pFile), pEncoding);
       return {
 
          'txt' : () => {return fin;},
          'json' : () => {return JSON.parse(fin);}
 
       }[pFile.split('.').slice(-1)]();
-
-   } catch (error) {return 'Could not read file.';}
+   
+   } catch (error) {return pErrorMessage;}
 
 }
 
 
-(async () => {
-
-   // set
-
-   // get
-   const file = 'sj.json';
-   await fileSet(
-
-      pData = {"test" : "test"},
-      pFile = file
-
-   );
-   const fin = await fileGet(pFile = file);
-   console.log(fin);
-
-})();
-
-
-async function fileDel(
+async function fileDel({
 
    pFile,
-   pPath = getProjectPath()
+   pPath = getProjectPath(),
+   pErrorMessage = 'File does not exist.'
 
-) {
+}) {
 
-
+   try {await fs.unlink(pPath + pFile);}
+   catch (error) {return pErrorMessage;}
 
 }
 
