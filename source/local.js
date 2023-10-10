@@ -43,7 +43,7 @@ async function fileSet({
 
       )
 
-   } catch (error) {return pErrorMessage;}
+   } catch (error) {console.log(error); return pErrorMessage;}
 
 }
 
