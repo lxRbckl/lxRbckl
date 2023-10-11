@@ -20,7 +20,7 @@ jobs:
 
             commitMessage="${{ github.event.head_commit.message }}";
 
-            if [ $commitMessage != "Update" ]; then
+            if [ "$commitMessage" != "Update" ]; then
 
                echo "Strictly told not to advance.";
                exit 1;
