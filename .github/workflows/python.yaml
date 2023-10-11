@@ -22,7 +22,7 @@ jobs:
 
             if [ "$commitMessage" != "Update" ]; then
 
-               echo "Strictly told not to advance.";
+               echo "Cancelling Workflow.";
                exit 1;
 
             fi
