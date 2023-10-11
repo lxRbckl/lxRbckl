@@ -15,18 +15,14 @@ jobs:
          PYPI: ${{ secrets.PYPI }}
          PYGITHUB: ${{ secrets.PYGITHUB }}
       steps:
-         - name: Check Commit Message
+         - name: Evaluate Commit Message
            run: |
 
             commitMessage="${{ github.event.head_commit.message }}";
 
-            if [ $commitMessage == "Test" ] || [ $commitMessage == "Update" ]; then
+            if [ $commitMessage != "Update" ]; then
 
-               echo "Executing PyTest.";
-            
-            else 
-            
-               echo "Strictly told not to execute PyTest.";
+               echo "Strictly told not to advance.";
                exit 1;
 
             fi
@@ -44,7 +40,7 @@ jobs:
          - name: Install Python Poetry
            run: pip install poetry
          
-         - name: Initialize Poetry Environment
+         - name: Install Poetry Environment
            run: poetry install
 
          - name: Run PyTest
