@@ -19,8 +19,12 @@ jobs:
 
             if [ "$commitMessage" != "Update" ]; then
 
-               echo "Cancelling Workflow.";
+               echo "Strictly told not to continue.";
                exit 1;
+            
+            else
+
+               echo "Strictly told to execute.";
             
             fi
          
@@ -45,11 +49,11 @@ jobs:
 
             if [ $isSuccessful == 0 ]; then
 
-               echo "Tests successfully passed.";
+               echo "Tests passed.";
             
             else
 
-               echo "Tests failed to pass.";
+               echo "Tests failed.";
                exit 1;
             
             fi
