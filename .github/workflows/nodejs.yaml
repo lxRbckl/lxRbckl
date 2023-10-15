@@ -1,0 +1,35 @@
+name: Python Workflow
+
+
+on:
+   push:
+      branches:
+         - nodejs
+
+
+jobs:
+   build:
+      runs-on: ubuntu-22.04
+   
+      steps:
+         - name: Evaluate Commit Message
+           run: |
+
+            commitMessage="${{ github.event.head_commit.message }}";
+
+            if [ "$commitMessage" != "Update" ]; then
+
+               echo "Cancelling Workflow.";
+               exit 1;
+            
+            fi
+         
+         - name: Checkout Code
+           uses: actions/checkout@v2
+         
+         - name: Setup Node.js
+           uses: actions/setup-node@v2
+           with:
+            node-version: 20
+         
+         
