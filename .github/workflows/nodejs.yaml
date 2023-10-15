@@ -43,7 +43,7 @@ jobs:
 
             isSuccessful=$?;
 
-            if [ $isSuccessful == 0 ]; then
+            if [ $isSuccessful == 1 ]; then
 
                echo "Updating lxRbckl package.";
             
