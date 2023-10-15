@@ -45,12 +45,19 @@ jobs:
 
             if [ $isSuccessful == 0 ]; then
 
-               echo "Updating lxRbckl package.";
+               echo "Tests successfully passed.";
+            
+            else
 
-               npm version patch
-               npm publish
+               echo "Tests failed to pass.";
+               exit 1;
             
             fi
+         
+         - name: Update Package
+           run: |
+
+            echo "updating";
          
            env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM }}
