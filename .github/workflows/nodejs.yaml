@@ -56,4 +56,5 @@ jobs:
          
          - name: Update Package
            run: npm publish
-           env: ${{ secrets.NPM }}
+           env: 
+            NODE_AUTH_TOKEN: ${{ secrets.NPM }}
