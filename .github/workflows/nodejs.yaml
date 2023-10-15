@@ -46,7 +46,6 @@ jobs:
             if [ $isSuccessful == 0 ]; then
 
                echo "Tests successfully passed.";
-               exit 1;
             
             else
 
@@ -56,9 +55,5 @@ jobs:
             fi
          
          - name: Update Package
-           run: |
-
-            echo "updating";
-         
-           env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM }}
+           run: npm publish
+           env: ${{ secrets.NPM }}
