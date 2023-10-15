@@ -38,3 +38,13 @@ jobs:
          - name: Run Tests
            run: npm test
          
+         - name: Evaluate lxRbckl Package Update
+           run: |
+
+            isSuccessful=$?;
+
+            if [ $isSuccessful == 0 ]; then
+
+               echo "Updating lxRbckl package.";
+            
+            fi
