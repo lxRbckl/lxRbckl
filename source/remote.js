@@ -4,7 +4,7 @@ const axios = require('axios');
 // >
 
 
-async function axiosGet(pURL) {
+async function axiosGet({pURL}) {
 
    try {
 
@@ -13,8 +13,8 @@ async function axiosGet(pURL) {
 
       return {
 
-         'txt' : () => {return response},
-         'json' : () => {return JSON.parse(JSON.stringify(response))}
+         'txt' : () => {return response;},
+         'json' : () => {return JSON.parse(JSON.stringify(response));}
 
       }[extension]();
       
