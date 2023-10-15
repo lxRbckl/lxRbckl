@@ -53,4 +53,4 @@ jobs:
             fi
          
            env:
-            NODE_AUTH_TOKEN: ${{secrets.NPM}}
+            NODE_AUTH_TOKEN: ${{ secrets.NPM }}
