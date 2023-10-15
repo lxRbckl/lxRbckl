@@ -46,6 +46,7 @@ jobs:
             if [ $isSuccessful == 0 ]; then
 
                echo "Tests successfully passed.";
+               exit 1;
             
             else
 
