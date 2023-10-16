@@ -24,7 +24,7 @@ jobs:
             
             else
 
-               echo "Strictly told to execute.";
+               echo "Strictly told to continue.";
             
             fi
          
