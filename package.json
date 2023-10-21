@@ -1,18 +1,19 @@
 {
   "name": "lxrbckl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "<p align=\"center\">",
-  "main": "local.js",
+  "main": "source/local.js",
+  "files" : [
+    "source/local.js",
+    "source/remote.js"
+  ],
   "scripts": {
-    "test": "mocha"
+    "lxrbckl": "mocha"
   },
-  "author": "",
+  "author": "Alex Arbuckle",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.5.1",
     "mocha": "^10.2.0"
-  },
-  "directories": {
-    "test": "test"
   }
 }

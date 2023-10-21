@@ -88,9 +88,15 @@ describe('fileGet() Test Suite', async () => {
 
 describe('fileDel() Test Suite', async () => {
 
-   it('can delete valid files', async () => {
+   it('can delete TXT files', async () => {
 
       const result = await fileDel({pFile : gFileTXT});
+      assert.strictEqual(result, undefined);
+
+   });
+   it('can delete JSON files', async() => {
+
+      const result = await fileDel({pFile : gFileJSON});
       assert.strictEqual(result, undefined);
 
    });
