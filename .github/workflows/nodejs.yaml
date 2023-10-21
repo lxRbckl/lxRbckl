@@ -49,8 +49,15 @@ jobs:
                exit 1;
             
             fi
+
+         - name: Create .npmrc File
+           run: |
+ 
+             mkdir .npmrc;
+             
+             echo "//registry.npmjs.org/:_authToken=${{ secrets.NPMTOKEN }}" >> .npmrc;
+             echo "//registry.npmjs.org/:username=${{ secrets.NPMUSERNAME }}" >> .npmrc;
+             echo "//registry.npmjs.org/:_password=${{ secrets.NPMPASSWORD }}" >> .npmrc;
          
          - name: Update Package
            run: npm publish
-           env: 
-            NODE_AUTH_TOKEN: ${{ secrets.NPMTOKEN }}
