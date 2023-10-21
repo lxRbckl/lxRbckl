@@ -22,10 +22,6 @@ jobs:
                echo "Strictly told not to continue.";
                exit 1;
             
-            else
-
-               echo "Strictly told to continue.";
-            
             fi
          
          - name: Checkout Code
@@ -47,13 +43,9 @@ jobs:
 
             isSuccessful=$?;
 
-            if [ $isSuccessful == 0 ]; then
+            if [ $isSuccessful != 0 ]; then
 
-               echo "Tests passed.";
-            
-            else
-
-               echo "Tests failed";
+               echo "Tests failed.";
                exit 1;
             
             fi
@@ -61,4 +53,4 @@ jobs:
          - name: Update Package
            run: npm publish
            env: 
-            NODE_AUTH_TOKEN: ${{ secrets.NPM }}
+            NODE_AUTH_TOKEN: ${{ secrets.NPMTOKEN }}
