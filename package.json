@@ -1,8 +1,8 @@
 {
   "name": "lxrbckl",
-  "version": "1.0.1",
-  "description": "<p align=\"center\">",
-  "main": "source/local.js",
+  "version": "1.0.2",
+  "description": "CRUD tools for local and remote files, enhancing readability and abstraction in lxRbckl projects.",
+  "main": "index.js",
   "files" : [
     "source/local.js",
     "source/remote.js"
