@@ -1,6 +1,15 @@
 // import <
-const fs = require('fs').promises;
 const path = require('path');
+const {
+
+   mkdir,
+   rmdir,
+   unlink,
+   readdir,
+   readFile,
+   writeFile
+
+} = require('fs/promises');
 
 // >
 
@@ -12,10 +21,10 @@ function getProjectPath(
    
 ) {
 
-   const dir = path.dirname(__filename);
-   const file = pFile.split(/[/\\]/).join(pDelimeter);
+   const file = pFile.split(/[/\\]/);
+   const dir = path.dirname(__filename).split(/[/\\]/);
 
-   return [dir, file].join(pDelimeter);
+   return [...dir.slice(0, -1), ...file].join(pDelimeter);
 
 }
 
@@ -31,7 +40,7 @@ async function fileSet({
 
    try {
 
-      await fs.writeFile(
+      await writeFile(
 
          (pPath + pFile),
          {
@@ -59,7 +68,7 @@ async function fileGet({
 
    try {
 
-      const fin = await fs.readFile((pPath + pFile), pEncoding);
+      const fin = await readFile((pPath + pFile), pEncoding);
       return {
 
          'txt' : () => {return fin;},
@@ -80,7 +89,49 @@ async function fileDel({
 
 }) {
 
-   try {await fs.unlink(pPath + pFile);}
+   try {await unlink(pPath + pFile);}
+   catch (error) {return pErrorMessage;}
+
+}
+
+
+async function dirSet({
+
+   pDir,
+   pPath = getProjectPath(),
+   pErrorMessage = 'Could not create directory.'
+
+}) {
+
+   try {await mkdir(pPath + pDir)}
+   catch (error) {console.log(error); return pErrorMessage;}
+
+}
+
+
+async function dirGet({
+
+   pDir,
+   pPath = getProjectPath(),
+   pErrorMessage = 'Directory does not exist.'
+
+}) {
+
+   try {return await readdir(pPath + pDir);}
+   catch (error) {return pErrorMessage;}
+
+}
+
+
+async function dirDel({
+
+   pDir,
+   pPath = getProjectPath(),
+   pErrorMessage = 'Directory does not exist.'
+
+}) {
+
+   try {await rmdir(pPath + pDir);}
    catch (error) {return pErrorMessage;}
 
 }
@@ -91,7 +142,10 @@ module.exports = {
 
    fileSet,
    fileGet,
-   fileDel
+   fileDel,
+   dirSet,
+   dirGet,
+   dirDel
 
 };
 

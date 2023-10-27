@@ -5,16 +5,21 @@ const {
 
    fileSet,
    fileGet,
-   fileDel
+   fileDel,
+   dirSet,
+   dirGet,
+   dirDel
 
 } = require('../source/local.js');
+const exp = require('constants');
 
 // >
 
 
 // declare <
-var gFileTXT = 'test.txt'
-var gFileJSON = 'test.json'
+var gTestDir = 'testdir';
+var gFileTXT = 'test.txt';
+var gFileJSON = 'test.json';
 
 // >
 
@@ -100,10 +105,73 @@ describe('fileDel() Test Suite', async () => {
       assert.strictEqual(result, undefined);
 
    });
-   it('can delete invalid files', async () => {
+   it('can detect invalid files', async () => {
 
       const expected = 'File does not exist.';
       const result = await fileDel({pFile : 'dne.txt'})
+      assert.strictEqual(result, expected);
+
+   });
+
+});
+
+
+describe('dirSet() Test Suite', async () => {
+
+   it('can create directories', async () => {
+
+      const result = await dirSet({pDir : gTestDir});
+      assert.strictEqual(result, undefined);
+
+   });
+   it('can detect invalid directories', async () => {
+
+      const expected = 'Could not create directory.';
+      const result = await dirSet({pDir : 'dne/dne/dne'});
+      assert.strictEqual(result, expected);
+
+   });
+
+});
+
+
+describe('dirGet() Test Suite', async () => {
+
+   it('can read valid directories', async () => {
+
+      const expected = [
+
+         'test_local.js',
+         'test_remote.js'
+
+      ];
+      const result = await dirGet({pDir : '/test'});
+      assert.deepStrictEqual(result, expected);
+      
+   });
+   it('can detect invalid directories', async () => {
+
+      const expected = 'Directory does not exist.';
+      const result = await dirGet({pDir : '/dne'});
+      assert.strictEqual(result, expected);
+
+   });
+
+});
+
+
+describe('dirDel() Test Suite', async () => {
+
+   it('can delete valid directories', async () => {
+
+      const result = await dirDel({pDir : gTestDir});
+      assert.strictEqual(result, undefined);
+
+   });
+   it('can detect invalid directories', async () => {
+
+      const expected = 'Directory does not exist.';
+      const result = await dirDel({pDir : 'dne'});
       assert.strictEqual(result, expected);
 
    });
