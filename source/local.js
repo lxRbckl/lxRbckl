@@ -17,14 +17,15 @@ const {
 function getProjectPath(
    
    pFile = '',
-   pDelimeter = '/'
+   pDelimeter = '/',
+   pRootDirectory = -3
    
 ) {
 
    const file = pFile.split(/[/\\]/);
    const dir = path.dirname(__filename).split(/[/\\]/);
 
-   return [...dir.slice(0, -1), ...file].join(pDelimeter);
+   return [...dir.slice(0, pRootDirectory), ...file].join(pDelimeter);
 
 }
 
