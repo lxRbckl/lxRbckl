@@ -7,7 +7,7 @@ from github import (
    
 )
 
-from source.remote import (
+from lxrbckl.remote import (
    
    githubSet, 
    githubGet,
