@@ -1,18 +1,18 @@
 {
+  "license": "ISC",
   "name": "lxrbckl",
   "version": "2.0.0",
-  "description": "CRUD tools for local and remote files, enhancing readability and abstraction in lxRbckl projects.",
   "main": "index.js",
+  "author": "Alex Arbuckle",
+  "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
+  "description": "CRUD tools for local and remote files, enhancing readability and abstraction in lxRbckl projects.",
+  "scripts": {
+    "lxrbckl": "mocha"
+  },
   "files" : [
     "source/local.js",
     "source/remote.js"
   ],
-  "scripts": {
-    "lxrbckl": "mocha"
-  },
-  "author": "Alex Arbuckle",
-  "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
-  "license": "ISC",
   "dependencies": {
     "axios": "^1.5.1",
     "mocha": "^10.2.0"
