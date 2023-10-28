@@ -104,7 +104,7 @@ async function dirSet({
 }) {
 
    try {await mkdir(pPath + pDir)}
-   catch (error) {console.log(error); return pErrorMessage;}
+   catch (error) {return pErrorMessage;}
 
 }
 
