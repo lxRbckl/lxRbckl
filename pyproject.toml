@@ -3,7 +3,7 @@ name = "lxrbckl"
 version = "1.0.6"
 readme = "README.md"
 authors = ["lxRbckl <lxrbckl@gmail.com>"]
-repository = "https://github.com/lxRbckl/lxRbckl/tree/python"
+homepage = "https://github.com/lxRbckl/lxRbckl/tree/python"
 description = "CRUD tools for local and remote files, enhancing readability and abstraction in lxRbckl projects."
 
 [tool.poetry.dependencies]
