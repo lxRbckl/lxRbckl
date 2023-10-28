@@ -17,15 +17,20 @@ const {
 function getProjectPath(
    
    pFile = '',
-   pDelimeter = '/',
-   pRootDirectory = -3
+   pDelimeter = '/'
    
 ) {
 
    const file = pFile.split(/[/\\]/);
    const dir = path.dirname(__filename).split(/[/\\]/);
+   const base = {
 
-   return [...dir.slice(0, pRootDirectory), ...file].join(pDelimeter);
+      true : -3,
+      false : -1
+
+   }[dir.includes('node_modules')];
+
+   return [...dir.slice(0, base), ...file].join(pDelimeter);
 
 }
 
