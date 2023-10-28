@@ -1,16 +1,16 @@
 [tool.poetry]
 name = "lxrbckl"
-version = "1.0.5"
-description = "CRUD tools for local and remote files, enhancing readability and abstraction in lxRbckl projects."
-authors = ["lxRbckl <lxrbckl@gmail.com>"]
+version = "1.0.6"
 readme = "README.md"
+authors = ["lxRbckl <lxrbckl@gmail.com>"]
+repository = "https://github.com/lxRbckl/lxRbckl/tree/python"
+description = "CRUD tools for local and remote files, enhancing readability and abstraction in lxRbckl projects."
 
 [tool.poetry.dependencies]
 python = "^3.8"
 pytest = "^7.4.2"
 requests = "^2.31.0"
 pygithub = "^2.1.1"
-
 
 [build-system]
 requires = ["poetry-core"]
