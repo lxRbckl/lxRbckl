@@ -1,6 +1,5 @@
 // import <
 const axios = require('axios');
-const {Octokit} = require('@octokit/rest');
 
 // >
 
