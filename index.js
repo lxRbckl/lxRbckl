@@ -11,7 +11,9 @@ const {
 } = require('./source/local.js');
 const {
 
-   axiosGet
+   axiosGet,
+   githubGet,
+   githubUpdate
 
 } = require('./source/remote.js');
 
@@ -24,7 +26,9 @@ module.exports = {
    fileSet,
    fileGet,
    fileDel,
-   axiosGet
+   axiosGet,
+   githubGet,
+   githubUpdate
 
 };
 
