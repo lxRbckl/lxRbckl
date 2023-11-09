@@ -13,6 +13,7 @@ const {
 
    axiosGet,
    githubGet,
+   githubSet,
    githubUpdate
 
 } = require('./source/remote.js');
@@ -27,6 +28,7 @@ module.exports = {
    fileGet,
    fileDel,
    axiosGet,
+   githubSet,
    githubGet,
    githubUpdate
 
