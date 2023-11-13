@@ -47,10 +47,10 @@ async function githubGet({
 
 async function githubSet({
 
+   pData,
    pPath,
    pOwner,
    pGithub,
-   pContent,
    pRepository,
 
    opBranch = 'main',
@@ -74,7 +74,7 @@ async function githubSet({
          branch : opBranch,
          repo : pRepository,
          message : opMessage,
-         content : Buffer.from(JSON.stringify(pContent)).toString(opEncoding),
+         content : Buffer.from(JSON.stringify(pData)).toString(opEncoding),
          committer : {
 
             name : opName,
@@ -98,10 +98,10 @@ async function githubSet({
 
 async function githubUpdate({
 
+   pData,
    pPath,
    pOwner,
    pGithub,
-   pContent,
    pRepository,
 
    opBranch = 'main',
@@ -130,7 +130,7 @@ async function githubUpdate({
          repo : pRepository,
          message : opMessage,
          sha : response.data.sha,
-         content : Buffer.from(JSON.stringify(pContent)).toString(opEncoding),
+         content : Buffer.from(JSON.stringify(pData)).toString(opEncoding),
 
       });
    
