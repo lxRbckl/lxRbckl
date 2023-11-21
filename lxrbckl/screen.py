@@ -1,7 +1,6 @@
 # import <
 from pyautogui import (
    
-   size,
    click,
    moveTo,
    locateCenterOnScreen
@@ -11,62 +10,46 @@ from pyautogui import (
 # >
 
 
-class screen:
+def move(
    
-   def __init__(
-      
-      self,
-      isRetinaDisplay = True
-      
-   ):
-      '''  '''
-      
-      self.isRetinaDisplay = isRetinaDisplay
+   x,
+   y,
+   isRetinaDisplay = True
    
+):
+   '''  '''
    
-   def move(
-      
-      self,
-      x,
-      y
-      
-   ):
-      '''  '''
-      
-      fDisplay = lambda i : i / 2 if (self.isRetinaDisplay) else i
-      x, y = map(fDisplay, [x, y])
-      
-      moveTo(x, y)
+   fDisplay = lambda i : (i / 2) if (isRetinaDisplay) else i
+   x, y = map(fDisplay, [x, y])
    
-   
-   def click(
-      
-      self,
-      x,
-      y,
-      
-      times = 1
-      
-   ):
-      '''  '''
-      
-      for i in range(times): click(x, y)
+   moveTo(x, y)
 
+
+def find(
    
-   def locate(
+   image,
+   grayscale,
+   confidence
+   
+):
+   '''  '''
+   
+   return locateCenterOnScreen(
       
-      self,
-      image,
-      grayscale,
-      confidence
+      image = image,
+      grayscale = grayscale,
+      confidence = confidence
       
-   ):
-      '''  '''
+   )
+
+
+def click(
+   
+   x,
+   y,
+   times = 1
+   
+):
+   '''  '''
       
-      return locateCenterOnScreen(
-         
-         image = image,
-         grayscale = grayscale,
-         confidence = confidence
-         
-      )
+   for i in range(times): click(x, y)
