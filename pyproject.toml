@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "lxrbckl"
-version = "1.0.6"
+version = "2.0.0"
 readme = "README.md"
 authors = ["lxRbckl <lxrbckl@gmail.com>"]
 homepage = "https://github.com/lxRbckl/lxRbckl/tree/python"
@@ -11,6 +11,7 @@ python = "^3.8"
 pytest = "^7.4.2"
 requests = "^2.31.0"
 pygithub = "^2.1.1"
+pyautogui = "^0.9.54"
 
 [build-system]
 requires = ["poetry-core"]
