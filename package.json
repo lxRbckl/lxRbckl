@@ -1,7 +1,7 @@
 {
   "license": "ISC",
   "name": "lxrbckl",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "main": "index.js",
   "author": "Alex Arbuckle",
   "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@octokit/rest": "^20.0.2",
     "axios": "^1.5.1",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "openai": "^4.19.1"
   }
 }
