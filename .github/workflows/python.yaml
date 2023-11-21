@@ -12,8 +12,8 @@ jobs:
       runs-on: ubuntu-22.04
 
       env:
-         PYPI: ${{ secrets.PYPI }}
-         PYGITHUB: ${{ secrets.PYGITHUB }}
+         PYPITOKEN: ${{ secrets.PYPITOKEN }}
+         PYGITHUBTOKEN: ${{ secrets.PYGITHUBTOKEN }}
       steps:
          - name: Evaluate Commit Message
            run: |
@@ -56,7 +56,7 @@ jobs:
 
                echo "Updating lxRbckl package."
 
-               poetry config pypi-token.pypi $PYPI
+               poetry config pypi-token.pypi $PYPITOKEN
 
                poetry build
                poetry publish

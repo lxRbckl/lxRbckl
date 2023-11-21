@@ -20,7 +20,7 @@ from lxrbckl.remote import (
 
 
 # declare <
-gPyGitHubToken = environ.get('PYGITHUB')
+gPyGitHubToken = environ.get('PYGITHUBTOKEN')
 
 gBranch = 'python'
 gFilename = 'test.json'
