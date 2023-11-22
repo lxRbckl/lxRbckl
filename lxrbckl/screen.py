@@ -12,20 +12,7 @@ from pyautogui import (
 
 class screen:
 
-   def move(
-      
-      self,
-      x,
-      y,
-      isRetinaDisplay = True
-      
-   ):
-      '''  '''
-      
-      fDisplay = lambda i : (i / 2) if (isRetinaDisplay) else i
-      x, y = map(fDisplay, [x, y])
-      
-      pyautoguiMoveTo(x, y)
+   def move(self, x, y): pyautoguiMoveTo(x, y)
 
 
    def find(
@@ -33,18 +20,23 @@ class screen:
       self,
       image,
       grayscale,
-      confidence
+      confidence,
+      
+      isRetinaDisplay = True
       
    ):
       '''  '''
-      
-      return pyautoguiLocateCenterOnScreen(
+                  
+      adjust = lambda i : (i / 2) if (isRetinaDisplay) else i
+      x, y = map(adjust, pyautoguiLocateCenterOnScreen(
          
          image = image,
          grayscale = grayscale,
          confidence = confidence
          
-      )
+      ))
+      
+      return x, y
 
 
    def click(
