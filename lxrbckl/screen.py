@@ -14,6 +14,7 @@ class screen:
 
    def move(
       
+      self,
       x,
       y,
       isRetinaDisplay = True
@@ -29,6 +30,7 @@ class screen:
 
    def find(
       
+      self,
       image,
       grayscale,
       confidence
@@ -47,6 +49,7 @@ class screen:
 
    def click(
       
+      self,
       x,
       y,
       times = 1
