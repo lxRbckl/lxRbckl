@@ -26,17 +26,25 @@ class screen:
       
    ):
       '''  '''
-                  
-      adjust = lambda i : (i / 2) if (isRetinaDisplay) else i
-      x, y = map(adjust, pyautoguiLocateCenterOnScreen(
-         
-         image = image,
-         grayscale = grayscale,
-         confidence = confidence
-         
-      ))
       
-      return x, y
+      # try (if exists) <
+      # except (then does not exist) <
+      try:
+                  
+         adjust = lambda i : (i / 2) if (isRetinaDisplay) else i
+         x, y = map(adjust, pyautoguiLocateCenterOnScreen(
+            
+            image = image,
+            grayscale = grayscale,
+            confidence = confidence
+            
+         ))
+         
+         return x, y
+   
+      except: return 'Image DNE.'
+      
+      # >
 
 
    def click(
