@@ -4,7 +4,7 @@ const {OpenAI} = require('openai');
 // >
 
 
-class chatgpt {
+class gpt {
 
    constructor(token) {
 
@@ -33,6 +33,7 @@ class chatgpt {
          }]
 
       });
+      
       return response.choices[0].message.content;
 
    }
