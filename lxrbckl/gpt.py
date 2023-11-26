@@ -4,7 +4,7 @@ from openai import AsyncOpenAI
 # >
 
 
-class client:
+class gpt:
    
    def __init__(self, token):
       '''  '''
@@ -12,7 +12,7 @@ class client:
       self.openai = AsyncOpenAI(api_key = token)
 
       
-   async def startMessage(
+   async def message(
       
       self,
       message,
