@@ -2,7 +2,7 @@
 
 
 // import <
-const {chatgpt} = require('./source/chatgpt.js');
+const {gpt} = require('./source/gpt.js');
 const {
 
    fileSet,
@@ -25,7 +25,7 @@ const {
 // export <
 module.exports = {
 
-   chatgpt,
+   gpt,
    fileSet,
    fileGet,
    fileDel,

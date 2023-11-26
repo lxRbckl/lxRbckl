@@ -42,6 +42,6 @@ class gpt {
 
 
 // export <
-module.exports = {chatgpt};
+module.exports = {gpt};
 
 // >
