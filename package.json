@@ -1,7 +1,7 @@
 {
   "license": "ISC",
   "name": "lxrbckl",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "main": "index.js",
   "author": "Alex Arbuckle",
   "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
@@ -10,9 +10,9 @@
     "lxrbckl": "mocha"
   },
   "files": [
+    "source/gpt.js",
     "source/local.js",
-    "source/remote.js",
-    "source/chatgpt.js"
+    "source/remote.js"
   ],
   "dependencies": {
     "@octokit/rest": "^20.0.2",
