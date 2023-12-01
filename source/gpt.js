@@ -6,35 +6,34 @@ const {OpenAI} = require('openai');
 
 class gpt {
 
-   constructor(token) {
+   constructor({
+      
+      token,
+      role = 'user',
+      model = 'gpt-3.5-turbo'
+   
+   }) {
 
+      this.role = role;
+      this.model = model;
       this.openai = new OpenAI({apiKey : token});
 
    }
 
 
-   async message(
+   async message({query}) {
 
-      content,
-      role = 'user',
-      model = 'gpt-3.5-turbo'
+      return (await this.openai.chat.completions.create({
 
-   ) {
-
-
-      const response = await this.openai.chat.completions.create({
-
-         model : model,
+         model : this.model,
          messages : [{
 
-            role : role,
-            content : content
+            content : query,
+            role : this.role
 
          }]
 
-      });
-      
-      return response.choices[0].message.content;
+      })).choices[0].message.content;
 
    }
 

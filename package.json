@@ -1,7 +1,7 @@
 {
   "license": "ISC",
   "name": "lxrbckl",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "main": "index.js",
   "author": "Alex Arbuckle",
   "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
