@@ -5,6 +5,9 @@
 const {gpt} = require('./source/gpt.js');
 const {
 
+   dirSet,
+   dirGet,
+   dirDel,
    fileSet,
    fileGet,
    fileDel
@@ -26,6 +29,10 @@ const {
 module.exports = {
 
    gpt,
+   
+   dirSet,
+   dirGet,
+   dirDel,
    fileSet,
    fileGet,
    fileDel,
