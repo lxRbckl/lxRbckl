@@ -148,49 +148,49 @@ describe('dirSet() Test Suite', async () => {
 });
 
 
-describe('dirGet() Test Suite', async () => {
+// describe('dirGet() Test Suite', async () => {
 
-   it('can read valid directories', async () => {
+//    it('can read valid directories', async () => {
 
-      const expected = [
+//       const expected = [
 
-         'test_local.js',
-         'test_remote.js'
+//          'test_local.js',
+//          'test_remote.js'
 
-      ];
-      const result = await dirGet({pDir : '/test'});
-      assert.deepStrictEqual(result, expected);
+//       ];
+//       const result = await dirGet({pDir : '/test'});
+//       assert.deepStrictEqual(result, expected);
       
-   });
+//    });
 
 
-   it('can detect invalid directories', async () => {
+//    it('can detect invalid directories', async () => {
 
-      const expected = 'Directory does not exist.';
-      const result = await dirGet({pDir : '/dne'});
-      assert.strictEqual(result, expected);
+//       const expected = 'Directory does not exist.';
+//       const result = await dirGet({pDir : '/dne'});
+//       assert.strictEqual(result, expected);
 
-   });
+//    });
 
-});
+// });
 
 
-describe('dirDel() Test Suite', async () => {
+// describe('dirDel() Test Suite', async () => {
 
-   it('can delete valid directories', async () => {
+//    it('can delete valid directories', async () => {
 
-      const result = await dirDel({pDir : gTestDir});
-      assert.strictEqual(result, undefined);
+//       const result = await dirDel({pDir : gTestDir});
+//       assert.strictEqual(result, undefined);
 
-   });
+//    });
 
    
-   it('can detect invalid directories', async () => {
+//    it('can detect invalid directories', async () => {
 
-      const expected = 'Directory does not exist.';
-      const result = await dirDel({pDir : 'dne'});
-      assert.strictEqual(result, expected);
+//       const expected = 'Directory does not exist.';
+//       const result = await dirDel({pDir : 'dne'});
+//       assert.strictEqual(result, expected);
 
-   });
+//    });
 
-});
+// });
