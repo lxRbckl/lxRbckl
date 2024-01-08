@@ -2,7 +2,8 @@
 
 
 // import <
-const {gpt} = require('./source/gpt.js');
+const gpt = require('./source/fp/gpt.js');
+const local = require('./source/oop/local.js');
 const {
 
    dirSet,
@@ -12,7 +13,7 @@ const {
    fileGet,
    fileDel
 
-} = require('./source/local.js');
+} = require('./source/fp/local.js');
 const {
 
    axiosGet,
@@ -20,7 +21,7 @@ const {
    githubSet,
    githubUpdate
 
-} = require('./source/remote.js');
+} = require('./source/fp/remote.js');
 
 // >
 
@@ -29,6 +30,7 @@ const {
 module.exports = {
 
    gpt,
+   local,
    
    dirSet,
    dirGet,

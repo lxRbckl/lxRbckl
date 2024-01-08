@@ -51,12 +51,12 @@ async function fileSet({
          (pPath + pFile),
          {
 
-            'txt' : () => {return pData},
-            'json' : () => {return JSON.stringify(pData)}
+            'txt' : () => {return pData;},
+            'json' : () => {return JSON.stringify(pData);}
 
          }[pFile.split('.').slice(-1)]()
 
-      )
+      );
 
    } catch (error) {return pErrorMessage;}
 

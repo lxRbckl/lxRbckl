@@ -41,6 +41,6 @@ class gpt {
 
 
 // export <
-module.exports = {gpt};
+module.exports = gpt;
 
 // >

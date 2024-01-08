@@ -10,8 +10,7 @@ const {
    dirGet,
    dirDel
 
-} = require('../source/local.js');
-const exp = require('constants');
+} = require('../source/fp/local.js');
 
 // >
 
@@ -37,6 +36,8 @@ describe('fileSet() Test Suite', async () => {
       assert.strictEqual(result, undefined);
 
    });
+
+
    it('can write to JSON files', async () => {
 
       const result = await fileSet({
@@ -48,6 +49,8 @@ describe('fileSet() Test Suite', async () => {
       assert.strictEqual(result, undefined);
 
    });
+
+
    it('can prevent writing broken data.', async () => {
 
       const expected = 'Could not write to file.';
@@ -73,6 +76,8 @@ describe('fileGet() Test Suite', async () => {
       assert.strictEqual(result, expected);
 
    });
+
+
    it('can read JSON files', async () => {
 
       const expected = {'test' : 'test'};
@@ -80,6 +85,8 @@ describe('fileGet() Test Suite', async () => {
       assert.deepEqual(result, expected);
 
    });
+
+
    it('can detect invalid filepaths', async () => {
 
       const expected = 'Could not read file.';
@@ -99,12 +106,16 @@ describe('fileDel() Test Suite', async () => {
       assert.strictEqual(result, undefined);
 
    });
+
+
    it('can delete JSON files', async() => {
 
       const result = await fileDel({pFile : gFileJSON});
       assert.strictEqual(result, undefined);
 
    });
+
+
    it('can detect invalid files', async () => {
 
       const expected = 'File does not exist.';
@@ -124,6 +135,8 @@ describe('dirSet() Test Suite', async () => {
       assert.strictEqual(result, undefined);
 
    });
+
+
    it('can detect invalid directories', async () => {
 
       const expected = 'Could not create directory.';
@@ -149,6 +162,8 @@ describe('dirGet() Test Suite', async () => {
       assert.deepStrictEqual(result, expected);
       
    });
+
+
    it('can detect invalid directories', async () => {
 
       const expected = 'Directory does not exist.';
@@ -168,6 +183,8 @@ describe('dirDel() Test Suite', async () => {
       assert.strictEqual(result, undefined);
 
    });
+
+   
    it('can detect invalid directories', async () => {
 
       const expected = 'Directory does not exist.';

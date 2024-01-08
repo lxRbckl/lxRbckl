@@ -1,6 +1,6 @@
 // import <
 const assert = require('assert');
-const {axiosGet} = require('../source/remote.js');
+const {axiosGet} = require('../source/fp/remote.js');
 
 // >
 
@@ -21,6 +21,8 @@ describe('axiosGet() Test Suite', async () => {
       assert.deepEqual(result, expected);
 
    });
+
+   
    it('can detect invalid links', async () => {
 
       const expected = 'Data could not be loaded.';
