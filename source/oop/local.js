@@ -51,8 +51,6 @@ class local {
       const dir = await this.getDir({pDir : pDir, pPath : pPath});
       const location = dir.indexOf(pName);
 
-      console.log('exists', dir, location); // remove
-
       return location != -1;
 
    }
