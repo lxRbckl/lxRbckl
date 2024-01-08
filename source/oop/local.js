@@ -32,7 +32,7 @@ class local {
    _getProjectPath() {
 
       const dir = path.dirname(__filename).split(/[/\\]/);
-      const base = dir.includes('node_modules') ? -3 : -1;
+      const base = dir.indexOf('node_modules');
 
       return dir.slice(0, base).join(this.delimeter);
 
