@@ -49,9 +49,7 @@ class local {
    }) {
 
       const dir = await this.getDir({pDir : pDir, pPath : pPath});
-      const location = dir.indexOf(pName);
-
-      return location != -1;
+      return dir.includes(pName);
 
    }
 
