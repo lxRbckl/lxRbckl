@@ -84,8 +84,7 @@ class local {
 
    async getFile({
 
-      pFile,
-
+      pFile = '',
       pEncoding = 'utf8',
       pPath = this._getProjectPath()
 
@@ -142,8 +141,7 @@ class local {
 
    async getDir({
 
-      pDir,
-
+      pDir = '',
       pPath = this._getProjectPath()
 
    }) {
