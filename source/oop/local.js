@@ -29,10 +29,24 @@ class local {
    }
 
 
-   _getProjectPath() {
+   _getProjectPath(pShow = false) {
 
       const dir = path.dirname(__filename).split(/[/\\]/);
       const base = dir.indexOf('node_modules');
+
+      // if (show) <
+      if (pShow) {
+
+         console.log('reference', this.referencePath);
+
+         console.log('dir', dir);
+         console.log('base', base);
+
+         console.log('sum', dir.slice(0, base).join(this.delimeter));
+
+      }
+
+      // >
 
       return dir.slice(0, base).join(this.delimeter);
 
