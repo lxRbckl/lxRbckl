@@ -18,24 +18,26 @@ class local {
 
    constructor(
 
+      pShow = false,
       pDelimeter = '/',
       pReferencePath = ''
 
    ) {
 
+      this.show = pShow;
       this.delimeter = pDelimeter;
       this.referencePath = pReferencePath;
 
    }
 
 
-   _getProjectPath(pShow = false) {
+   _getProjectPath() {
 
       const dir = path.dirname(__filename).split(/[/\\]/);
       const base = dir.indexOf('node_modules');
 
       // if (show) <
-      if (pShow) {
+      if (this.show) {
 
          console.log('reference', this.referencePath);
 
