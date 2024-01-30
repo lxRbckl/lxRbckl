@@ -105,6 +105,7 @@ async function githubUpdate({
    pGithub,
    pRepository,
 
+   opSpacer = 3,
    opBranch = 'main',
    opShowError = true,
    opEncoding = 'base64',
@@ -131,7 +132,7 @@ async function githubUpdate({
          repo : pRepository,
          message : opMessage,
          sha : response.data.sha,
-         content : Buffer.from(JSON.stringify(pData)).toString(opEncoding),
+         content : Buffer.from(JSON.stringify(pData, null, opSpacer)).toString(opEncoding),
 
       });
    
