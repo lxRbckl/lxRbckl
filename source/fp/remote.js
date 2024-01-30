@@ -53,6 +53,7 @@ async function githubSet({
    pGithub,
    pRepository,
 
+   opSpacer = 3,
    opBranch = 'main',
    opShowError = true,
    opEncoding = 'base64',
@@ -74,7 +75,7 @@ async function githubSet({
          branch : opBranch,
          repo : pRepository,
          message : opMessage,
-         content : Buffer.from(JSON.stringify(pData)).toString(opEncoding),
+         content : Buffer.from(JSON.stringify(pData, null, opSpacer)).toString(opEncoding),
          committer : {
 
             name : opName,

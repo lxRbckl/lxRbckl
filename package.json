@@ -1,13 +1,13 @@
 {
   "license": "ISC",
   "name": "lxrbckl",
-  "version": "6.2.2",
+  "version": "6.3.0",
   "main": "index.js",
   "author": "Alex Arbuckle",
   "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
   "description": "CRUD tools for local and remote files, enhancing readability and abstraction in lxRbckl projects.",
   "scripts": {
-    "lxrbckl": "mocha"
+    "test": "mocha"
   },
   "files": [
     "source/fp/gpt.js",
