@@ -11,6 +11,7 @@ async function githubGet({
    pGithub,
    pRepository,
 
+   opParse = false,
    opBranch = 'main',
    opShowError = false,
    opEncoding = 'base64',
@@ -31,7 +32,14 @@ async function githubGet({
 
       });
 
-      return Buffer.from(response.data.content, opEncoding).toString('utf-8');
+      let result = Buffer.from(response.data.content, opEncoding).toString('utf-8');
+
+      return {
+
+         false : result,
+         true : JSON.parse(result)
+
+      }[opParse];
    
    } catch (error) {return {
 
