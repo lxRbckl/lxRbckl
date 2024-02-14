@@ -150,8 +150,8 @@ def requestsGet(pLink: str):
          
       }[pLink.split('.')[-1]]()
    
-   except KeyError: return 'Invalid link.'
-   except MissingSchema: return 'Invalid link.'
-   except JSONDecodeError: return 'Loaded data is broken.'
+   except KeyError: return False
+   except MissingSchema: return False
+   except JSONDecodeError: return False
    
    # >

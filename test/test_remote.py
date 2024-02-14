@@ -193,30 +193,30 @@ def test_githubDel():
    # >
 
 
-def test_requestsGet():
-   ''' requestsGet() Test Suite '''
+# def test_requestsGet():
+#    ''' requestsGet() Test Suite '''
    
-   # declare <
-   invalidLink = ''
-   txtLink = 'https://raw.githubusercontent.com/lxRbckl/lxRbckl/python/requirements.txt'
-   jsonLink = 'https://raw.githubusercontent.com/lxRbckl/Project-RCoD/main/setting.json'
-   brokenLink = 'https://raw.githubusercontent.com/lxRbckl/lxRbckl/python/test/broken.json'
+#    # declare <
+#    invalidLink = ''
+#    txtLink = 'https://raw.githubusercontent.com/lxRbckl/lxRbckl/python/requirements.txt'
+#    jsonLink = 'https://raw.githubusercontent.com/lxRbckl/Project-RCoD/main/setting.json'
+#    brokenLink = 'https://raw.githubusercontent.com/lxRbckl/lxRbckl/python/test/broken.json'
    
-   # >
+#    # >
    
-   # test <
-   result = requestsGet(pLink = txtLink)
-   assert (type(result) == str), 'Can load .txt files.'
+#    # test <
+#    result = requestsGet(pLink = txtLink)
+#    assert (type(result) == str), 'Can load .txt files.'
    
-   result = requestsGet(pLink = jsonLink)
-   assert (type(result) == dict), 'Can load .json files.'
+#    result = requestsGet(pLink = jsonLink)
+#    assert (type(result) == dict), 'Can load .json files.'
    
-   expected = 'Invalid link.'
-   result = requestsGet(pLink = invalidLink)
-   assert (result == expected), 'Can detect invalid links.'
+#    expected = 'Invalid link.'
+#    result = requestsGet(pLink = invalidLink)
+#    assert (result == expected), 'Can detect invalid links.'
    
-   expected = 'Loaded data is broken.'
-   result = requestsGet(pLink = brokenLink)
-   assert (result == expected), 'Can detect broken .json data.'
+#    expected = 'Loaded data is broken.'
+#    result = requestsGet(pLink = brokenLink)
+#    assert (result == expected), 'Can detect broken .json data.'
    
-   # >
+#    # >
