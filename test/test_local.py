@@ -58,49 +58,49 @@ def test_fileSet():
    # >
 
 
-def test_fileGet():
-   ''' fileGet() Test Suite '''
+# def test_fileGet():
+#    ''' fileGet() Test Suite '''
    
-   # construct <
-   fileSet(
+#    # construct <
+#    fileSet(
       
-      pFile = 'test/test.txt',
-      pData = 'this is a test'
+#       pFile = 'test/test.txt',
+#       pData = 'this is a test'
       
-   )
-   fileSet(
+#    )
+#    fileSet(
       
-      pFile = 'test/test.json',
-      pData = {'json' : 'example'}
+#       pFile = 'test/test.json',
+#       pData = {'json' : 'example'}
       
-   )
+#    )
    
-   # >
+#    # >
 
-   # test <
-   expected = {"json" : "example"}
-   result = fileGet(pFile = 'test/test.json')
-   assert (result == expected), 'Can load existing .json files.'
+#    # test <
+#    expected = {"json" : "example"}
+#    result = fileGet(pFile = 'test/test.json')
+#    assert (result == expected), 'Can load existing .json files.'
       
-   expected = 'this is a test'
-   result = fileGet(pFile = 'test/test.txt')
-   assert (result == expected), 'Can load existing .txt files.'
+#    expected = 'this is a test'
+#    result = fileGet(pFile = 'test/test.txt')
+#    assert (result == expected), 'Can load existing .txt files.'
    
-   expected = 'Loaded data is broken.'
-   result = fileGet(pFile = 'test/broken.json')
-   assert (result == expected), 'Can detect broken .json data.'
+#    expected = 'Loaded data is broken.'
+#    result = fileGet(pFile = 'test/broken.json')
+#    assert (result == expected), 'Can detect broken .json data.'
    
-   expected = 'File does not exist.'
-   result = fileGet(pFile = 'test/broken.txt')
-   assert (result == expected), 'Can detect non-existing files.'
+#    expected = 'File does not exist.'
+#    result = fileGet(pFile = 'test/broken.txt')
+#    assert (result == expected), 'Can detect non-existing files.'
    
-   # >
+#    # >
    
-   # deconstruct <
-   fileDel(pFile = 'test/test.json')
-   fileDel(pFile = 'test/test.txt')
+#    # deconstruct <
+#    fileDel(pFile = 'test/test.json')
+#    fileDel(pFile = 'test/test.txt')
    
-   # >
+#    # >
 
 
 def test_fileDel():

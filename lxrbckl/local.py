@@ -103,8 +103,8 @@ def fileGet(
             
          }[pFile.split('.')[1]]()
    
-   except JSONDecodeError: return 'Loaded data is broken.'
-   except FileNotFoundError: return 'File does not exist.'
+   except JSONDecodeError: return False
+   except FileNotFoundError: return False
    
    # >
 
