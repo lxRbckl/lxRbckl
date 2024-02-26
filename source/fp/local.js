@@ -25,7 +25,7 @@ function getProjectPath(
    const dir = path.dirname(__filename).split(/[/\\]/);
    const base = {
 
-      true : -3,
+      true : -4,
       false : -1
 
    }[dir.includes('node_modules')];
