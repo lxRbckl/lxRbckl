@@ -1,9 +1,9 @@
 // import <
 const path = require('path');
+const {exec} = require('child_process')
 const {
 
    mkdir,
-   rmdir,
    unlink,
    readdir,
    readFile,
@@ -14,177 +14,146 @@ const {
 // >
 
 
-class local {
+function getProjectPath(
+   
+   pFile = '',
+   pDelimeter = '/'
+   
+) {
 
-   constructor(
+   const file = pFile.split(/[/\\]/);
+   const dir = path.dirname(__filename).split(/[/\\]/);
+   const base = {
 
-      pShow = false,
-      pDelimeter = '/',
-      pReferencePath = ''
+      true : -4,
+      false : -1
 
-   ) {
+   }[dir.includes('node_modules')];
 
-      this.show = pShow;
-      this.delimeter = pDelimeter;
-      this.referencePath = pReferencePath;
+   return [...dir.slice(0, base), ...file].join(pDelimeter);
 
-   }
+}
 
 
-   getProjectPath() {
+async function fileSet({
 
-      const dir = path.dirname(__filename).split(/[/\\]/);
-      const base = dir.indexOf('node_modules');
+   pData,
+   pFile,
+   pPath = getProjectPath(),
+   pErrorMessage = 'Could not write to file.'
 
-      // if (show) <
-      if (this.show) {
+}) {
 
-         console.log('reference', this.referencePath);
+   try {
 
-         console.log('dir', dir);
-         console.log('base', base);
+      await writeFile(
 
-         console.log('sum', dir.slice(0, base).join(this.delimeter));
+         (pPath + pFile),
+         {
 
-      }
+            'txt' : () => {return pData;},
+            'json' : () => {return JSON.stringify(pData);}
 
-      // >
+         }[pFile.split('.').slice(-1)]()
 
-      return dir.slice(0, base).join(this.delimeter);
+      );
 
-   }
+   } catch (error) {return pErrorMessage;}
 
+}
 
-   async exists({
 
-      pDir,
-      pName,
+async function fileGet({
 
-      pPath = this.getProjectPath()
+   pFile,
+   pEncoding = 'utf8',
+   pPath = getProjectPath(),
+   pErrorMessage = 'Could not read file.'
 
-   }) {
+}) {
 
-      const dir = await this.getDir({pDir : pDir, pPath : pPath});
-      return dir.includes(pName);
+   try {
 
-   }
+      const fin = await readFile((pPath + pFile), pEncoding);
+      return {
 
+         'txt' : () => {return fin;},
+         'json' : () => {return JSON.parse(fin);}
 
-   async setFile({
+      }[pFile.split('.').slice(-1)]();
+   
+   } catch (error) {return pErrorMessage;}
 
-      pData,
-      pFile,
+}
 
-      pPath = this.getProjectPath()
 
-   }) {
+async function fileDel({
 
-      try {
+   pFile,
+   pPath = getProjectPath(),
+   pErrorMessage = 'File does not exist.'
 
-         await writeFile(
+}) {
 
-            (pPath + this.referencePath + pFile),
-            {
+   try {await unlink(pPath + pFile);}
+   catch (error) {return pErrorMessage;}
 
-               'txt' : () => {return pData;},
-               'json' : () => {return JSON.stringify(pData);}
+}
 
-            }[pFile.split('.').slice(-1)]()
 
-         );
+async function dirSet({
 
-      } catch (error) {return 'Could not write to file.';}
+   pDir,
+   pPath = getProjectPath(),
+   pErrorMessage = 'Could not create directory.'
 
-   }
+}) {
 
+   try {await mkdir(pPath + pDir)}
+   catch (error) {return pErrorMessage;}
 
-   async getFile({
+}
 
-      pFile = '',
-      pEncoding = 'utf8',
-      pPath = this.getProjectPath()
 
-   }) {
+async function dirGet({
 
-      try {
+   pDir,
+   pPath = getProjectPath(),
+   pErrorMessage = 'Directory does not exist.'
 
-         const fin = await readFile(
+}) {
 
-            (pPath + this.referencePath + pFile),
-            pEncoding
+   try {return await readdir(pPath + pDir);}
+   catch (error) {return pErrorMessage;}
 
-         );
+}
 
-         return {
 
-            'txt' : () => {return fin;},
-            'json' : () => {return JSON.parse(fin);}
+async function dirDel({
 
-         }[pFile.split('.').slice(-1)]();
+   pDir,
+   pPath = getProjectPath(),
+   pErrorMessage = 'Directory does not exist.'
 
-      } catch (error) {return 'Could not read file.';}
+}) {
 
-   }
-
-
-   async delFile({
-
-      pFile,
-
-      pPath = this.getProjectPath()
-
-   }) {
-
-      try {await unlink(pPath + this.referencePath + pFile);}
-      catch (error) {return 'File does not exist.';}
-
-   }
-
-
-   async setDir({
-
-      pDir,
-
-      pPath = this.getProjectPath()
-
-   }) {
-
-      try {await mkdir(pPath + this.referencePath + pDir);}
-      catch (error) {return 'Could not create directory.';}
-
-   }
-
-
-   async getDir({
-
-      pDir = '',
-      pPath = this.getProjectPath()
-
-   }) {
-
-      try {return await readdir(pPath + this.referencePath + pDir);}
-      catch (error) {return 'Directory does not exist.';}
-
-   }
-
-
-   async delDir({
-
-      pDir,
-
-      pPath = this.getProjectPath()
-
-   }) {
-
-      try {await rmdir(pPath + this.referencePath + pDir);}
-      catch (error) {return 'Directory does not exist.';}
-
-   }
+   try {await exec(`rm -rf ${pPath + pDir}`);}
+   catch (error) {console.log('error', error); return pErrorMessage;}
 
 }
 
 
 // export <
-module.exports = local;
+module.exports = {
+
+   getProjectPath,
+   fileSet,
+   fileGet,
+   fileDel,
+   dirSet,
+   dirGet,
+   dirDel
+
+};
 
 // >
