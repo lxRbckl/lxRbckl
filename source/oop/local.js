@@ -31,7 +31,7 @@ class local {
    }
 
 
-   _getProjectPath() {
+   getProjectPath() {
 
       const dir = path.dirname(__filename).split(/[/\\]/);
       const base = dir.indexOf('node_modules');
@@ -60,7 +60,7 @@ class local {
       pDir,
       pName,
 
-      pPath = this._getProjectPath()
+      pPath = this.getProjectPath()
 
    }) {
 
@@ -75,7 +75,7 @@ class local {
       pData,
       pFile,
 
-      pPath = this._getProjectPath()
+      pPath = this.getProjectPath()
 
    }) {
 
@@ -102,7 +102,7 @@ class local {
 
       pFile = '',
       pEncoding = 'utf8',
-      pPath = this._getProjectPath()
+      pPath = this.getProjectPath()
 
    }) {
 
@@ -131,7 +131,7 @@ class local {
 
       pFile,
 
-      pPath = this._getProjectPath()
+      pPath = this.getProjectPath()
 
    }) {
 
@@ -145,7 +145,7 @@ class local {
 
       pDir,
 
-      pPath = this._getProjectPath()
+      pPath = this.getProjectPath()
 
    }) {
 
@@ -158,7 +158,7 @@ class local {
    async getDir({
 
       pDir = '',
-      pPath = this._getProjectPath()
+      pPath = this.getProjectPath()
 
    }) {
 
@@ -172,7 +172,7 @@ class local {
 
       pDir,
 
-      pPath = this._getProjectPath()
+      pPath = this.getProjectPath()
 
    }) {
 
