@@ -146,6 +146,7 @@ async function dirDel({
 // export <
 module.exports = {
 
+   getProjectPath,
    fileSet,
    fileGet,
    fileDel,

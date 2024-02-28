@@ -11,7 +11,8 @@ const {
    dirDel,
    fileSet,
    fileGet,
-   fileDel
+   fileDel,
+   getProjectPath
 
 } = require('./source/fp/local.js');
 const {
@@ -41,7 +42,8 @@ module.exports = {
    axiosGet,
    githubSet,
    githubGet,
-   githubUpdate
+   githubUpdate,
+   getProjectPath
 
 };
 
