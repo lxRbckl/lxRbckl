@@ -1,9 +1,9 @@
 // import <
 const path = require('path');
+const {exec} = require('child_process')
 const {
 
    mkdir,
-   rmdir,
    unlink,
    readdir,
    readFile,
@@ -137,7 +137,7 @@ async function dirDel({
 
 }) {
 
-   try {await rmdir(pPath + pDir);}
+   try {await exec(`rm -rf ${pPath + pDir}`);}
    catch (error) {return pErrorMessage;}
 
 }
