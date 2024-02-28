@@ -39,6 +39,7 @@ async function fileSet({
 
    pData,
    pFile,
+   pIndent = 3,
    pPath = getProjectPath(),
    pErrorMessage = 'Could not write to file.'
 
@@ -52,7 +53,7 @@ async function fileSet({
          {
 
             'txt' : () => {return pData;},
-            'json' : () => {return JSON.stringify(pData);}
+            'json' : () => {return JSON.stringify(pData, null, pIndent);}
 
          }[pFile.split('.').slice(-1)]()
 
