@@ -1,15 +1,14 @@
 {
   "license": "ISC",
   "name": "lxrbckl",
-  "version": "7.0.5",
-  "main": "./index.js",
+  "version": "7.0.6",
+  "main": "index.js",
   "author": "Alex Arbuckle",
   "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
   "description": "CRUD tools for local and remote file management enhancing readability and abstraction in lxRbckl projects.",
   "scripts": {},
   "files": [
-    "./dist/",
-    "./index.js"
+    "./dist/"
   ],
   "dependencies": {
     "@octokit/rest": "^20.1.1"
