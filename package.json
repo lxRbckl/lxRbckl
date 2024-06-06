@@ -1,7 +1,7 @@
 {
   "license": "ISC",
   "name": "lxrbckl",
-  "version": "7.0.11",
+  "version": "7.0.12",
   "main": "index.js",
   "author": "Alex Arbuckle",
   "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
@@ -19,7 +19,8 @@
   "scripts": {},
   "files": [
     "index.js",
-    "./dist/"
+    "./dist/",
+    "./types/"
   ],
   "dependencies": {
     "@octokit/rest": "^20.1.1"
