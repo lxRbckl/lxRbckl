@@ -4,7 +4,7 @@ import { Octokit } from '@octokit/rest';
 // >
 
 
-class ocotkit {
+export class ocotkit {
 
 
    private _octokit: Octokit;
@@ -131,9 +131,3 @@ class ocotkit {
 
 
 }
-
-
-// export <
-module.exports = {ocotkit};
-
-// >

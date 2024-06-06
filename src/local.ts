@@ -14,7 +14,7 @@ import {
 // >
 
 
-function getProjectPath(
+export function getProjectPath(
    
    file: string = '',
    delimeter: string = '/'
@@ -29,7 +29,7 @@ function getProjectPath(
 }
 
 
-async function fileSet(
+export async function fileSet(
 
    data: any,
    file: string,
@@ -53,7 +53,7 @@ async function fileSet(
 }
 
 
-async function fileGet(
+export async function fileGet(
 
    file: string,
 
@@ -72,7 +72,7 @@ async function fileGet(
 }
 
 
-async function fileDel(
+export async function fileDel(
 
    file: string,
    path: string = getProjectPath()
@@ -85,7 +85,7 @@ async function fileDel(
 }
 
 
-async function dirSet(
+export async function dirSet(
 
    dir: string,
    path: string = getProjectPath()
@@ -98,7 +98,7 @@ async function dirSet(
 }
 
 
-async function dirGet(
+export async function dirGet(
 
    dir: string,
    path: string = getProjectPath()
@@ -111,7 +111,7 @@ async function dirGet(
 }
 
 
-async function dirDel(
+export async function dirDel(
 
    dir: string,
    path: string = getProjectPath()
@@ -122,19 +122,3 @@ async function dirDel(
    catch (error) {console.log(`Error: ${error}\nPath: ${path + dir}`)}
 
 }
-
-
-// export <
-module.exports = {
-
-   getProjectPath,
-   fileSet,
-   fileGet,
-   fileDel,
-   dirSet,
-   dirGet,
-   dirDel
-
-};
-
-// >

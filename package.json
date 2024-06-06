@@ -1,12 +1,14 @@
 {
-  "license": "ISC",
+  "license": "MIT",
   "name": "lxrbckl",
-  "version": "7.0.13",
-  "main": "index.js",
+  "version": "7.0.14",
+  "main": "./dist/index.js",
   "author": "Alex Arbuckle",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
   "description": "CRUD functionality to enhance readability and abstraction in projects, for both local and remote file management.",
-  "keywords" : [
+  "keywords": [
     "file management",
     "dir management",
     "octokit.js",
@@ -16,17 +18,16 @@
     "file",
     "dir"
   ],
-  "scripts": {},
-  "files": [
-    "index.js",
-    "./dist/",
-    "index.d.ts"
-  ],
+  "scripts": {
+    "build" : "tsup"
+  },
+  "files": [],
   "dependencies": {
-    "@octokit/rest": "^20.1.1"
+    "@octokit/rest": "^20.1.1",
+    "@types/node": "^20.14.2"
   },
   "devDependencies": {
-    "@types/node": "^20.14.2",
+    "tsup": "^8.1.0",
     "typescript": "^5.4.5"
   }
 }

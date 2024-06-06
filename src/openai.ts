@@ -6,7 +6,7 @@ import { exec } from 'child_process';
 // >
 
 
-class openai {
+export class openai {
 
 
    private readonly _model: string;
@@ -62,9 +62,3 @@ class openai {
    }
 
 }
-
-
-// export <
-module.exports = {openai};
-
-// >
