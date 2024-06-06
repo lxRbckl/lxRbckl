@@ -2,8 +2,8 @@
 
 
 // import <
-import openai from './dist/src/openai.js';
-import octokit from './dist/src/octokit.js';
+import openai from './dist/openai.js';
+import octokit from './dist/octokit.js';
 import {
 
    dirSet,
@@ -14,7 +14,7 @@ import {
    fileDel,
    getProjectPath
 
-} from './dist/src/local.js';
+} from './dist/local.js';
 
 // >
 

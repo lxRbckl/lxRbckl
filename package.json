@@ -8,7 +8,7 @@
   "description": "CRUD tools for local and remote file management enhancing readability and abstraction in lxRbckl projects.",
   "scripts": {},
   "files": [
-    "./dist/src/"
+    "./dist/"
   ],
   "dependencies": {
     "@octokit/rest": "^20.1.1"
