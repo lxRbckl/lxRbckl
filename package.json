@@ -1,11 +1,18 @@
 {
   "license": "ISC",
   "name": "lxrbckl",
-  "version": "7.0.6",
+  "version": "7.0.7",
   "main": "index.js",
   "author": "Alex Arbuckle",
   "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
-  "description": "CRUD tools for local and remote file management enhancing readability and abstraction in lxRbckl projects.",
+  "description": "CRUD functionality to enhance readability and abstraction in projects, for both local and remote file management.",
+  "keywords" : [
+    "octokit",
+    "openai",
+    "CRUD",
+    "file",
+    "dir"
+  ],
   "scripts": {},
   "files": [
     "./dist/"
