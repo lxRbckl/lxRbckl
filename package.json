@@ -1,7 +1,7 @@
 {
   "license": "ISC",
   "name": "lxrbckl",
-  "version": "7.0.8",
+  "version": "7.0.9",
   "main": "./index.js",
   "author": "Alex Arbuckle",
   "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
@@ -10,6 +10,7 @@
     "file management",
     "dir management",
     "octokit.js",
+    "chatgpt",
     "openai",
     "CRUD",
     "file",
