@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "lxrbckl",
-  "version": "7.0.16",
+  "version": "7.0.17",
   "main": "./dist/index.js",
   "author": "Alex Arbuckle",
   "module": "./dist/index.mjs",
@@ -21,7 +21,9 @@
   "scripts": {
     "build" : "tsup"
   },
-  "files": [],
+  "files": [
+    "./dist"
+  ],
   "dependencies": {
     "@octokit/rest": "^20.1.1",
     "@types/node": "^20.14.2"
