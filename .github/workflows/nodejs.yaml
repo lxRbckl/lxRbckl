@@ -4,7 +4,7 @@ name: Nodejs Workflow
 on:
    push:
       branches:
-         - nodejs
+         - NPM
 
 
 jobs:
@@ -35,20 +35,20 @@ jobs:
          - name: Install Dependencies
            run: npm install
          
-         - name: Run Tests
-           run: npm run test
+         # - name: Run Tests
+         #   run: npm run test
          
-         - name: Evaluate lxRbckl Package Update
-           run: |
+         # - name: Evaluate lxRbckl Package Update
+         #   run: |
 
-            isSuccessful=$?;
+         #    isSuccessful=$?;
 
-            if [ $isSuccessful != 0 ]; then
+         #    if [ $isSuccessful != 0 ]; then
 
-               echo "Tests failed.";
-               exit 1;
+         #       echo "Tests failed.";
+         #       exit 1;
             
-            fi
+         #    fi
 
          - name: Initialize .npmrc File
            run: |

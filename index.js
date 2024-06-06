@@ -2,9 +2,9 @@
 
 
 // import <
-const gpt = require('./source/fp/gpt.js');
-const local = require('./source/oop/local.js');
-const {
+import openai from './dist/src/openai.js';
+import octokit from './dist/src/octokit.js';
+import {
 
    dirSet,
    dirGet,
@@ -14,15 +14,7 @@ const {
    fileDel,
    getProjectPath
 
-} = require('./source/fp/local.js');
-const {
-
-   axiosGet,
-   githubGet,
-   githubSet,
-   githubUpdate
-
-} = require('./source/fp/remote.js');
+} from './dist/src/local.js';
 
 // >
 
@@ -30,19 +22,15 @@ const {
 // export <
 module.exports = {
 
-   gpt,
-   local,
-   
+   openai,
+   octokit,
+
    dirSet,
    dirGet,
    dirDel,
    fileSet,
    fileGet,
    fileDel,
-   axiosGet,
-   githubSet,
-   githubGet,
-   githubUpdate,
    getProjectPath
 
 };
