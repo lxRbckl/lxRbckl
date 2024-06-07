@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "lxrbckl"
-version = "3.3.1"
+version = "3.3.2"
 readme = "README.md"
 authors = ["lxRbckl <lxrbckl@gmail.com>"]
 homepage = "https://github.com/lxRbckl/lxRbckl/tree/python"
