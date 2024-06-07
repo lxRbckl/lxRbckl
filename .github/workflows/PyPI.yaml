@@ -14,6 +14,7 @@ jobs:
       env:
          PYPITOKEN: ${{ secrets.PYPITOKEN }}
          PYGITHUBTOKEN: ${{ secrets.PYGITHUBTOKEN }}
+         
       steps:
          - name: Evaluate Commit Message
            run: |
@@ -37,30 +38,10 @@ jobs:
            with:
             python-version: 3.8
 
-         - name: Install Python Poetry
-           run: pip install poetry
-         
-         - name: Install Poetry Environment
-           run: poetry install
-
-         - name: Run PyTest
-           run: poetry run pytest
-
-         - name: Evaluate lxRbckl Package Update
+         - name: Update Package
            run: |
-            
-            isSuccessful=$?;
-            commitMessage="${{ github.event.head_commit.message }}";
 
-            if [ $isSuccessful == 0 ] && [ $commitMessage == "Update" ]; then
+            poetry config pypi-token.pypi $PYPITOKEN
 
-               echo "Updating lxRbckl package."
-
-               poetry config pypi-token.pypi $PYPITOKEN
-
-               poetry build
-               poetry publish
-            
-            else echo "Not updating lxRbckl package.";
-            
-            fi
+            poetry build
+            poetry publish
