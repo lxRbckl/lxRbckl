@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "lxrbckl",
-  "version": "7.0.17",
+  "version": "8.0.0",
   "main": "./dist/index.js",
   "author": "Alex Arbuckle",
   "module": "./dist/index.mjs",
@@ -9,10 +9,12 @@
   "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
   "description": "CRUD functionality to enhance readability and abstraction in projects, for both local and remote file management.",
   "keywords": [
+    "repository management",
     "file management",
     "dir management",
     "octokit.js",
     "chatgpt",
+    "github",
     "openai",
     "CRUD",
     "file",

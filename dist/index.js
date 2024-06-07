@@ -175,6 +175,7 @@ var openai = class {
 var import_rest = require("@octokit/rest");
 var ocotkit = class {
   constructor(token, owner, indent = 3, stringEncoding = "utf8", bufferEncoding = "base64") {
+    // endpoints <
     this.urlFileGet = (repo, file) => `GET /repos/${this._owner}/${repo}/contents/${file}`;
     this.urlFilePut = (repo, file) => `PUT /repos/${this._owner}/${repo}/contents/${file}`;
     this._token = token;
@@ -184,11 +185,26 @@ var ocotkit = class {
     this._bufferEncoding = bufferEncoding;
     this._octokit = new import_rest.Octokit({ auth: this._token });
   }
+  // >
+  request(_0) {
+    return __async(this, arguments, function* (url, parameters = {}, property = "data", propertyElement = "") {
+      let response = yield this._octokit.request(url, parameters);
+      switch (propertyElement == "") {
+        case true:
+          return response[property];
+        case false:
+          return response[property].map((i) => i[propertyElement]);
+      }
+    });
+  }
   repositoryGet(file, branch, repository, property = "content", suppressError = false) {
     return __async(this, null, function* () {
       let fileGet2 = this.urlFileGet(repository, file);
       try {
-        let data = (yield this._octokit.request(fileGet2, { ref: branch })).data;
+        let data = yield this.request(
+          fileGet2,
+          { ref: branch }
+        );
         switch (property == "content") {
           case false:
             return data[property];

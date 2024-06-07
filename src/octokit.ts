@@ -35,11 +35,35 @@ export class ocotkit {
    }
 
 
+   // endpoints <
    urlFileGet = (repo: string, file: string): string => `GET /repos/${this._owner}/${repo}/contents/${file}`;
    urlFilePut = (repo: string, file: string): string => `PUT /repos/${this._owner}/${repo}/contents/${file}`;
 
+   // >
 
-   async repositoryGet(
+
+   public async request(
+
+      url: string,
+      parameters: any = {},
+      property: string = 'data',
+      propertyElement: string = ''
+
+   ): Promise<any> {
+
+      let response: any = await this._octokit.request(url, parameters);
+
+      switch (propertyElement == '') {
+
+         case true: return response[property];
+         case false: return response[property].map((i: any) => i[propertyElement]);
+
+      }
+
+   }
+
+
+   public async repositoryGet(
 
       file: string,
       branch: string,
@@ -59,7 +83,12 @@ export class ocotkit {
       // catch (then 403, 404) <
       try {
 
-         let data: any = (await this._octokit.request(fileGet, {ref: branch})).data;
+         let data: any = await this.request(
+
+            fileGet,
+            {ref : branch}
+
+         );
 
          switch (property == 'content') {
 
@@ -85,7 +114,7 @@ export class ocotkit {
    }
 
 
-   async respositorySet(
+   public async respositorySet(
 
       data: object,
       file: string,

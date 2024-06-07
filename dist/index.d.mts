@@ -24,6 +24,7 @@ declare class ocotkit {
     constructor(token: string, owner: string, indent?: number, stringEncoding?: BufferEncoding, bufferEncoding?: BufferEncoding);
     urlFileGet: (repo: string, file: string) => string;
     urlFilePut: (repo: string, file: string) => string;
+    request(url: string, parameters?: any, property?: string, propertyElement?: string): Promise<any>;
     repositoryGet(file: string, branch: string, repository: string, property?: string, suppressError?: boolean): Promise<any>;
     respositorySet(data: object, file: string, branch: string, repository: string, suppressError?: boolean, message?: string): Promise<boolean>;
 }
