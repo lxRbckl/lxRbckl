@@ -1,5 +1,4 @@
 # import <
-from time import sleep
 from requests import get
 from json import loads, dumps
 from json.decoder import JSONDecodeError
@@ -15,7 +14,6 @@ def githubSet(
    pGithub: object,
    pRepository: str,
    
-   pSleep: int = 3,
    isNew: bool = False,
    pBranch: str = 'main'
    
@@ -57,9 +55,7 @@ def githubSet(
          )
       
       # >
-   
-      sleep(pSleep)
-   
+      
    except: return {
       
       True : 'File already exists.',
@@ -105,7 +101,6 @@ def githubDel(
    pFilename: str,
    pRepository: str,
    
-   pSleep: int = 3,
    pBranch: str = 'main',
    pMessage: str = 'Automated Deletion'
    
@@ -127,9 +122,7 @@ def githubDel(
          message = pMessage
          
       )
-      
-      sleep(pSleep)
-   
+         
    except: return 'File does not exist.'
    
    # >
