@@ -67,7 +67,11 @@ import {
    
    ) {
 
-      this._channelId = val.includes('http') ? (await axiosGet(val))[name] : val;
+      try {
+
+         this._channelId = val.includes('http') ? (await axiosGet(val))[name] : val;
+      
+      } catch (error) {console.log('Error: ', error, '\nChannelId: ', this._channelId);}
 
    }
 
