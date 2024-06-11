@@ -35,20 +35,8 @@ jobs:
          - name: Install Dependencies
            run: npm install
          
-         # - name: Run Tests
-         #   run: npm run test
-         
-         # - name: Evaluate lxRbckl Package Update
-         #   run: |
-
-         #    isSuccessful=$?;
-
-         #    if [ $isSuccessful != 0 ]; then
-
-         #       echo "Tests failed.";
-         #       exit 1;
-            
-         #    fi
+         - name: Run tsup
+           run: npm run build
 
          - name: Initialize .npmrc File
            run: |
