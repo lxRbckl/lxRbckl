@@ -1,12 +1,12 @@
 {
   "license": "MIT",
   "name": "lxrbckl",
-  "version": "8.0.3",
+  "version": "8.0.4",
   "main": "./dist/index.js",
   "author": "Alex Arbuckle",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "repository": "https://github.com/lxRbckl/lxRbckl/tree/nodejs",
+  "repository": "https://github.com/lxRbckl/lxRbckl/tree/NPM",
   "description": "CRUD functionality to enhance readability and abstraction in projects, for both local and remote file management.",
   "keywords": [
     "repository management",
