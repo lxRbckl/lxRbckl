@@ -1,4 +1,5 @@
 // import <
+import { axiosGet } from './axios'
 import {
 
    command,
@@ -24,17 +25,16 @@ import {
 
 
    private _client: Client;
+   private _channelId: any;
    private _version: string;
    private _guildId: string;
    private _intents: number[];
-   private _channelId: string;
    private _applicationId: string;
 
 
    constructor(
-
+      
       guildId: string,
-      channelId: string,
       applicationId: string,
 
       version: string = '10',
@@ -49,26 +49,28 @@ import {
 
    ) {
 
+      this._channelId = '';
       this._version = version;
       this._intents = intents;
       this._guildId = guildId;
-      this._channelId = channelId;
       this._applicationId = applicationId;
 
-      this._client = new Client({
-
-         intents : this._intents,
-         rest : {version : this._version}
-
-      });
+      this._client = new Client({intents : this._intents, rest : {version : this._version}});
 
    }
 
 
-   login(token: string): void {this._client.login(token);}
+   public async setChannelId(val: string) {
+
+      this._channelId = val.includes('http') ? await axiosGet(val) : val;
+
+   }
 
 
-   messageChannel(
+   public login(token: string): void {this._client.login(token);}
+
+
+   public messageChannel(
       
       content: string, 
       isInline: boolean = false,
@@ -99,7 +101,7 @@ import {
    }   
  
    
-   registerCommands(commands: any): void {
+   public registerCommands(commands: any): void {
 
       this._client.rest.put(
 
@@ -116,7 +118,7 @@ import {
    }
 
 
-   async registerOnReady(callback: onReadyCallback): Promise<void> {
+   public async registerOnReady(callback: onReadyCallback): Promise<void> {
 
       this._client.on('ready', async (): Promise<void> => {
 
@@ -127,7 +129,7 @@ import {
    }
 
 
-   async registerInteractionCreate(callback: interactionCreateCallback): Promise<void> {
+   public async registerInteractionCreate(callback: interactionCreateCallback): Promise<void> {
 
       this._client.on('interactionCreate', async (interaction): Promise<void> => {
 

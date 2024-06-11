@@ -4,7 +4,7 @@ const axios = require('axios');
 // >
 
 
-export async function axiosFetch(url: string): Promise<any> {
+export async function axiosGet(url: string): Promise<any> {
 
    try {
 
