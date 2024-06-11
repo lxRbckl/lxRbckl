@@ -22,7 +22,7 @@ import {
 // >
 
 
- export default class discord {
+ export class discord {
 
 
    private _client: Client;
