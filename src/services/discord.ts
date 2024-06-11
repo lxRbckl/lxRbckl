@@ -60,22 +60,6 @@ import {
    }
 
 
-   public async setChannelId(
-      
-      val: string,
-      name: string = 'main'
-   
-   ) {
-
-      try {
-
-         this._channelId = val.includes('http') ? (await axiosGet(val))[name] : val;
-      
-      } catch (error) {console.log('Error: ', error, '\nChannelId: ', this._channelId);}
-
-   }
-
-
    public login(token: string): void {this._client.login(token);}
 
 
@@ -107,7 +91,7 @@ import {
 
       }
 
-   }   
+   }
  
    
    public registerCommands(commands: any): void {
@@ -124,6 +108,17 @@ import {
 
       )
       
+   }
+
+
+   public async registerChannel(val: string, name: string = 'main'): Promise<void> {
+
+      try {
+
+         this._channelId = val.includes('http') ? (await axiosGet(val))[name] : val
+
+      } catch (error) {console.log('Error: ', error, '\nChannelId: ', val);}
+
    }
 
 
