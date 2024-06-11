@@ -1,5 +1,13 @@
 // import <
 import {
+
+   command,
+   onReadyCallback,
+   interactionCreateCallback
+
+} from '../types/discord';
+
+import {
    
    Client,
    Routes,
@@ -8,14 +16,6 @@ import {
    IntentsBitField
 
 } from 'discord.js';
-
-import {
-
-   command,
-   onReadyCallback,
-   interactionCreateCallback
-
-} from '../types/discord';
 
 // >
 
