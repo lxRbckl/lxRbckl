@@ -4,10 +4,8 @@ import {
    Client,
    Routes,
    Channel,
-   DMChannel,
    TextChannel,
-   IntentsBitField,
-   GatewayIntentBits
+   IntentsBitField
 
 } from 'discord.js';
 
@@ -29,17 +27,17 @@ import {
    private _version: string;
    private _guildId: string;
    private _intents: number[];
+   private _channelId: string;
    private _applicationId: string;
-   private _defaultChannel: string;
 
 
    constructor(
 
       guildId: string,
+      channelId: string,
       applicationId: string,
 
       version: string = '10',
-      defaultChannel: string = '',
       intents: number[] = [
 
          IntentsBitField.Flags.Guilds,
@@ -54,8 +52,8 @@ import {
       this._version = version;
       this._intents = intents;
       this._guildId = guildId;
+      this._channelId = channelId;
       this._applicationId = applicationId;
-      this._defaultChannel = defaultChannel;
 
       this._client = new Client({
 
@@ -80,7 +78,7 @@ import {
 
       try {
 
-         let channel: Channel = this._client.channels.cache.get(this._defaultChannel)!;
+         let channel: Channel = this._client.channels.cache.get(this._channelId)!;
 
          if (channel instanceof TextChannel) {
 
@@ -94,7 +92,7 @@ import {
          
       } catch (error) {
 
-         console.log('Error: ', error, '\nChannelId: ', this._defaultChannel);
+         console.log('Error: ', error, '\nChannelId: ', this._channelId);
 
       }
 

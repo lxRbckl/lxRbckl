@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "lxrbckl",
-  "version": "8.0.5",
+  "version": "8.5.6",
   "main": "./dist/index.js",
   "author": "Alex Arbuckle",
   "module": "./dist/index.mjs",
