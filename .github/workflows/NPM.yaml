@@ -35,6 +35,10 @@ jobs:
          - name: Install Dependencies
            run: npm install
          
+         - name: Create /dist
+           run: mkdir dist
+           
+
          - name: Run tsup
            run: npm run build
 
