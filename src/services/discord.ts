@@ -60,9 +60,14 @@ import {
    }
 
 
-   public async setChannelId(val: string) {
+   public async setChannelId(
+      
+      val: string,
+      name: string = 'main'
+   
+   ) {
 
-      this._channelId = val.includes('http') ? await axiosGet(val) : val;
+      this._channelId = val.includes('http') ? (await axiosGet(val))[name] : val;
 
    }
 
