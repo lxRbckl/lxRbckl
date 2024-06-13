@@ -8,6 +8,7 @@ export class ocotkit {
 
 
    private _octokit: Octokit;
+
    private readonly _token: string;
    private readonly _owner: string;
    private readonly _indent: number;
@@ -18,7 +19,7 @@ export class ocotkit {
    constructor(
       
       token: string,
-      owner: string = '',
+      owner: string,
       indent: number = 3,
       stringEncoding: BufferEncoding = 'utf8',
       bufferEncoding: BufferEncoding = 'base64'
@@ -30,6 +31,7 @@ export class ocotkit {
       this._indent = indent;
       this._stringEncoding = stringEncoding;
       this._bufferEncoding = bufferEncoding;
+
       this._octokit = new Octokit({auth: this._token});
 
    }
