@@ -18,7 +18,7 @@ export class ocotkit {
    constructor(
       
       token: string,
-      owner: string,
+      owner: string = '',
       indent: number = 3,
       stringEncoding: BufferEncoding = 'utf8',
       bufferEncoding: BufferEncoding = 'base64'
