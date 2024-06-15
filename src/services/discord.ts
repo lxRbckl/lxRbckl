@@ -7,7 +7,6 @@ import {
    interactionCreateCallback
 
 } from '../types/discord';
-
 import {
    
    Client,
@@ -103,7 +102,7 @@ import {
          ),
          {body : commands.map((c: command) => c.context())}
 
-      )
+      );
       
    }
 
