@@ -66,6 +66,7 @@ import {
    public messageChannel(
       
       content: string, 
+      isCodeBlock: string = '',
       isInline: boolean = false,
       isSpoiler: boolean = false
    
@@ -79,17 +80,13 @@ import {
 
             content = isInline ? `\` ${content} \`` : content;
             content = isSpoiler ? `|| ${content} ||` : content;
+            content = isCodeBlock ? `\`\`\`${isCodeBlock}\n${content}\`\`\`` : content;
 
             channel.send(content);
 
          }
          
-         
-      } catch (error) {
-
-         console.log('Error: ', error, '\nChannelId: ', this._channelId);
-
-      }
+      } catch (error) {console.log('Error: ', error, '\nChannelId: ', this._channelId);}
 
    }
  
