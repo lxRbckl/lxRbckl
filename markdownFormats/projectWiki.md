@@ -4,9 +4,9 @@
 ---
 ### Who is the target audience?
 
-### Why is the chosen tech stack suitable?
+### What does the application to solve?
 
-### What does the application aim to solve?
+### Why is the chosen tech stack suitable?
 
 ### Where will this application be deployed?
 
