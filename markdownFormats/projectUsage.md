@@ -5,4 +5,4 @@
 ```yml
 
 ```
-> `how to run`
+> `command`
