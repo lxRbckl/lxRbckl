@@ -14,17 +14,17 @@ Insert Here
 Insert Here
 </p>
 
+### What are the goals of the application?
+<p align="justify">
+Insert Here
+</p>
+
 ### Why is the chosen tech stack suitable?
 <p align="justify">
 Insert Here
 </p>
 
 ### Where will this application be deployed?
-<p align="justify">
-Insert Here
-</p>
-
-### What are the goals of the application?
 <p align="justify">
 Insert Here
 </p>
