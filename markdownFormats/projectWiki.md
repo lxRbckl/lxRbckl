@@ -1,18 +1,38 @@
 # Project Title
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<p align="justify">
+Insert Here
+</p>
 
 ---
 ### Who is the target audience?
+<p align="justify">
+Insert Here
+</p>
 
 ### What does the application to solve?
+<p align="justify">
+Insert Here
+</p>
 
 ### Why is the chosen tech stack suitable?
+<p align="justify">
+Insert Here
+</p>
 
 ### Where will this application be deployed?
+<p align="justify">
+Insert Here
+</p>
 
-### What are the key features of the application?
+### What are the goals of the application?
+<p align="justify">
+Insert Here
+</p>
 
-### What are the primary goals of the application?
+### What are the features of the application?
+<p align="justify">
+Insert Here
+</p>
 
 ---
 
