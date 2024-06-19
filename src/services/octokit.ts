@@ -118,10 +118,10 @@ export class octokit {
 
    public async respositorySet(
 
-      data: object,
       file: string,
       branch: string,
       repository: string,
+      data: object | string,
 
       suppressError: boolean = false,
       message: string = 'Automated Action'
