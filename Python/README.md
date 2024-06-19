@@ -4,6 +4,7 @@ Python is renowned for its simplicity and readability. I use this tool for web d
 </p>
 
 ---
+
 ## Projects
 [`Project Maximus V1`](https://github.com/lxRbckl/Project-Maximus/tree/V1) 
 [`Project Borg`](https://github.com/lxRbckl/Project-Borg/tree/V1)
@@ -38,15 +39,17 @@ Python is renowned for its simplicity and readability. I use this tool for web d
 [`Project Acta Mea V3`](https://github.com/lxRbckl/Project-Acta-Mea/tree/V3)
 [`Project Acta Mea V4`](https://github.com/lxRbckl/Project-Acta-Mea/tree/V4)
 [`Project Comperio`](https://github.com/lxRbckl/Project-Comperio/tree/V1)
-[``]()
-[``]()
-[``]()
-[``]()
-[``]()
-[``]()
-[``]()
+[`CS461 P2`](https://github.com/ala2q6/CS461-P2/tree/main)
+[`CS461 P3`](https://github.com/ala2q6/CS461-P3/tree/main)
+[`CS456 P`](https://github.com/ala2q6/CS456-P/tree/main)
+[`CS490DL P`](https://github.com/ala2q6/CS490DL-P/tree/main)
+[`HAR S22`](https://github.com/ala2q6/HAR-S22/tree/main)
+[`CS461 P1`](https://github.com/ala2q6/CS461-P1/tree/main)
 
 ---
+
 ## Ecosystem
 [`example`]() 
 [`example`]()
+
+---
