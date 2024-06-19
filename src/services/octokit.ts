@@ -4,7 +4,7 @@ import { Octokit } from '@octokit/rest';
 // >
 
 
-export class ocotkit {
+export class octokit {
 
 
    private _octokit: Octokit;
