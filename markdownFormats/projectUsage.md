@@ -1,8 +1,18 @@
 
-### Docker Compose
+## subject
 
-*`docker-compose.yml`*
+*`subject.file-ending`*
 ```yml
 
 ```
-> `command`
+
+## bash subject example
+*`example.sh`*
+> ```bash ```
+
+---
+
+## Resources
+[`example`]()
+
+---
