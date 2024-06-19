@@ -2,7 +2,7 @@
 
 *`subject.file-ending`*
 
-`variable` **`required?`** `variable purpose`
+> `variable` **`required?`** `variable purpose`
 ```ending
 
 insert here
