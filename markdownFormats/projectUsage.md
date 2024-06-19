@@ -1,5 +1,5 @@
 ## Breakdown
-`variable` **`required?`** `ex. here` `what this variable does`
+`variable` **`required?`** `what this variable does`
 
 ---
 
