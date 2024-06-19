@@ -8,13 +8,6 @@
 
 ---
 
-## bash subject example
-
-*`example.sh`*
-> ```bash ```
-
----
-
 ## Resources
 [`example`]()
 
