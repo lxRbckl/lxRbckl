@@ -1,9 +1,16 @@
 # title
 <p align="justify">
-Insert Here
+description
 </p>
 
 ---
 
+## Projects
+[`example`]()
+[`example`]()
+
+---
+
 ## Resources
-[`example`]() [`example`]()
+[`example`]()
+[`example`]()

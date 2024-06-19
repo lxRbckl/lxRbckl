@@ -60,6 +60,3 @@ Insert Here
 </p>
 
 ---
-
-## Tech Stack
-##### [`example`]() [`example`]()
