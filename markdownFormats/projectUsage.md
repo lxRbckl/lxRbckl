@@ -1,3 +1,7 @@
+## Breakdown
+`variable` `ex. here` `what this variable does`
+
+---
 
 ## subject
 
