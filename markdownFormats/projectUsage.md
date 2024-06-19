@@ -1,11 +1,8 @@
-## Breakdown
-`variable` **`required?`** `what this variable does`
-
----
-
 ## subject
 
 *`subject.file-ending`*
+
+`variable` **`required?`** `variable purpose`
 ```ending
 
 insert here
