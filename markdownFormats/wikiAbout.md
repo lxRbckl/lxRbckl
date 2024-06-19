@@ -4,6 +4,7 @@ Insert Here
 </p>
 
 ---
+
 ### Why it's discontinued?
 <p align="justify">
 Insert Here
@@ -59,7 +60,6 @@ Insert Here
 </p>
 
 ---
-
 
 ## Tech Stack
 ##### [`example`]() [`example`]()

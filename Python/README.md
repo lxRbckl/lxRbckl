@@ -6,6 +6,7 @@ Python is renowned for its simplicity and readability. I use this tool for web d
 ---
 
 ## Projects
+[`**PyPI**/lxRbckl`](https://github.com/lxRbckl/lxRbckl/tree/PyPI)
 [`Project Maximus V1`](https://github.com/lxRbckl/Project-Maximus/tree/V1) 
 [`Project Borg`](https://github.com/lxRbckl/Project-Borg/tree/V1)
 [`Project VBR`](https://github.com/lxRbckl/Project-VBR/tree/VBR)

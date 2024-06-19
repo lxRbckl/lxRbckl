@@ -6,6 +6,7 @@ Insert Here
 ---
 
 ## Projects
+[`**NPM**/lxRbckl`](https://github.com/lxRbckl/lxRbckl/tree/NPM)
 [`Project Heimir V2`](https://github.com/lxRbckl/Project-Heimir/tree/V2) 
 
 ---
