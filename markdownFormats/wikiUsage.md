@@ -1,6 +1,6 @@
 ## subject
 
-*`subject.file-ending`*
+*`subject.ending`*
 
 > `variable` **`required?`** `variable purpose`
 ```ending
