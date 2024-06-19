@@ -1,4 +1,4 @@
-# [lxrbckl](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)/Shell
+# [lxrbckl](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)╱Shell
 <p align="justify">
 Insert Here
 </p>

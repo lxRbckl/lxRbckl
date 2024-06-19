@@ -1,4 +1,4 @@
-# [lxrbckl](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)/TypeScript
+# [lxrbckl](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)╱TypeScript
 <p align="justify">
 Insert Here
 </p>

@@ -1,4 +1,4 @@
-# [lxrbckl](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)/Raspberry Pi
+# [lxrbckl](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)╱Raspberry Pi
 <p align="justify">
 Insert Here
 </p>
