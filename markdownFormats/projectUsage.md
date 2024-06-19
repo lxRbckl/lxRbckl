@@ -6,7 +6,10 @@
 
 ```
 
+---
+
 ## bash subject example
+
 *`example.sh`*
 > ```bash ```
 
