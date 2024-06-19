@@ -121,8 +121,9 @@ export class octokit {
       file: string,
       branch: string,
       repository: string,
-      data: object | string,
+      data: string | object,
 
+      isMarkdown: boolean = false,
       suppressError: boolean = false,
       message: string = 'Automated Action'
 
@@ -130,6 +131,7 @@ export class octokit {
 
       // build url <
       let filePut: string = this.urlFilePut(repository, file);
+      data = isMarkdown ? data : JSON.stringify(data, null, this._indent);
 
       // >
 
@@ -142,8 +144,8 @@ export class octokit {
             branch : branch,
             message : message,
             owner : this._owner,
-            sha : await this.repositoryGet(file, branch, repository, 'sha', suppressError),
-            content : Buffer.from(JSON.stringify(data, null, this._indent)).toString(this._bufferEncoding)
+            content : Buffer.from(data as string).toString(this._bufferEncoding),
+            sha : await this.repositoryGet(file, branch, repository, 'sha', suppressError)
 
          });
 
