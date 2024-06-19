@@ -48,5 +48,5 @@ Insert Here
 ---
 
 
-## Resources
+## Tech Stack
 #### [`example`]() [`example`]()
