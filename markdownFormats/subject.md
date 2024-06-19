@@ -4,7 +4,7 @@ Insert Here
 </p>
 
 ---
-## Usage
+## Projects
 [`example`]() [`example`]()
 
 ---
