@@ -6,11 +6,7 @@ Insert Here
 ---
 
 ## Projects
-[`example`]() 
-[`example`]()
+[`Project Maximus V1`](https://github.com/lxRbckl/Project-Maximus/tree/V1) 
+[`Project Domum V1`](https://github.com/lxRbckl/Project-Domum/tree/V1)
 
 ---
-
-## Ecosystem
-[`example`]() 
-[`example`]()
