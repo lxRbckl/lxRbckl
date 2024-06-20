@@ -51,7 +51,6 @@ export interface RepositorySet {
    file: string;
    branch: string;
    repository: string;
-   isMarkdown?: boolean;
    data: string | object;
    displayError?: boolean;
    commitMessage?: string;
