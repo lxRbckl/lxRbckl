@@ -118,9 +118,9 @@ export class octokit {
                let encoding: BufferEncoding = data.encoding;
                let buffer: Buffer = Buffer.from(data.content, encoding);
 
-               let ending: string = file.split('.').splice(-1)[0];
+               let fileEnding: string = file.split('.').splice(-1)[0];
                let result: string = buffer.toString(this._stringEncoding);
-               switch (ending) {
+               switch (fileEnding) {
 
                   case 'json': return JSON.parse(result);
                   default: return result;
@@ -152,8 +152,8 @@ export class octokit {
 
    }: RepositorySet): Promise<boolean> {
 
-      let ending: string = file.split('.').splice(-1)[0];
-      switch (ending) {
+      let fileEnding: string = file.split('.').splice(-1)[0];
+      switch (fileEnding) {
 
          case 'json':
 
