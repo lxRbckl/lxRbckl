@@ -91,7 +91,6 @@ export class octokit {
 
    }: RepositoryGet): Promise<any> {
       
-      // build url <
       let endpoint: string = this.endpointFile({
 
          file : file,
@@ -99,8 +98,6 @@ export class octokit {
          repository : repository
 
       });
-
-      // >
 
       // try (get) <
       // catch (then 403, 404) <
@@ -149,7 +146,6 @@ export class octokit {
 
    }: RepositorySet): Promise<boolean> {
 
-      // build url <
       data = isMarkdown ? data : JSON.stringify(data, null, this._indent);
       let endpoint: string = this.endpointFile({
 
@@ -158,8 +154,6 @@ export class octokit {
          repository: repository
 
       });
-
-      // >
 
       // try (get) <
       // catch (then ) <
