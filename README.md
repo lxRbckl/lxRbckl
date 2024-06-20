@@ -8,7 +8,7 @@
 [`axios`]()
 [`discord.js`]()
 [`fs`]()
-[`openai-api`]()
-[`octokit`]()
+[`OpenAI`]()
+[`Octokit`]()
 
 # 
