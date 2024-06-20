@@ -1,5 +1,14 @@
 // import <
 import { Octokit } from '@octokit/rest';
+import {
+
+   RepositoryGet,
+   RepositorySet,
+   EndpointFile,
+   Constructor,
+   Request
+
+} from '../types/octokit';
 
 // >
 
@@ -16,15 +25,15 @@ export class octokit {
    private readonly _bufferEncoding: BufferEncoding;
 
 
-   constructor(
+   constructor({
       
-      token: string,
-      owner: string,
-      indent: number = 3,
-      stringEncoding: BufferEncoding = 'utf8',
-      bufferEncoding: BufferEncoding = 'base64'
+      token,
+      owner,
+      indent = 3,
+      stringEncoding = 'utf8',
+      bufferEncoding = 'base64'
    
-   ) {
+   }: Constructor) {
 
       this._token = token;
       this._owner = owner;
@@ -37,47 +46,59 @@ export class octokit {
    }
 
 
-   // endpoints <
-   urlFileGet = (repo: string, file: string): string => `GET /repos/${this._owner}/${repo}/contents/${file}`;
-   urlFilePut = (repo: string, file: string): string => `PUT /repos/${this._owner}/${repo}/contents/${file}`;
+   private endpointFile({
 
-   // >
+      file,
+      method,
+      repository
+
+   }: EndpointFile): string {
+
+      let endpoint: string = `${method} /repos/${this._owner}/${repository}/contents/${file}`;
+      return endpoint;
+
+   }
 
 
-   public async request(
+   public async request({
 
-      url: string,
-      parameters: any = {},
-      property: string = 'data',
-      propertyElement: string = ''
+      endpoint,
+      parameters = {},
+      elementFromProperty = '',
+      propertyFromResult = 'data'
 
-   ): Promise<any> {
+   }: Request): Promise<any> {
 
-      let response: any = await this._octokit.request(url, parameters);
+      let response: any = await this._octokit.request(endpoint, parameters);
 
-      switch (propertyElement == '') {
+      switch (elementFromProperty == '') {
 
-         case true: return response[property];
-         case false: return response[property].map((i: any) => i[propertyElement]);
+         case true: return response[propertyFromResult];
+         case false: return response[propertyFromResult].map((i: any) => i[elementFromProperty]);
 
       }
 
    }
 
 
-   public async repositoryGet(
+   public async repositoryGet({
 
-      file: string,
-      branch: string,
-      repository: string,
+      file,
+      branch,
+      repository,
+      suppressError = false,
+      propertyFromResult = 'content'
 
-      property: string = 'content',
-      suppressError: boolean = false
-
-   ): Promise<any> {
+   }: RepositoryGet): Promise<any> {
       
       // build url <
-      let fileGet: string = this.urlFileGet(repository, file);
+      let endpoint: string = this.endpointFile({
+
+         file : file,
+         method : 'GET',
+         repository : repository
+
+      });
 
       // >
 
@@ -85,16 +106,16 @@ export class octokit {
       // catch (then 403, 404) <
       try {
 
-         let data: any = await this.request(
+         let data: any = await this.request({
 
-            fileGet,
-            {ref : branch}
+            endpoint: endpoint,
+            parameters : {ref : branch}
 
-         );
+         });
 
-         switch (property == 'content') {
+         switch (propertyFromResult == 'content') {
 
-            case false: return data[property];
+            case false: return data[propertyFromResult];
             case true: 
 
                let encoding: BufferEncoding = data.encoding;
@@ -106,7 +127,7 @@ export class octokit {
 
       } catch (error) {
 
-         suppressError ? console.log('Error: ', error, '\nQuery: ', fileGet, '\nBranch: ', branch) : undefined;
+         suppressError ? console.log('Error: ', error) : undefined;
          return false;
    
       }
@@ -116,22 +137,27 @@ export class octokit {
    }
 
 
-   public async respositorySet(
+   public async respositorySet({
 
-      file: string,
-      branch: string,
-      repository: string,
-      data: string | object,
+      data,
+      file,
+      branch,
+      repository,
+      isMarkdown = false,
+      suppressError = false,
+      commitMessage = 'Automated Action'
 
-      isMarkdown: boolean = false,
-      suppressError: boolean = false,
-      message: string = 'Automated Action'
-
-   ): Promise<boolean> {
+   }: RepositorySet): Promise<boolean> {
 
       // build url <
-      let filePut: string = this.urlFilePut(repository, file);
       data = isMarkdown ? data : JSON.stringify(data, null, this._indent);
+      let endpoint: string = this.endpointFile({
+
+         file : file,
+         method: 'PUT',
+         repository: repository
+
+      });
 
       // >
 
@@ -139,13 +165,21 @@ export class octokit {
       // catch (then ) <
       try {
 
-         await this._octokit.request(filePut, {
+         await this._octokit.request(endpoint, {
 
             branch : branch,
-            message : message,
             owner : this._owner,
+            message : commitMessage,
             content : Buffer.from(data as string).toString(this._bufferEncoding),
-            sha : await this.repositoryGet(file, branch, repository, 'sha', suppressError)
+            sha : await this.repositoryGet({
+
+               file : file,
+               branch : branch,
+               repository : repository,
+               propertyFromResult : 'sha',
+               suppressError : suppressError
+
+            })
 
          });
 
@@ -153,7 +187,7 @@ export class octokit {
 
       } catch (error) {
 
-         suppressError ? console.log('Error: ', error, '\nQuery: ', filePut, '\nBranch: ', branch) : undefined;
+         suppressError ? console.log('Error: ', error) : undefined;
          return false;
 
       }
