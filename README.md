@@ -5,9 +5,9 @@
 
 [**`Python`**]()
 [`os`]()
-[`OpenAI`]()
-[`PyGitHub`]()
+[`openai-api`]()
+[`pygithub`]()
 [`requests`]()
-[`PyAutoGUI`]()
+[`pyautogui`]()
 
 ---
