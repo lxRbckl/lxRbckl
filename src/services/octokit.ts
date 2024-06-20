@@ -86,7 +86,7 @@ export class octokit {
       file,
       branch,
       repository,
-      suppressError = false,
+      displayError = false,
       propertyFromResult = 'content'
 
    }: RepositoryGet): Promise<any> {
@@ -124,7 +124,7 @@ export class octokit {
 
       } catch (error) {
 
-         suppressError ? console.log('Error: ', error) : undefined;
+         displayError ? console.log('Error: ', error) : undefined;
          return false;
    
       }
@@ -141,7 +141,7 @@ export class octokit {
       branch,
       repository,
       isMarkdown = false,
-      suppressError = false,
+      displayError = false,
       commitMessage = 'Automated Action'
 
    }: RepositorySet): Promise<boolean> {
@@ -171,7 +171,7 @@ export class octokit {
                branch : branch,
                repository : repository,
                propertyFromResult : 'sha',
-               suppressError : suppressError
+               displayError : displayError
 
             })
 
@@ -181,7 +181,7 @@ export class octokit {
 
       } catch (error) {
 
-         suppressError ? console.log('Error: ', error) : undefined;
+         displayError ? console.log('Error: ', error) : undefined;
          return false;
 
       }

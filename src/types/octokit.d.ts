@@ -40,7 +40,7 @@ export interface RepositoryGet {
    file: string;
    branch: string;
    repository: string;
-   suppressError?: boolean;
+   displayError?: boolean;
    propertyFromResult?: string;
 
 }
@@ -53,8 +53,8 @@ export interface RepositorySet {
    repository: string;
    isMarkdown?: boolean;
    data: string | object;
+   displayError?: boolean;
    commitMessage?: string;
-   suppressError?: boolean;
 
 }
 
