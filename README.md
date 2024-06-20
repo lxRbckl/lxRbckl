@@ -10,5 +10,7 @@
 [`fs`]()
 [`openai-api`]()
 [`octokit/rest`]()
+[`mocha`]()
+[`npm`]()
 
 # 
