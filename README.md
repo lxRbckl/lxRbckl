@@ -9,5 +9,7 @@
 [`pygithub`]()
 [`requests`]()
 [`pyautogui`]()
+[`pypi`]()
+[`pytest`]()
 
 ---
