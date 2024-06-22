@@ -4,7 +4,6 @@
 ---
 
 [**`TypeScript`**]()
-[**`JavaScript`**]()
 [`axios`]()
 [`discord.js`]()
 [`fs`]()
@@ -12,5 +11,6 @@
 [`octokit/rest`]()
 [`mocha`]()
 [`npm`]()
+[`node.js`]()
 
 # 
