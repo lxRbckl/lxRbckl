@@ -3,17 +3,15 @@
 
 ---
 
-[**`TypeScript`**]()
 [**`JavaScript`**]()
-[`axios`]()
-[`discord.js`]()
-[`fs`]()
-[`openai-api`]()
-[`octokit/rest`]()
-[`mocha`]()
-[`npm`]()
-[`node.js`]()
-[**`demo`**]()
-[`ok`]()
+[**`TypeScript`**](https://github.com/lxRbckl/lxRbckl/blob/main/TypeScript/README.md)
+[`axios`](https://github.com/lxRbckl/lxRbckl/blob/main/TypeScript/axios.md)
+[`discord-js`](https://github.com/lxRbckl/lxRbckl/blob/main/TypeScript/discord-js.md)
+[`fs`](https://github.com/lxRbckl/lxRbckl/blob/main/TypeScript/fs.md)
+[`openai-api`](https://github.com/lxRbckl/lxRbckl/blob/main/TypeScript/openai-api.md)
+[`octokit-rest`](https://github.com/lxRbckl/lxRbckl/blob/main/TypeScript/octokit-rest.md)
+[`mocha`](https://github.com/lxRbckl/lxRbckl/blob/main/TypeScript/mocha.md)
+[`npm`](https://github.com/lxRbckl/lxRbckl/blob/main/TypeScript/npm.md)
+[`node-js`](https://github.com/lxRbckl/lxRbckl/blob/main/TypeScript/node-js.md)
 
 # 
