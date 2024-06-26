@@ -4,6 +4,7 @@
 ---
 
 [**`TypeScript`**]()
+[**`JavaScript`**]()
 [`axios`]()
 [`discord.js`]()
 [`fs`]()
