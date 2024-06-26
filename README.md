@@ -11,6 +11,5 @@
 [`pyautogui`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pyautogui.md)
 [`pypi`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pypi.md)
 [`pytest`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pytest.md)
-[**`Excel`**](https://github.com/lxRbckl/lxRbckl/blob/main/Excel/README.md)
 
 # 
