@@ -5,7 +5,7 @@
 
 [**`Python`**](https://github.com/lxRbckl/lxRbckl/blob/main/Python/README.md)
 [`os`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/os.md)
-[`openai-api`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/openai-api.md)
+[`openai api`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/openai-api.md)
 [`pygithub`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pygithub.md)
 [`requests`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/requests.md)
 [`pyautogui`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pyautogui.md)
