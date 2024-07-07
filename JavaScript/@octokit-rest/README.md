@@ -1,4 +1,4 @@
-@octokit-rest
+## @octokit-rest
 
 ---
 
