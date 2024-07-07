@@ -1,4 +1,7 @@
 # JavaScript
+
+---
+
 ## Ecosystem
 [`axios`](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript/axios/README.md)
 [`discord-js`](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript/discord-js/README.md)
