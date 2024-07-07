@@ -1,8 +1,8 @@
-## Python
+# Python
 
 ---
 
-### Ecosystem
+## Ecosystem
 [`os`](https://github.com/lxRbckl/lxRbckl/tree/main/Python/os/README.md)
 [`openai-api`](https://github.com/lxRbckl/lxRbckl/tree/main/Python/openai-api/README.md)
 [`pygithub`](https://github.com/lxRbckl/lxRbckl/tree/main/Python/pygithub/README.md)
@@ -13,7 +13,7 @@
 
 # 
 
-### Projects
+## Projects
 [`lxRbckl PyPI`](https://github.com/lxRbckl/lxRbckl/blob/PyPI/README.md)
 
 ---
