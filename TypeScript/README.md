@@ -1,8 +1,8 @@
-## TypeScript
+# TypeScript
 
 ---
 
-### Ecosystem
+## Ecosystem
 [`axios`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/axios/README.md)
 [`discord-js`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/discord-js/README.md)
 [`fs`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/fs/README.md)
@@ -14,7 +14,7 @@
 
 # 
 
-### Projects
+## Projects
 [`lxRbckl NPM`](https://github.com/lxRbckl/lxRbckl/blob/NPM/README.md)
 
 ---
