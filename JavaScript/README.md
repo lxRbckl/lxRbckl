@@ -1,8 +1,8 @@
-## JavaScript
+# JavaScript
 
 ---
 
-### Ecosystem
+## Ecosystem
 [`axios`](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript/axios/README.md)
 [`discord-js`](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript/discord-js/README.md)
 [`fs`](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript/fs/README.md)
@@ -14,7 +14,7 @@
 
 # 
 
-### Projects
+## Projects
 [`lxRbckl NPM`](https://github.com/lxRbckl/lxRbckl/blob/NPM/README.md)
 
 ---
