@@ -1,7 +1,4 @@
 # TypeScript
-
----
-
 ## Ecosystem
 [`axios`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/axios/README.md)
 [`discord-js`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/discord-js/README.md)
