@@ -1,8 +1,8 @@
-## openai-api
+# openai-api
 
 ---
 
-### Projects
+## Projects
 [`lxRbckl NPM`](https://github.com/lxRbckl/lxRbckl/blob/NPM/README.md)
 
 ---
