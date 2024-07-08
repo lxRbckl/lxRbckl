@@ -18,9 +18,10 @@ export interface Constructor {
 
 export interface EndpointFile {
 
-   file: string,
-   repository: string,
-   method: 'GET' | 'PUT'
+   file: string;
+   repository: string;
+   customOwner?: string;
+   method: 'GET' | 'PUT';
 
 }
 
@@ -40,6 +41,7 @@ export interface RepositoryGet {
    file: string;
    branch: string;
    repository: string;
+   customOwner?: string;
    displayError?: boolean;
    propertyFromResult?: string;
 
@@ -51,6 +53,7 @@ export interface RepositorySet {
    file: string;
    branch: string;
    repository: string;
+   customOwner?: string;
    data: string | object;
    displayError?: boolean;
    commitMessage?: string;

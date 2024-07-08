@@ -46,20 +46,6 @@ export class octokit {
    }
 
 
-   private endpointFile({
-
-      file,
-      method,
-      repository
-
-   }: EndpointFile): string {
-
-      let endpoint: string = `${method} /repos/${this._owner}/${repository}/contents/${file}`;
-      return endpoint;
-
-   }
-
-
    public async request({
 
       endpoint,
@@ -81,11 +67,27 @@ export class octokit {
    }
 
 
+   private endpointFile({
+
+      file,
+      method,
+      repository,
+      customOwner
+
+   }: EndpointFile): string {
+
+      const owner: string = (customOwner ? customOwner : this._owner);
+      return `${method} /repos/${owner}/${repository}/contents/${file}`;
+
+   }
+
+
    public async repositoryGet({
 
       file,
       branch,
       repository,
+      customOwner,
       displayError = false,
       propertyFromResult = 'content'
 
@@ -95,7 +97,8 @@ export class octokit {
 
          file : file,
          method : 'GET',
-         repository : repository
+         repository : repository,
+         customOwner : customOwner
 
       });
 
@@ -123,6 +126,7 @@ export class octokit {
                switch (fileEnding) {
 
                   case 'json': return JSON.parse(result);
+
                   default: return result;
 
                }
@@ -147,6 +151,7 @@ export class octokit {
       file,
       branch,
       repository,
+      customOwner,
       displayError = false,
       commitMessage = 'Automated Action'
 
@@ -166,7 +171,8 @@ export class octokit {
 
          file : file,
          method: 'PUT',
-         repository: repository
+         repository: repository,
+         customOwner : customOwner
 
       });
 
@@ -177,14 +183,15 @@ export class octokit {
          await this._octokit.request(endpoint, {
 
             branch : branch,
-            owner : this._owner,
             message : commitMessage,
+            owner : (customOwner ? customOwner : this._owner),
             content : Buffer.from(data as string).toString(this._bufferEncoding),
             sha : await this.repositoryGet({
 
                file : file,
                branch : branch,
                repository : repository,
+               customOwner : customOwner,
                propertyFromResult : 'sha',
                displayError : displayError
 
