@@ -18,8 +18,8 @@ export class octokit {
 
    private _octokit: Octokit;
 
+   private _owner: string;
    private readonly _token: string;
-   private readonly _owner: string;
    private readonly _indent: number;
    private readonly _stringEncoding: BufferEncoding;
    private readonly _bufferEncoding: BufferEncoding;
@@ -44,6 +44,9 @@ export class octokit {
       this._octokit = new Octokit({auth: this._token});
 
    }
+
+
+   set owner(newOwner: string) {this._owner = newOwner;}
 
 
    public async request({
@@ -71,13 +74,11 @@ export class octokit {
 
       file,
       method,
-      repository,
-      customOwner
+      repository
 
    }: EndpointFile): string {
 
-      const owner: string = (customOwner ? customOwner : this._owner);
-      return `${method} /repos/${owner}/${repository}/contents/${file}`;
+      return `${method} /repos/${this._owner}/${repository}/contents/${file}`;
 
    }
 
@@ -87,7 +88,6 @@ export class octokit {
       file,
       branch,
       repository,
-      customOwner,
       displayError = false,
       propertyFromResult = 'content'
 
@@ -97,8 +97,7 @@ export class octokit {
 
          file : file,
          method : 'GET',
-         repository : repository,
-         customOwner : customOwner
+         repository : repository
 
       });
 
@@ -151,7 +150,6 @@ export class octokit {
       file,
       branch,
       repository,
-      customOwner,
       displayError = false,
       commitMessage = 'Automated Action'
 
@@ -171,8 +169,7 @@ export class octokit {
 
          file : file,
          method: 'PUT',
-         repository: repository,
-         customOwner : customOwner
+         repository: repository
 
       });
 
@@ -183,15 +180,14 @@ export class octokit {
          await this._octokit.request(endpoint, {
 
             branch : branch,
+            owner : this._owner,
             message : commitMessage,
-            owner : (customOwner ? customOwner : this._owner),
             content : Buffer.from(data as string).toString(this._bufferEncoding),
             sha : await this.repositoryGet({
 
                file : file,
                branch : branch,
                repository : repository,
-               customOwner : customOwner,
                propertyFromResult : 'sha',
                displayError : displayError
 
