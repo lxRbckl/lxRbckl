@@ -51,6 +51,7 @@ export interface RepositorySet {
    file: string;
    branch: string;
    repository: string;
+   retryOnError: number;
    data: string | object;
    displayError?: boolean;
    commitMessage?: string;

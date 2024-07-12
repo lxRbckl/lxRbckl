@@ -150,6 +150,7 @@ export class octokit {
       file,
       branch,
       repository,
+      retryOnError = 0,
       displayError = false,
       commitMessage = 'Automated Action'
 
@@ -200,7 +201,23 @@ export class octokit {
       } catch (error) {
 
          displayError ? console.log('Error: ', error) : undefined;
-         return false;
+
+         if (retryOnError == 0) {return false}
+         else {
+
+            return await this.respositorySet({
+
+               data : data,
+               file : file,
+               branch : branch,
+               repository : repository,
+               displayError : displayError,
+               commitMessage : commitMessage,
+               retryOnError : (retryOnError - 1)
+
+            });
+
+         }
 
       }
 
