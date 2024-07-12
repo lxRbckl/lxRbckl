@@ -1,8 +1,8 @@
-# node_cron
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main/README.md)/[JavaScript](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript)/node_cron
 
 ---
 
-## Projects
+## Experience
 [`Project-Kinma V2`](https://github.com/lxRbckl/Project-Kinma/blob/V2/README.md)
 
 ---
