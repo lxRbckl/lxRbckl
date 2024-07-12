@@ -15,5 +15,5 @@
 # 
 
 <p align="center">
-  Maintained by <a href="link">Project MadGarden</a>, autonomously.
+  Autonomously managed by <a href="link">Project MadGarden</a>.
 </p>
