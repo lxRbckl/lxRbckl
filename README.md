@@ -15,5 +15,5 @@
 # 
 
 <p align="center">
-  Autonomously managed by <a href="link">Project MadGarden</a>.
+  This directory is managed by <a href="link">Project MadGarden</a>, autonomously.
 </p>
