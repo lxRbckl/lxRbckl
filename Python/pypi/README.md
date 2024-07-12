@@ -1,8 +1,8 @@
-# pypi
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main/README.md)/[Python](https://github.com/lxRbckl/lxRbckl/tree/main/Python)/pypi
 
 ---
 
-## Projects
+## Experience
 [`lxRbckl PyPI`](https://github.com/lxRbckl/lxRbckl/blob/PyPI/README.md)
 
 ---
