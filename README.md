@@ -13,4 +13,7 @@
 [![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)](https://github.com/lxRbckl/lxRbckl/blob/main/Raspberry%20Pi/README.md)
 
 # 
-Automatically Maintained by [Project MadGarden]().
+
+<p align="center">
+  Automatically Maintained by <a href="link">Project MadGarden</a>.
+</p>
