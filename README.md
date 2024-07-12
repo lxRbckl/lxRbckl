@@ -15,5 +15,5 @@
 # 
 
 <p align="center">
-  This directory is managed by <a href="link">Project MadGarden</a>, autonomously.
+  This directory is managed by <a href="https://github.com/lxRbckl/Project-MadGarden">Project MadGarden</a>, autonomously.
 </p>
