@@ -4,12 +4,12 @@
 ---
 
 [**`Python`**](https://github.com/lxRbckl/lxRbckl/blob/main/Python/README.md)
-[`os`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/os.md)
-[`openai api`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/openai-api.md)
-[`pygithub`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pygithub.md)
-[`requests`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/requests.md)
-[`pyautogui`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pyautogui.md)
-[`pypi`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pypi.md)
-[`pytest`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pytest.md)
+[`os`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/os/README.md)
+[`openai api`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/openai-api/README.md)
+[`pygithub`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pygithub/README.md)
+[`requests`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/requests/README.md)
+[`pyautogui`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pyautogui/README.md)
+[`pypi`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pypi/README.md)
+[`pytest`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pytest/README.md)
 
 # 
