@@ -1,12 +1,4 @@
 // import <
-import { axiosGet } from './axios'
-import {
-
-   command,
-   onReadyCallback,
-   interactionCreateCallback
-
-} from '../types/discord';
 import {
    
    Client,
@@ -17,6 +9,18 @@ import {
 
 } from 'discord.js';
 
+import {
+
+   command,
+   LoginParams,
+   MessageChannel,
+   onReadyCallback,
+   RegisterCommands,
+   ConstructorParams,
+   interactionCreateCallback
+
+} from '../types/discord';
+
 // >
 
 
@@ -24,20 +28,21 @@ import {
 
 
    private _client: Client;
-   private _channelId: any;
    private _version: string;
    private _guildId: string;
    private _intents: number[];
+   private _channelId: string;
    private _applicationId: string;
 
 
-   constructor(
-      
-      guildId: string,
-      applicationId: string,
+   constructor({
 
-      version: string = '10',
-      intents: number[] = [
+      guildId,
+      channelId,
+      applicationId,
+
+      version = '10',
+      intents = [
 
          IntentsBitField.Flags.Guilds,
          IntentsBitField.Flags.GuildMembers,
@@ -46,12 +51,12 @@ import {
 
       ]
 
-   ) {
+   }: ConstructorParams) {
 
-      this._channelId = '';
       this._version = version;
       this._intents = intents;
       this._guildId = guildId;
+      this._channelId = channelId;
       this._applicationId = applicationId;
 
       this._client = new Client({intents : this._intents, rest : {version : this._version}});
@@ -59,17 +64,17 @@ import {
    }
 
 
-   public login(token: string): void {this._client.login(token);}
+   public login({token}: LoginParams): void {this._client.login(token);}
 
 
-   public messageChannel(
-      
-      content: string, 
-      isCodeBlock: string = '',
-      isInline: boolean = false,
-      isSpoiler: boolean = false
-   
-   ): void {
+   public messageChannel({
+
+      content,
+      codeBlock = '',
+      isInline = false,
+      isSpoiler = false
+
+   }: MessageChannel): void {
 
       try {
 
@@ -79,7 +84,7 @@ import {
 
             content = isInline ? `\` ${content} \`` : content;
             content = isSpoiler ? `|| ${content} ||` : content;
-            content = isCodeBlock ? `\`\`\`${isCodeBlock}\n${content}\`\`\`` : content;
+            content = codeBlock ? `\`\`\`${codeBlock}\n${content}\`\`\`` : content;
 
             channel.send(content);
 
@@ -90,7 +95,7 @@ import {
    }
  
    
-   public registerCommands(commands: any): void {
+   public registerCommands({commands}: RegisterCommands): void {
 
       this._client.rest.put(
 
@@ -104,17 +109,6 @@ import {
 
       );
       
-   }
-
-
-   public async registerChannel(val: string, name: string = 'main'): Promise<void> {
-
-      try {
-
-         this._channelId = val.includes('http') ? (await axiosGet(val))[name] : val
-
-      } catch (error) {console.log('Error: ', error, '\nChannelId: ', val);}
-
    }
 
 
