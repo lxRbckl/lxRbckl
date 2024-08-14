@@ -1,8 +1,8 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main/README.md)/Shell
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main / README.md) / Shell
 
 ---
 ## Ecosystem
-[`guvcview`](https://github.com/lxRbckl/lxRbckl/tree/main/Shell/guvcview/README.md) [`wmctrl`](https://github.com/lxRbckl/lxRbckl/tree/main/Shell/guvcview/README.md/wmctrl/README.md) [`chromium-browser`](https://github.com/lxRbckl/lxRbckl/tree/main/Shell/guvcview/README.md/wmctrl/README.md/chromium-browser/README.md)
+[`guvcview`](https://github.com/lxRbckl/lxRbckl/tree/main/Shell/guvcview/README.md) [`wmctrl`](https://github.com/lxRbckl/lxRbckl/tree/main/Shell/wmctrl/README.md) [`chromium-browser`](https://github.com/lxRbckl/lxRbckl/tree/main/Shell/chromium-browser/README.md)
 
 # 
 
