@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//TypeScript
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/TypeScript
 
 ---
 ## Ecosystem
