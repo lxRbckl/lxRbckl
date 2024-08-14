@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main / README.md) / [GitHub](https://github.com/lxRbckl/lxRbckl/tree/main/GitHub) / github-workflows
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//[GitHub](https://github.com/lxRbckl/lxRbckl/tree/main/GitHub)/github-workflows
 
 ---
 
