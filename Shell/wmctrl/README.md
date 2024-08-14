@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main/README.md)/[Shell](https://github.com/lxRbckl/lxRbckl/tree/main/Shell)/wmctrl
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main / README.md) / [Shell](https://github.com/lxRbckl/lxRbckl/tree/main/Shell) / wmctrl
 
 ---
 
