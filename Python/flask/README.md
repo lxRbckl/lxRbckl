@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/[Python](https://github.com/lxRbckl/lxRbckl/tree/main/Python)flask
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/[Python](https://github.com/lxRbckl/lxRbckl/tree/main/Python)/flask
 
 ---
 
