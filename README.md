@@ -3,7 +3,7 @@
 
 ---
 
-[**`JavaScript`**]()
+[**`JavaScript`**](https://github.com/lxRbckl/lxRbckl/blob/main/JavaScript/README.md)
 [`axios`](https://github.com/lxRbckl/lxRbckl/blob/main/JavaScript/axios/README.md)
 [`discord js`](https://github.com/lxRbckl/lxRbckl/blob/main/JavaScript/discord-js/README.md)
 [`fs`](https://github.com/lxRbckl/lxRbckl/blob/main/JavaScript/fs/README.md)
