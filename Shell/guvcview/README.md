@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//[Shell](https://github.com/lxRbckl/lxRbckl/tree/main/Shell)/guvcview
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/[Shell](https://github.com/lxRbckl/lxRbckl/tree/main/Shell)guvcview
 
 ---
 
