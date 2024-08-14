@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//Shell
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/Shell
 
 ---
 ## Ecosystem
