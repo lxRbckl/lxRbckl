@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//[TypeScript](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript)/npm
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/[TypeScript](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript)npm
 
 ---
 
