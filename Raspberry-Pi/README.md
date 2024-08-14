@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main / README.md) / Raspberry-Pi
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//Raspberry-Pi
 
 ---
 ## Ecosystem
