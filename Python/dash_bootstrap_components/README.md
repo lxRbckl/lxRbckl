@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main / README.md) / [Python](https://github.com/lxRbckl/lxRbckl/tree/main/Python) / dash_bootstrap_components
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//[Python](https://github.com/lxRbckl/lxRbckl/tree/main/Python)/dash_bootstrap_components
 
 ---
 
