@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main / README.md) / [JavaScript](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript) / axios
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//[JavaScript](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript)/axios
 
 ---
 
