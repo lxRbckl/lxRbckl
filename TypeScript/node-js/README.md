@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main/README.md)/[TypeScript](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript)/node-js
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main / README.md) / [TypeScript](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript) / node-js
 
 ---
 
