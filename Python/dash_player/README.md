@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//[Python](https://github.com/lxRbckl/lxRbckl/tree/main/Python)/dash_player
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/[Python](https://github.com/lxRbckl/lxRbckl/tree/main/Python)dash_player
 
 ---
 
