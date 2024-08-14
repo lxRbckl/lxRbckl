@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//Python
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//Python UPDATE
 
 ---
 ## Ecosystem
