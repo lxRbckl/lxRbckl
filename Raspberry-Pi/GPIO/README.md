@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//[Raspberry-Pi](https://github.com/lxRbckl/lxRbckl/tree/main/Raspberry-Pi)/GPIO
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/[Raspberry-Pi](https://github.com/lxRbckl/lxRbckl/tree/main/Raspberry-Pi)GPIO
 
 ---
 
