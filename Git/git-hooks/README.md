@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main / README.md) / [Git](https://github.com/lxRbckl/lxRbckl/tree/main/Git) / git-hooks
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//[Git](https://github.com/lxRbckl/lxRbckl/tree/main/Git)/git-hooks
 
 ---
 
