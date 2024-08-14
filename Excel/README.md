@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//Excel
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/Excel
 
 ---
 
