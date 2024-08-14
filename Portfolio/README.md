@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main / README.md) / Portfolio
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)//Portfolio
 
 ---
 
