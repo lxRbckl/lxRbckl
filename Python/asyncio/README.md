@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main/README.md)/[Python](https://github.com/lxRbckl/lxRbckl/tree/main/Python)/asyncio
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main / README.md) / [Python](https://github.com/lxRbckl/lxRbckl/tree/main/Python) / asyncio
 
 ---
 
