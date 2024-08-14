@@ -1,4 +1,4 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/[JavaScript](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript)node-cron
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/[JavaScript](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript)/node-cron
 
 ---
 
