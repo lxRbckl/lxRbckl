@@ -133,4 +133,7 @@ import {
 
    }
 
+
+   public terminate() {this._client.destroy();}
+
 }
