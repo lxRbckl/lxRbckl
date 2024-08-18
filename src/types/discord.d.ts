@@ -37,7 +37,7 @@ export interface MessageChannel {
 
 export interface RegisterCommands {
 
-   commands: any;
+   commands: command[];
 
 }
 

@@ -65,34 +65,6 @@ import {
 
 
    public login({token}: LoginParams): void {this._client.login(token);}
-
-
-   public messageChannel({
-
-      content,
-      codeBlock = '',
-      isInline = false,
-      isSpoiler = false
-
-   }: MessageChannel): void {
-
-      try {
-
-         let channel: Channel = this._client.channels.cache.get(this._channelId)!;
-
-         if (channel instanceof TextChannel) {
-
-            content = isInline ? `\` ${content} \`` : content;
-            content = isSpoiler ? `|| ${content} ||` : content;
-            content = codeBlock ? `\`\`\`${codeBlock}\n${content}\`\`\`` : content;
-
-            channel.send(content);
-
-         }
-         
-      } catch (error) {console.log('Error: ', error, '\nChannelId: ', this._channelId);}
-
-   }
  
    
    public registerCommands({commands}: RegisterCommands): void {
@@ -130,6 +102,34 @@ import {
          await callback(interaction);
 
       });
+
+   }
+
+
+   public messageChannel({
+
+      content,
+      codeBlock = '',
+      isInline = false,
+      isSpoiler = false
+
+   }: MessageChannel): void {
+
+      try {
+
+         let channel: Channel = this._client.channels.cache.get(this._channelId)!;
+
+         if (channel instanceof TextChannel) {
+
+            content = isInline ? `\` ${content} \`` : content;
+            content = isSpoiler ? `|| ${content} ||` : content;
+            content = codeBlock ? `\`\`\`${codeBlock}\n${content}\`\`\`` : content;
+
+            channel.send(content);
+
+         }
+         
+      } catch (error) {console.log('Error: ', error, '\nChannelId: ', this._channelId);}
 
    }
 
