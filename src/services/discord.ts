@@ -60,13 +60,16 @@ import {
       this._applicationId = applicationId;
 
       this._client = new Client({intents : this._intents, rest : {version : this._version}});
+      
 
    }
 
 
+   // required
    public login({token}: LoginParams): void {this._client.login(token);}
  
    
+   // required
    public registerCommands({commands}: RegisterCommands): void {
 
       this._client.rest.put(
@@ -84,6 +87,11 @@ import {
    }
 
 
+   // optional
+   public terminate(): void {this._client.destroy();}
+
+
+   // optional
    public async registerOnReady(callback: onReadyCallback): Promise<void> {
 
       this._client.on('ready', async (): Promise<void> => {
@@ -95,6 +103,7 @@ import {
    }
 
 
+   // optional
    public async registerInteractionCreate(callback: interactionCreateCallback): Promise<void> {
 
       this._client.on('interactionCreate', async (interaction): Promise<void> => {
@@ -106,6 +115,7 @@ import {
    }
 
 
+   // optional
    public messageChannel({
 
       content,
@@ -132,8 +142,5 @@ import {
       } catch (error) {console.log('Error: ', error, '\nChannelId: ', this._channelId);}
 
    }
-
-
-   public terminate() {this._client.destroy();}
 
 }
