@@ -53,10 +53,10 @@ interface bodyOptions {
 
 interface commandBody {
 
-   type: number;
-   name: string;
-   description: string;
-   options: bodyOptions[];
+   type?: number;
+   name?: string;
+   description?: string;
+   options?: bodyOptions[];
 
 }
 
