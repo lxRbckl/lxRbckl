@@ -23,6 +23,7 @@ export interface ConstructorParams {
    version?: string;
    channelId: string;
    intents?: number[];
+   commands?: Commands;
    applicationId: string;
 
 }

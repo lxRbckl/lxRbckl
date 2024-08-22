@@ -41,6 +41,7 @@ import {
       channelId,
       applicationId,
 
+      commands = [],
       version = '10',
       intents = [
 
@@ -53,10 +54,10 @@ import {
 
    }: ConstructorParams) {
 
-      this.commands = [];
       this._version = version;
       this._intents = intents;
       this._guildId = guildId;
+      this.commands = commands;
       this._channelId = channelId;
       this._applicationId = applicationId;
 
