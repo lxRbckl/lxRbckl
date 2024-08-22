@@ -35,13 +35,6 @@ export interface MessageChannel {
 }
 
 
-export interface RegisterCommands {
-
-   commands: command[];
-
-}
-
-
 interface bodyOptions {
 
    type: number;
@@ -60,9 +53,17 @@ interface commandBody {
 
 }
 
-export interface command {
+
+interface Command {
    
-   context(): commandBody
+   context(): commandBody;
+   async registerChoices?: () => Promise<void>;
+
+}
+
+export interface Commands {
+
+   commands: Command[];
 
 }
 

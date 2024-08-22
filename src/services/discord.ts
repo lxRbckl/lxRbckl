@@ -11,11 +11,10 @@ import {
 
 import {
 
-   command,
+   Commands,
    LoginParams,
    MessageChannel,
    onReadyCallback,
-   RegisterCommands,
    ConstructorParams,
    interactionCreateCallback
 
@@ -70,7 +69,7 @@ import {
  
    
    // required
-   public registerCommands({commands}: RegisterCommands): void {
+   public registerCommands({commands}: Commands): void {
 
       this._client.rest.put(
 
@@ -80,7 +79,7 @@ import {
             this._guildId
 
          ),
-         {body : commands.map((c: command) => c.context())}
+         {body : commands.map(c => c.context())}
 
       );
       
@@ -91,7 +90,19 @@ import {
    public terminate(): void {this._client.destroy();}
 
 
-   // optional
+   // optional (recommended)
+   public async  registerCommandChoices({commands}: Commands) {
+
+      for (const c of commands) {
+
+         if (c.registerChoices) {await c.registerChoices();}
+
+      }
+      
+   }
+
+
+   // optional (recommended)
    public async registerOnReady(callback: onReadyCallback): Promise<void> {
 
       this._client.on('ready', async (): Promise<void> => {
@@ -103,7 +114,7 @@ import {
    }
 
 
-   // optional
+   // optional (recommended)
    public async registerInteractionCreate(callback: interactionCreateCallback): Promise<void> {
 
       this._client.on('interactionCreate', async (interaction): Promise<void> => {
