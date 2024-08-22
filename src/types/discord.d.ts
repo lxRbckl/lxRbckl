@@ -1,4 +1,6 @@
 // types <
+export type Commands = Command[];
+
 export type onReadyCallback = (...args: any[]) => Promise<void>;
 
 export type interactionCreateCallback = (...args: any[]) => Promise<void>;
@@ -7,6 +9,14 @@ export type interactionCreateCallback = (...args: any[]) => Promise<void>;
 
 
 // interfaces <
+interface Command {
+   
+   context(): commandBody;
+   async registerChoices?: () => Promise<void>;
+
+}
+
+
 export interface ConstructorParams {
 
    guildId: string;
@@ -50,20 +60,6 @@ interface commandBody {
    name?: string;
    description?: string;
    options?: bodyOptions[];
-
-}
-
-
-interface Command {
-   
-   context(): commandBody;
-   async registerChoices?: () => Promise<void>;
-
-}
-
-export interface Commands {
-
-   commands: Command[];
 
 }
 

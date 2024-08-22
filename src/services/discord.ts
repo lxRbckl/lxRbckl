@@ -29,6 +29,7 @@ import {
    private _client: Client;
    private _version: string;
    private _guildId: string;
+   public commands: Commands;
    private _intents: number[];
    private _channelId: string;
    private _applicationId: string;
@@ -52,6 +53,7 @@ import {
 
    }: ConstructorParams) {
 
+      this.commands = [];
       this._version = version;
       this._intents = intents;
       this._guildId = guildId;
@@ -69,7 +71,7 @@ import {
  
    
    // required
-   public registerCommands({commands}: Commands): void {
+   public registerCommands(): void {
 
       this._client.rest.put(
 
@@ -79,7 +81,7 @@ import {
             this._guildId
 
          ),
-         {body : commands.map(c => c.context())}
+         {body : this.commands.map(c => c.context())}
 
       );
       
@@ -91,9 +93,9 @@ import {
 
 
    // optional (recommended)
-   public async  registerCommandChoices({commands}: Commands) {
+   public async  registerCommandChoices() {
 
-      for (const c of commands) {
+      for (const c of this.commands) {
 
          if (c.registerChoices) {await c.registerChoices();}
 
