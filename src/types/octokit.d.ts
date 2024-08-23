@@ -19,6 +19,7 @@ export interface Constructor {
 export interface EndpointFile {
 
    file: string;
+   branch?: string;
    repository: string;
    method: 'GET' | 'PUT';
 

@@ -74,12 +74,18 @@ export class octokit {
 
       file,
       method,
-      repository
+      repository,
+
+      branch = undefined
 
    }: EndpointFile): string {
 
-      return `${method} /repos/${this._owner}/${repository}/contents/${file}`;
+      let endpoint: string = '';
+      endpoint += `${method} /repos/${this._owner}/${repository}/contents/${file}`;
+      endpoint += branch ? `?ref=${branch}` : '';
 
+      return endpoint;
+      
    }
 
 
