@@ -103,6 +103,7 @@ export class octokit {
 
          file : file,
          method : 'GET',
+         branch : branch,
          repository : repository
 
       });
@@ -176,6 +177,7 @@ export class octokit {
 
          file : file,
          method: 'PUT',
+         branch : branch,
          repository: repository
 
       });
