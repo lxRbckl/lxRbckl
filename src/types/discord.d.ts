@@ -1,9 +1,15 @@
+// import <
+import { Interaction } from 'discord.js/typings'
+
+// >
+
+
 // types <
 export type Commands = Command[];
 
 export type onReadyCallback = (...args: any[]) => Promise<void>;
 
-export type interactionCreateCallback = (...args: any[]) => Promise<void>;
+export type interactionCreateCallback = (interaction: Interaction) => Promise<void>;
 
 // >
 
