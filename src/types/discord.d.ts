@@ -11,8 +11,17 @@ export type interactionCreateCallback = (...args: any[]) => Promise<void>;
 // interfaces <
 interface Command {
    
+   name?: string;
+
    context(): commandBody;
    async registerChoices?: () => Promise<void>;
+
+}
+
+
+export interface MappedCommands {
+
+   [key: string]: Command;
 
 }
 

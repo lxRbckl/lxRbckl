@@ -14,6 +14,7 @@ import {
    Commands,
    LoginParams,
    MessageChannel,
+   MappedCommands,
    onReadyCallback,
    ConstructorParams,
    interactionCreateCallback
@@ -33,6 +34,7 @@ import {
    private _intents: number[];
    private _channelId: string;
    private _applicationId: string;
+   public mappedCommands: MappedCommands;
 
 
    constructor({
@@ -58,6 +60,7 @@ import {
       this._intents = intents;
       this._guildId = guildId;
       this.commands = commands;
+      this.mappedCommands = {};
       this._channelId = channelId;
       this._applicationId = applicationId;
 
@@ -87,10 +90,6 @@ import {
       );
       
    }
-
-
-   // optional
-   public terminate(): void {this._client.destroy();}
 
 
    // optional (recommended)
@@ -125,6 +124,22 @@ import {
          await callback(interaction);
 
       });
+
+   }
+
+
+   // optional
+   public terminate(): void {this._client.destroy();}
+
+
+   // optional
+   public mapCommands(): void {
+
+      for (const c of this.commands) {
+
+         if (c.name) {this.mappedCommands[c.name] = c;}
+
+      }
 
    }
 
