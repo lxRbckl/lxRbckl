@@ -1,9 +1,3 @@
-// import <
-import { Interaction } from 'discord.js/typings'
-
-// >
-
-
 // types <
 export type Commands = Command[];
 
