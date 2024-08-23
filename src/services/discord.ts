@@ -15,9 +15,9 @@ import {
    LoginParams,
    MessageChannel,
    MappedCommands,
-   onReadyCallback,
+   OnReadyCallback,
    ConstructorParams,
-   interactionCreateCallback
+   InteractionCreateCallback
 
 } from '../types/discord';
 
@@ -105,7 +105,7 @@ import {
 
 
    // optional (recommended)
-   public async registerOnReady(callback: onReadyCallback): Promise<void> {
+   public async registerOnReady(callback: OnReadyCallback): Promise<void> {
 
       this._client.on('ready', async (): Promise<void> => {
 
@@ -117,7 +117,7 @@ import {
 
 
    // optional (recommended)
-   public async registerInteractionCreate(callback: interactionCreateCallback): Promise<void> {
+   public async registerInteractionCreate(callback: InteractionCreateCallback): Promise<void> {
 
       this._client.on('interactionCreate', async (interaction): Promise<void> => {
 
