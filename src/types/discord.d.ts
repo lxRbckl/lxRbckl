@@ -14,9 +14,8 @@ interface Command {
    name?: string;
 
    context(): commandBody;
-   run?: (...args: any[]) => any;
+   run: (...args: any[]) => any | Promise<any>;
    async registerChoices?: () => Promise<void>;
-   async run?: (...args: any[]) => Promise<any>;
 
 }
 
