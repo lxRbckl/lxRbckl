@@ -6,7 +6,7 @@
 [![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://github.com/lxRbckl/lxRbckl/blob/main/Shell/README.md)
 [![Clojure](https://img.shields.io/badge/Clojure-%23Clojure.svg?style=for-the-badge&logo=Clojure&logoColor=Clojure)](https://github.com/lxRbckl/lxRbckl/blob/main/Clojure/README.md)
 [![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://github.com/lxRbckl/lxRbckl/blob/main/C%2B%2B/README.md)
-[![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)](https://github.com/lxRbckl/lxRbckl/tree/main/C-Sharp/README.md)
+[![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)](https://github.com/lxRbckl/lxRbckl/tree/main/CS)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://github.com/lxRbckl/lxRbckl/blob/main/Docker/README.md)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://github.com/lxRbckl/lxRbckl/blob/main/Linux/README.md)
 [![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)](https://github.com/lxRbckl/lxRbckl/tree/main/Raspberry-Pi)
