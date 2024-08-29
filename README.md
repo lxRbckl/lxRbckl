@@ -17,7 +17,7 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 
-# 
+--- 
 
 <p align="center">
   This directory is managed by <a href="https://github.com/lxRbckl/Project-MadGarden">Project MadGarden</a>, autonomously.
