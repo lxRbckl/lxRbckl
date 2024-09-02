@@ -2,7 +2,7 @@
 
 ---
 ## Ecosystem
-[`GPIO`](https://github.com/lxRbckl/lxRbckl/tree/main/Raspberry-Pi/GPIO/README.md)
+[`GPIO`](https://github.com/lxRbckl/lxRbckl/blob/main/Raspberry-Pi/GPIO/README.md)
 
 # 
 
