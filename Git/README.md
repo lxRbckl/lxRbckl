@@ -2,7 +2,7 @@
 
 ---
 ## Ecosystem
-[`Git`](https://github.com/lxRbckl/lxRbckl/tree/main/Git/git hooks/README.md) [`Git`](https://github.com/lxRbckl/lxRbckl/tree/main/Git/git-hooks/README.md)
+[`git-hooks`](https://github.com/lxRbckl/lxRbckl/tree/main/Git/git hooks/README.md)
 
 # 
 
