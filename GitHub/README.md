@@ -2,7 +2,7 @@
 
 ---
 ## Ecosystem
-[`github-workflows`](https://github.com/lxRbckl/lxRbckl/tree/main/GitHub/github workflows/README.md) [`github-actions`](https://github.com/lxRbckl/lxRbckl/tree/main/GitHub/github actions/README.md)
+[`github workflows`](https://github.com/lxRbckl/lxRbckl/blob/main/GitHub/github-workflows/README.md) [`github actions`](https://github.com/lxRbckl/lxRbckl/blob/main/GitHub/github-actions/README.md)
 
 # 
 
