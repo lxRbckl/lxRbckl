@@ -1,8 +1,3 @@
-# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/[JavaScript](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript)/node-cron
-
----
-
+# [lxRbckl]()/[JavaScript](/JavaScript)/node-cron'\n\n---\n'
 ## Experience
-[`Project-Acta-Mea V5`](https://github.com/lxRbckl/Project-Acta-Mea/blob/V5/README.md) [`Project-JA V3`](https://github.com/lxRbckl/Project-JA/blob/V3/README.md)
-
----
+[`Project-Acta-Mea V5`](https://github.com/lxRbckl/Project-Acta-Mea/blob/V5/README.md)'\n\n---\n'
