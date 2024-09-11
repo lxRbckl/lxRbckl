@@ -1,3 +1,3 @@
-# [lxRbckl]()/[Python](/Python)/discord-py'\n\n---\n'
+# [lxRbckl]()/[Python](/Python)/discord-py\n\n---\n
 ## Experience
-[`Project-WS3K V1`](https://github.com/lxRbckl/Project-WS3K/blob/V1/README.md)'\n\n---\n'
+[`Project-WS3K V1`](https://github.com/lxRbckl/Project-WS3K/blob/V1/README.md)\n\n---\n
