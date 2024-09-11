@@ -1,4 +1,4 @@
-# [lxRbckl]()/TypeScript'\n\n---\n'## Ecosystem
+# [lxRbckl]()/TypeScript\n\n---\n## Ecosystem
 # Project Acta Mea 6
 > Administer servers and services via a Discord bot utilizing a remote data file. V6. Summer 2024.
 
@@ -41,6 +41,6 @@
 [**`Portfolio`**](https://github.com/lxRbckl/lxRbckl/blob/main/Portfolio/README.md)
 
 #
-'\n\n# \n'
+\n\n# \n
 ## Experience
-[`Project-Acta-Mea V6`](https://github.com/lxRbckl/Project-Acta-Mea/blob/V6/README.md) [`Project-Heimir V2`](https://github.com/lxRbckl/Project-Heimir/blob/V2/README.md) [`Project-MadGarden V1`](https://github.com/lxRbckl/Project-MadGarden/blob/V1/README.md)'\n\n---\n'
+[`Project-Acta-Mea V6`](https://github.com/lxRbckl/Project-Acta-Mea/blob/V6/README.md) [`Project-Heimir V2`](https://github.com/lxRbckl/Project-Heimir/blob/V2/README.md) [`Project-MadGarden V1`](https://github.com/lxRbckl/Project-MadGarden/blob/V1/README.md)\n\n---\n
