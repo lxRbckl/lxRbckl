@@ -1,3 +1,3 @@
-# [lxRbckl]()/[TypeScript](/TypeScript)/@octokit-rest'\n\n---\n'
+# [lxRbckl]()/[TypeScript](/TypeScript)/@octokit-rest\n\n---\n
 ## Experience
-[`Project-Heimir V2`](https://github.com/lxRbckl/Project-Heimir/blob/V2/README.md) [`Project-MadGarden V1`](https://github.com/lxRbckl/Project-MadGarden/blob/V1/README.md)'\n\n---\n'
+[`Project-Heimir V2`](https://github.com/lxRbckl/Project-Heimir/blob/V2/README.md) [`Project-MadGarden V1`](https://github.com/lxRbckl/Project-MadGarden/blob/V1/README.md)\n\n---\n
