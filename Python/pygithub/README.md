@@ -1,3 +1,3 @@
-# [lxRbckl]()/[Python](/Python)/pygithub'\n\n---\n'
+# [lxRbckl]()/[Python](/Python)/pygithub\n\n---\n
 ## Experience
-[`Project-Acta-Mea V4`](https://github.com/lxRbckl/Project-Acta-Mea/blob/V4/README.md) [`Project-Heimir V1`](https://github.com/lxRbckl/Project-Heimir/blob/V1/README.md)'\n\n---\n'
+[`Project-Acta-Mea V4`](https://github.com/lxRbckl/Project-Acta-Mea/blob/V4/README.md) [`Project-Heimir V1`](https://github.com/lxRbckl/Project-Heimir/blob/V1/README.md)\n\n---\n
