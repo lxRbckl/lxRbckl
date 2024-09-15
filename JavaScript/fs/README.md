@@ -1,3 +1,2 @@
-# [lxRbckl]()/[JavaScript](/JavaScript)/fs\n\n---\n
-## Experience
-[`Project-PasCam V8`](https://github.com/lxRbckl/Project-PasCam/blob/V8/README.md)\n\n---\n
+# [lxRbckl](https://github.com/lxRbckl/lxRbckl/tree/main)/[JavaScript](https://github.com/lxRbckl/lxRbckl/tree/main/JavaScript)/fs'\n\n---\n'## Experience
+[`Project-PasCam V8`](https://github.com/lxRbckl/Project-PasCam/blob/V8/README.md)'\n\n---\n'
