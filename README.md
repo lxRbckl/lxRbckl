@@ -17,6 +17,13 @@
 
 --- 
 
-<p align="center">
+<div align="center">
   This archive is managed by <a href="https://github.com/lxRbckl/Project-MadGarden">Project MadGarden</a>, autonomously.
-</p>
+</div>
+
+<div align="center">
+  <p> </p> <!-- Text above the image -->
+  <a href="https://www.lxrbckl.com/">
+    <img src="https://i.postimg.cc/C5jqrGz5/favicon.png" height="50">
+  </a>
+</div>
