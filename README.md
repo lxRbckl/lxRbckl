@@ -14,6 +14,7 @@
 [![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)
 [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)
 [![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)
+[![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)
 
 --- 
 
