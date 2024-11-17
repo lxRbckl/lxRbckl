@@ -128,12 +128,16 @@ def githubDel(
    # >
    
 
-def requestsGet(pLink: str):
+def requestsGet(
+   
+   pLink: str,
+   pShowError: bool = False
+
+):
    '''  '''
 
    # try (if valid link) <
-   # except (then invalid link) <
-   # except (then invalid .json format) <
+   # except (then invalid query) <
    try: 
       
       return {
@@ -143,8 +147,9 @@ def requestsGet(pLink: str):
          
       }[pLink.split('.')[-1]]()
    
-   except KeyError: return False
-   except MissingSchema: return False
-   except JSONDecodeError: return False
+   except Exception as e:
+      
+      if (pShowError): print('Error: ', e)
+      elif (not pShowError): pass
    
    # >
