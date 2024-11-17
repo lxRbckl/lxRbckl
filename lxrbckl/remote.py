@@ -1,4 +1,5 @@
 # import <
+from sys import stderr
 from requests import get
 from json import loads, dumps
 from json.decoder import JSONDecodeError
@@ -149,7 +150,11 @@ def requestsGet(
    
    except Exception as e:
       
-      if (pShowError): print('Error: ', e)
+      if (pShowError): 
+         
+         print('Error: ', e)
+         stderr.write(e)
+      
       elif (not pShowError): pass
    
    # >
