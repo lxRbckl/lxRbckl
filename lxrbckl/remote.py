@@ -153,8 +153,8 @@ def requestsGet(
       if (pShowError): 
          
          print('Error: ', e)
-         stderr.write('Error: ', e)
-         stderr.write('link: ', pLink)
+         stderr.write(f"Error: {e}\n")
+         stderr.write(f"Link: {pLink}\n")
       
       elif (not pShowError): pass
    
