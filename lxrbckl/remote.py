@@ -161,46 +161,46 @@ def githubDel(
 #    # >
 
 
-   def requestsGet(pLink: str, pShowError: bool = False):
-      '''  '''
+def requestsGet(pLink: str, pShowError: bool = False):
+   '''  '''
 
-      # Try to get the response and handle exceptions
-      try:
-         # Send the request
-         response = get(pLink)
-         
-         # Check if the response status code is 200 (OK)
-         if response.status_code != 200:
-               raise Exception(f"Error: Received status code {response.status_code} from {pLink}")
-         
-         # Debug the response text (for checking the content)
-         print(f"Response content from {pLink}: {response.text[:100]}...")  # Print the first 100 chars of the response
+   # Try to get the response and handle exceptions
+   try:
+      # Send the request
+      response = get(pLink)
+      
+      # Check if the response status code is 200 (OK)
+      if response.status_code != 200:
+            raise Exception(f"Error: Received status code {response.status_code} from {pLink}")
+      
+      # Debug the response text (for checking the content)
+      print(f"Response content from {pLink}: {response.text[:100]}...")  # Print the first 100 chars of the response
 
-         # Check if the response is expected to be in JSON format
-         if pLink.split('.')[-1] == 'json':
-               try:
-                  # Try parsing the response as JSON
-                  return {
-                     
-                     'txt': lambda: response.text, 
-                     'json': lambda: response.json()
-                     
-                  }[pLink.split('.')[-1]]()
-               except ValueError as e:
-                  # Handle JSON parsing error
-                  if pShowError:
-                     print(f"JSON parsing error: {e}")
-                     stderr.write(f"JSON parsing error: {e}\n")
-                  return None
-
-         # Default to returning text if the file extension isn't .json
-         return response.text
-
-      except Exception as e:
-         # Handle the exception (invalid URL, connection error, etc.)
-         if pShowError:
-               print(f"Error: {e}")
-               stderr.write(f"Error: {e}\n")
-               stderr.write(f"Link: {pLink}\n")
-         elif not pShowError:
+      # Check if the response is expected to be in JSON format
+      if pLink.split('.')[-1] == 'json':
+            try:
+               # Try parsing the response as JSON
+               return {
+                  
+                  'txt': lambda: response.text, 
+                  'json': lambda: response.json()
+                  
+               }[pLink.split('.')[-1]]()
+            except ValueError as e:
+               # Handle JSON parsing error
+               if pShowError:
+                  print(f"JSON parsing error: {e}")
+                  stderr.write(f"JSON parsing error: {e}\n")
                return None
+
+      # Default to returning text if the file extension isn't .json
+      return response.text
+
+   except Exception as e:
+      # Handle the exception (invalid URL, connection error, etc.)
+      if pShowError:
+            print(f"Error: {e}")
+            stderr.write(f"Error: {e}\n")
+            stderr.write(f"Link: {pLink}\n")
+      elif not pShowError:
+            return None
