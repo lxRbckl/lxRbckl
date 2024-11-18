@@ -156,17 +156,21 @@ import {
 
       try {
 
-         let channel: Channel = this._client.channels.cache.get(this._channelId)!;
+         if (content.length > 0) {
 
-         if (channel instanceof TextChannel) {
+            let channel: Channel = this._client.channels.cache.get(this._channelId)!;
 
-            content = isInline ? `\` ${content} \`` : content;
-            content = isSpoiler ? `|| ${content} ||` : content;
-            content = codeBlock ? `\`\`\`${codeBlock}\n${content}\`\`\`` : content;
+            if (channel instanceof TextChannel) {
 
-            channel.send(content);
+               content = isInline ? `\` ${content} \`` : content;
+               content = isSpoiler ? `|| ${content} ||` : content;
+               content = codeBlock ? `\`\`\`${codeBlock}\n${content}\`\`\`` : content;
 
-         }
+               channel.send(content);
+
+            }
+
+         } else {console.log('There is no content.');}
          
       } catch (error) {console.log('Error: ', error, '\nChannelId: ', this._channelId);}
 
