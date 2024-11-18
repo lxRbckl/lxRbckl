@@ -129,7 +129,9 @@ def githubDel(
 
 def requestsGet(
    
-   pLink: str,
+   pURL: str,
+   
+   pHeaders: dict = None,
    pDisplayError: bool = False
 
 ):
@@ -139,19 +141,30 @@ def requestsGet(
    # except (then ) <
    try:
       
-      ftype = pLink.split('.')[-1]
+      ftype = pURL.split('.')[-1]
       
-      if (ftype == 'txt'): return get(pLink).text
-      if (ftype == 'json'): return loads(get(pLink).text)
+      if (ftype == 'txt'): return get(
+         
+         url = pURL,
+         header = pHeaders
+         
+      ).text
+      
+      if (ftype == 'json'): return loads(get(
+         
+         url = pURL,
+         headers = pHeaders
+         
+      ).text)
    
    except Exception as e:
       
       if (pDisplayError): 
          
          print('Error: ', e)
-         print('Link: ', pLink)
+         print('Link: ', pURL)
          stderr.write(f"Error: {e}\n")
-         stderr.write(f"Link: {pLink}\n")
+         stderr.write(f"Link: {pURL}\n")
       
       else: pass
    
