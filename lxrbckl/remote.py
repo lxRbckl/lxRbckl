@@ -135,6 +135,8 @@ def requestsGet(
 ):
    ''' supports: (.json, .txt) '''
    
+   # try (if ) <
+   # except (then ) <
    try:
       
       ftype = pLink.split('.')[-1]
