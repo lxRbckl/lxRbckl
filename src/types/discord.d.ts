@@ -1,6 +1,4 @@
 // types <
-export type Commands = Command[];
-
 export type OnReadyCallback = (...args: any[]) => Promise<void>;
 
 export type InteractionCreateCallback = (...args: any[]) => Promise<void>;
@@ -11,8 +9,6 @@ export type InteractionCreateCallback = (...args: any[]) => Promise<void>;
 // interfaces <
 interface Command {
    
-   name?: string;
-
    context(): commandBody;
    run: (...args: any[]) => any | Promise<any>;
    async registerChoices?: () => Promise<void>;
@@ -20,9 +16,9 @@ interface Command {
 }
 
 
-export interface MappedCommands {
+export interface Commands {
 
-   [key: string]: Command;
+   [key: string]: Command
 
 }
 

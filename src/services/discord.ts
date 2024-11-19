@@ -14,7 +14,6 @@ import {
    Commands,
    LoginParams,
    MessageChannel,
-   MappedCommands,
    OnReadyCallback,
    ConstructorParams,
    InteractionCreateCallback
@@ -34,7 +33,6 @@ import {
    private _intents: number[];
    private _channelId: string;
    private _applicationId: string;
-   public mappedCommands: MappedCommands;
 
 
    constructor({
@@ -43,7 +41,7 @@ import {
       channelId,
       applicationId,
 
-      commands = [],
+      commands = {},
       version = '10',
       intents = [
 
@@ -60,7 +58,6 @@ import {
       this._intents = intents;
       this._guildId = guildId;
       this.commands = commands;
-      this.mappedCommands = {};
       this._channelId = channelId;
       this._applicationId = applicationId;
 
@@ -70,11 +67,11 @@ import {
    }
 
 
-   // required
+   // required //
    public login({token}: LoginParams): void {this._client.login(token);}
  
    
-   // required
+   // required //
    public registerCommands(): void {
 
       this._client.rest.put(
@@ -85,26 +82,14 @@ import {
             this._guildId
 
          ),
-         {body : this.commands.map(c => c.context())}
+         {body : Object.values(this.commands).map(c => c.context())}
 
       );
       
    }
 
 
-   // optional (recommended)
-   public async  registerCommandChoices() {
-
-      for (const c of this.commands) {
-
-         if (c.registerChoices) {await c.registerChoices();}
-
-      }
-      
-   }
-
-
-   // optional (recommended)
+   // suggested //
    public async registerOnReady(callback: OnReadyCallback): Promise<void> {
 
       this._client.on('ready', async (): Promise<void> => {
@@ -116,7 +101,7 @@ import {
    }
 
 
-   // optional (recommended)
+   // suggested //
    public async registerInteractionCreate(callback: InteractionCreateCallback): Promise<void> {
 
       this._client.on('interactionCreate', async (interaction): Promise<void> => {
@@ -128,23 +113,25 @@ import {
    }
 
 
-   // optional
-   public terminate(): void {this._client.destroy();}
+   // optional //
+   public async registerCommandChoices() {
 
+      // register all choices concurrently <
+      await Promise.all(
 
-   // optional
-   public mapCommands(): void {
+         Object.values(this.commands)
 
-      for (const c of this.commands) {
+           .filter((c) => c.registerChoices)
+           .map((c) => c.registerChoices!())
 
-         if (c.name) {this.mappedCommands[c.name] = c;}
+       );
 
-      }
+       // >
 
    }
 
 
-   // optional
+   // optional //
    public messageChannel({
 
       content,
@@ -156,6 +143,8 @@ import {
 
       try {
 
+         // if (message) <
+         // else (then no message) <
          if (content.length > 0) {
 
             let channel: Channel = this._client.channels.cache.get(this._channelId)!;
@@ -171,9 +160,16 @@ import {
             }
 
          } else {console.log('There is no content.');}
+
+         // >
          
       } catch (error) {console.log('Error: ', error, '\nChannelId: ', this._channelId);}
 
    }
+
+
+   // optional //
+   public terminate(): void {this._client.destroy();}
+
 
 }
