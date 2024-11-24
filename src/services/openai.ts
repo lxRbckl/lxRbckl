@@ -3,6 +3,8 @@
 import { promisify } from 'util';
 import { exec } from 'child_process';
 
+import { PropsConstructor } from '../types/openai';
+
 // >
 
 
@@ -14,19 +16,18 @@ export class openai {
    private readonly _temperature: number;
    
 
-   constructor(
+   constructor({
 
-      token: string,
+      token,
+      model = 'gpt-4o',
+      temperature = 1.5
 
-      model: string = 'gpt-4o',
-      temperature: number = 1.5
+   }: PropsConstructor) {
 
-   ) {
-
-      this._model = model;
       this._token = token;
+      this._model = model;
       this._temperature = temperature;
-      
+
    }
 
 
