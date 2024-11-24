@@ -5,6 +5,7 @@ import {
    Routes,
    Channel,
    TextChannel,
+   Interaction,
    IntentsBitField
 
 } from 'discord.js';
@@ -104,7 +105,7 @@ import {
    // suggested //
    public async registerInteractionCreate(callback: InteractionCreateCallback): Promise<void> {
 
-      this._client.on('interactionCreate', async (interaction): Promise<void> => {
+      this._client.on('interactionCreate', async (interaction: Interaction): Promise<void> => {
 
          await callback(interaction);
 

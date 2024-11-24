@@ -9,6 +9,7 @@ export type InteractionCreateCallback = (...args: any[]) => Promise<void>;
 // interfaces <
 interface Command {
    
+   ctx?: Interaction,
    context(): commandBody;
    run: (...args: any[]) => any | Promise<any>;
    async registerChoices?: () => Promise<void>;

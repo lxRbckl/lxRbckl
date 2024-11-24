@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "lxrbckl",
-  "version": "9.9.0",
+  "version": "9.9.2",
   "main": "./dist/index.js",
   "author": "Alex Arbuckle",
   "module": "./dist/index.mjs",
@@ -30,7 +30,7 @@
     "@octokit/rest": "^20.1.1",
     "@types/node": "^20.14.2",
     "axios": "^1.7.2",
-    "discord.js": "^14.15.3"
+    "discord.js": "^14.16.3"
   },
   "devDependencies": {
     "tsup": "^8.1.0",
