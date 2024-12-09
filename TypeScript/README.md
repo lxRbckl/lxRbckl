@@ -4,7 +4,7 @@
 ## Ecosystem
 
 
-[`axios`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/axios) [`discord-js`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/discord-js) [`fs`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/fs) [`openai-api`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/openai-api) [`@octokit-rest`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/@octokit-rest) [`mocha`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/mocha) [`npm`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/npm) [`node-js`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/node-js) [`node-cron`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/node-cron) [`dockerode`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/dockerode)
+[`axios`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/axios) [`discord-js`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/discord-js) [`fs`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/fs) [`openai-api`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/openai-api) [`@octokit-rest`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/@octokit-rest) [`mocha`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/mocha) [`npm`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/npm) [`node-js`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/node-js) [`node-cron`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/node-cron) [`dockerode`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/dockerode) [`Next-js`](https://github.com/lxRbckl/lxRbckl/tree/main/TypeScript/Next-js)
 # 
 ## Experience
 
