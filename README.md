@@ -19,5 +19,5 @@
 --- 
 
 <div align="center">
-  This archive is managed by <a href="https://github.com/lxRbckl/Project-MadGarden">Project MadGarden</a>, autonomously.
+  This interactive archive is managed autonomously by <a href="https://github.com/lxRbckl/Project-MadGarden">Project MadGarden</a>.
 </div>
