@@ -2,7 +2,7 @@
 
 [![Python](https://img.shields.io/badge/python-111111?style=for-the-badge&logo=python&logoColor=F7F5F1)](https://github.com/lxRbckl/lxRbckl/blob/main/Python/README.md)
 [![TypeScript](https://img.shields.io/badge/typescript-%23111111.svg?style=for-the-badge&logo=typescript&logoColor=F7F5F1)](https://github.com/lxRbckl/lxRbckl/blob/main/TypeScript/README.md)
-[![JavaScript](https://img.shields.io/badge/javascript-%23111111.svg?style=for-the-badge&logo=javascript&logoColor=%F7F5F1)](https://github.com/lxRbckl/lxRbckl/blob/main/JavaScript/README.md)
+[![JavaScript](https://img.shields.io/badge/javascript-%23111111.svg?style=for-the-badge&logo=javascript&logoColor=F7F5F1)](https://github.com/lxRbckl/lxRbckl/blob/main/JavaScript/README.md)
 [![Shell Script](https://img.shields.io/badge/shell_script-%23111111.svg?style=for-the-badge&logo=gnu-bash&logoColor=F7F5F1)](https://github.com/lxRbckl/lxRbckl/blob/main/Shell/README.md)
 [![C++](https://img.shields.io/badge/c++-%23111111.svg?style=for-the-badge&logo=c%2B%2B&logoColor=F7F5F1)](https://github.com/lxRbckl/lxRbckl/blob/main/C%2B%2B/README.md)
 [![C#](https://img.shields.io/badge/c%23-%23111111.svg?style=for-the-badge&logo=csharp&logoColor=F7F5F1)](https://github.com/lxRbckl/lxRbckl/tree/main/CS)
