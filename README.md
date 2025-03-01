@@ -16,6 +16,7 @@
 [![.Net](https://img.shields.io/badge/.NET-111111?style=for-the-badge&logo=.net&logoColor=F7F5F1)](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)
 [![Clojure](https://img.shields.io/badge/Clojure-%23111111?style=for-the-badge&logo=Clojure&logoColor=F7F5F1)](https://github.com/lxRbckl/lxRbckl/blob/main/Clojure/README.md)
 [![Bootstrap](https://img.shields.io/badge/bootstrap-%23111111.svg?style=for-the-badge&logo=bootstrap&logoColor=F7F5F1)](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)
+[![Nginx](https://img.shields.io/badge/nginx-%23111111.svg?style=for-the-badge&logo=nginx&logoColor=F7F5F1)](https://github.com/lxRbckl/lxRbckl/blob/main/README.md)
 
 --- 
 
